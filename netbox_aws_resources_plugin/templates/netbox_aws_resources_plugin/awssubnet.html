@@ -1,0 +1,57 @@
+{% extends 'generic/object.html' %}
+{% load helpers %}
+{% load plugins %}
+
+{% block content_left_page %}
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <strong>AWS Subnet Details</strong>
+        </div>
+        <table class="table table-hover panel-body attr-table">
+            <tr>
+                <td>Name</td>
+                <td>{{ object.name|placeholder }}</td>
+            </tr>
+            <tr>
+                <td>Subnet ID</td>
+                <td>{{ object.subnet_id }}</td>
+            </tr>
+            <tr>
+                <td>AWS VPC</td>
+                <td>
+                    {% if object.aws_vpc %}
+                        <a href="{% url 'plugins:netbox_aws_resources_plugin:awsvpc' pk=object.aws_vpc.pk %}">{{ object.aws_vpc }}</a>
+                        {% if object.aws_vpc.aws_account %}
+                            (Account: <a href="{% url 'plugins:netbox_aws_resources_plugin:awsaccount' pk=object.aws_vpc.aws_account.pk %}">{{ object.aws_vpc.aws_account }}</a>)
+                        {% endif %}
+                    {% else %}
+                        {{ ''|placeholder }}
+                    {% endif %}
+                </td>
+            </tr>
+            <tr>
+                <td>CIDR (Prefix)</td>
+                <td>
+                    {% if object.cidr_block %}
+                        <a href="{% url 'ipam:prefix' pk=object.cidr_block.pk %}">{{ object.cidr_block }}</a>
+                    {% else %}
+                        {{ ''|placeholder }}
+                    {% endif %}
+                </td>
+            </tr>
+            <tr>
+                <td>Availability Zone</td>
+                <td>{{ object.get_availability_zone_display }}</td>
+            </tr>
+            <tr>
+                <td>State</td>
+                <td>{{ object.get_state_display }}</td>
+            </tr>
+            <tr>
+                <td>Map Public IP on Launch</td>
+                <td>{{ object.map_public_ip_on_launch|yesno }}</td>
+            </tr>
+        </table>
+    </div>
+    {% plugin_left_page object %}
+{% endblock %}

@@ -1,0 +1,95 @@
+{% extends 'generic/object.html' %}
+{% load helpers %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-md-12">
+            {# AWS Account Details Panel #}
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <strong>AWS Account Details</strong>
+                </div>
+                <table class="table table-hover panel-body attr-table">
+                    <tr>
+                        <td>Account ID</td>
+                        <td>{{ object.account_id }}</td>
+                    </tr>
+                    <tr>
+                        <td>Name</td>
+                        <td>{{ object.name|placeholder }}</td>
+                    </tr>
+                    <tr>
+                        <td>Tenant</td>
+                        <td>
+                            {% if object.tenant %}
+                                <a href="{{ object.tenant.get_absolute_url }}">{{ object.tenant }}</a>
+                            {% else %}
+                                {{ ''|placeholder }}
+                            {% endif %}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Parent Account</td>
+                        <td>
+                            {% if object.parent_account %}
+                                <a href="{{ object.parent_account.get_absolute_url }}">{{ object.parent_account }}</a>
+                            {% else %}
+                                {{ ''|placeholder }}
+                            {% endif %}
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            {# Child Accounts Panel #}
+            {% with child_accounts=object.child_accounts.all %}
+                {% if child_accounts %}
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <strong>Child Accounts</strong>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table table-hover panel-body">
+                            <thead>
+                                <tr>
+                                    <th>Account ID</th>
+                                    <th>Name</th>
+                                    <th>Tenant</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for child in child_accounts %}
+                                    <tr>
+                                        <td><a href="{{ child.get_absolute_url }}">{{ child.account_id }}</a></td>
+                                        <td>{{ child.name|placeholder }}</td>
+                                        <td>
+                                            {% if child.tenant %}
+                                                <a href="{{ child.tenant.get_absolute_url }}">{{ child.tenant }}</a>
+                                            {% else %}
+                                                {{ ''|placeholder }}
+                                            {% endif %}
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                {% else %}
+                    {# Optionally, display a message if there are no child accounts #}
+                    {#
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <strong>Child Accounts</strong>
+                        </div>
+                        <div class="panel-body">
+                            <span class="text-muted">No child accounts found.</span>
+                        </div>
+                    </div>
+                    #}
+                {% endif %}
+            {% endwith %}
+
+        </div>
+    </div>
+{% endblock %}

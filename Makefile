@@ -1,4 +1,4 @@
-sources = NetBox AWS Resources Plugin
+sources = netbox_aws_resources_plugin
 
 .PHONY: test format lint unittest pre-commit clean
 test: format lint unittest

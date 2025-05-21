@@ -1,18 +1,72 @@
-from extras.plugins import PluginMenuButton, PluginMenuItem
-from utilities.choices import ButtonColorChoices
+from netbox.choices import ButtonColorChoices
+from netbox.plugins import PluginMenu, PluginMenuButton, PluginMenuItem
 
-plugin_buttons = [
-    PluginMenuButton(
-        link="plugins:netbox_aws_resources_plugin:awsresources_add",
-        title="Add",
-        icon_class="mdi mdi-plus-thick",
-    )
-]
+# Button for adding a new AWS Account
+awsaccount_add_button = PluginMenuButton(
+    link="plugins:netbox_aws_resources_plugin:awsaccount_add",
+    title="Add Account",
+    icon_class="mdi mdi-plus-thick",
+    color=ButtonColorChoices.GREEN,
+)
 
-menu_items = (
-    PluginMenuItem(
-        link="plugins:netbox_aws_resources_plugin:awsresources_list",
-        link_text="AWS Resources",
-        buttons=plugin_buttons,
+# Button for adding a new AWS VPC
+awsvpc_add_button = PluginMenuButton(
+    link="plugins:netbox_aws_resources_plugin:awsvpc_add",
+    title="Add VPC",
+    icon_class="mdi mdi-plus-thick",
+    color=ButtonColorChoices.GREEN,
+)
+
+# Button for adding a new AWS Subnet
+awssubnet_add_button = PluginMenuButton(
+    link="plugins:netbox_aws_resources_plugin:awssubnet_add",
+    title="Add Subnet",
+    icon_class="mdi mdi-plus-thick",
+    color=ButtonColorChoices.GREEN,
+)
+
+# Button for adding a new AWS Load Balancer
+awsloadbalancer_add_button = PluginMenuButton(
+    link="plugins:netbox_aws_resources_plugin:awsloadbalancer_add",
+    title="Add Load Balancer",
+    icon_class="mdi mdi-plus-thick",
+    color=ButtonColorChoices.GREEN,
+)
+
+# Menu item for listing AWS Accounts
+awsaccount_list_item = PluginMenuItem(
+    link="plugins:netbox_aws_resources_plugin:awsaccount_list",
+    link_text="AWS Accounts",
+    buttons=(awsaccount_add_button,),
+)
+
+# Menu item for listing AWS VPCs
+awsvpc_list_item = PluginMenuItem(
+    link="plugins:netbox_aws_resources_plugin:awsvpc_list",
+    link_text="AWS VPCs",
+    buttons=(awsvpc_add_button,),
+)
+
+# Menu item for listing AWS Subnets
+awssubnet_list_item = PluginMenuItem(
+    link="plugins:netbox_aws_resources_plugin:awssubnet_list",
+    link_text="AWS Subnets",
+    buttons=(awssubnet_add_button,),
+)
+
+# Menu item for listing AWS Load Balancers
+awsloadbalancer_list_item = PluginMenuItem(
+    link="plugins:netbox_aws_resources_plugin:awsloadbalancer_list",
+    link_text="AWS Load Balancers",
+    buttons=(awsloadbalancer_add_button,),
+)
+
+# Define the top-level menu
+menu = PluginMenu(
+    label="AWS Resources",  # Text that will appear on the top-level tab
+    groups=(
+        ("AWS Management", (awsaccount_list_item, awsvpc_list_item, awssubnet_list_item, awsloadbalancer_list_item)),
+        # You can add more groups and items here later as your plugin grows
     ),
+    icon_class="mdi mdi-cloud",  # Original cloud icon
 )
