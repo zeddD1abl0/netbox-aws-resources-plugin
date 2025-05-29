@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
                         // IMPORTANT: Trigger change event on the hidden fields so APISelect updates
                         vpcCIDRHiddenField.dispatchEvent(new Event('change', { bubbles: true }));
-                        // vpcVRFHiddenField.dispatchEvent(new Event('change', { bubbles: true })); // Triggering on one might be enough
+                        vpcVRFHiddenField.dispatchEvent(new Event('change', { bubbles: true })); // Ensure VRF ID change also triggers refresh
                     } else {
                         console.warn('Selected VPC does not have a cidr_block or prefix defined:', data);
                     }

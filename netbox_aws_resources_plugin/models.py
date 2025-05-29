@@ -6,7 +6,7 @@ from tenancy.models import Tenant
 
 
 class AWSAccount(NetBoxModel):
-    account_id = models.CharField(max_length=12, unique=True, help_text="AWS Account ID (12 digits)")
+    account_id = models.CharField(max_length=12, unique=True, help_text="AWS Account ID (12 digits)", blank=True, null=True)
     name = models.CharField(max_length=100, help_text="Descriptive name for the AWS account")
     tenant = models.ForeignKey(to=Tenant, on_delete=models.PROTECT, related_name="aws_accounts", blank=True, null=True)
     # New field for parent-child relationship
@@ -96,19 +96,20 @@ AWS_SUBNET_STATE_CHOICES = [
 
 
 class AWSVPC(NetBoxModel):
-    name = models.CharField(
-        max_length=255,
-        blank=True,  # Name is optional in AWS, can be derived from tags
-        help_text="User-defined name for the VPC",
+    aws_account = models.ForeignKey(
+        to=AWSAccount,
+        on_delete=models.PROTECT,
+        related_name="vpcs",
+        help_text="The AWS Account this VPC belongs to"
     )
+    name = models.CharField(max_length=255, help_text="The name of the VPC")
     vpc_id = models.CharField(
-        max_length=50,  # e.g., vpc-012345abcdef1234567
-        unique=True,
+        max_length=50, 
+        unique=True, 
+        blank=True, 
+        null=True, 
         verbose_name="VPC ID",
         help_text="The unique identifier for the VPC (e.g., vpc-012345abcdef)",
-    )
-    aws_account = models.ForeignKey(
-        to=AWSAccount, on_delete=models.PROTECT, related_name="vpcs", help_text="The AWS Account this VPC belongs to"
     )
     region = models.CharField(
         max_length=50, choices=AWS_REGION_CHOICES, help_text="The AWS region where the VPC is located"
@@ -116,12 +117,10 @@ class AWSVPC(NetBoxModel):
     # Represents the primary IPv4 CIDR block. Additional CIDR blocks are handled via ipam.Prefix relationships if needed
     cidr_block = (
         models.OneToOneField(  # A VPC has one primary CIDR block in AWS, often represented as a Prefix in NetBox
-            to=Prefix,
+            to="ipam.Prefix",
             on_delete=models.PROTECT,  # Protecting the Prefix if a VPC references it
-            related_name="aws_vpc_primary_cidr",
-            null=True,  # Can be null if not yet provisioned or if managed differently
-            blank=True,
-            help_text="The primary IPv4 CIDR block of this VPC, represented as a NetBox Prefix",
+            related_name="aws_vpc_primary_cidr", # Ensure this related_name is unique if used elsewhere
+            help_text="The primary IPv4 CIDR block for this VPC.",
         )
     )
     state = models.CharField(
@@ -148,22 +147,20 @@ class AWSVPC(NetBoxModel):
 
 
 class AWSSubnet(NetBoxModel):
-    name = models.CharField(
-        max_length=255,
-        blank=True,  # Name is optional in AWS, can be derived from tags
-        help_text="User-defined name for the Subnet",
-    )
-    subnet_id = models.CharField(
-        max_length=50,  # e.g., subnet-012345abcdef1234567
-        unique=True,
-        verbose_name="Subnet ID",
-        help_text="The unique identifier for the Subnet (e.g., subnet-012345abcdef)",
-    )
     aws_vpc = models.ForeignKey(
         to=AWSVPC,
-        on_delete=models.CASCADE,  # Subnets are deleted if their VPC is deleted
+        on_delete=models.PROTECT,
         related_name="subnets",
-        help_text="The AWS VPC this Subnet belongs to",
+        help_text="The AWS VPC this Subnet belongs to"
+    )
+    name = models.CharField(max_length=255, help_text="The name of the Subnet")
+    subnet_id = models.CharField(
+        max_length=50, 
+        unique=True, 
+        blank=True, 
+        null=True, 
+        verbose_name="Subnet ID",
+        help_text="The unique identifier for the Subnet (e.g., subnet-012345abcdef)",
     )
     # Represents the IPv4 CIDR block of the subnet.
     cidr_block = models.OneToOneField(  # A Subnet has one CIDR block, represented as a Prefix in NetBox
@@ -210,59 +207,40 @@ class AWSSubnet(NetBoxModel):
 
 class AWSLoadBalancer(NetBoxModel):
     name = models.CharField(max_length=255, help_text="The name of the Load Balancer")
-    arn = models.CharField(max_length=255, unique=True, help_text="Amazon Resource Name (ARN) of the Load Balancer")
+    arn = models.CharField(max_length=255, unique=True, blank=True, help_text="Amazon Resource Name for the Load Balancer")
     aws_account = models.ForeignKey(
-        to=AWSAccount,
-        on_delete=models.PROTECT,  # Or models.CASCADE if LBs should be deleted with account
-        related_name="load_balancers",
-        help_text="The AWS Account this Load Balancer belongs to",
+        to=AWSAccount, on_delete=models.PROTECT, related_name="account_load_balancers", help_text="The AWS Account this Load Balancer belongs to"
     )
-    region = models.CharField(
-        max_length=50, choices=AWS_REGION_CHOICES, help_text="The AWS region where the Load Balancer is located"
-    )
+    region = models.CharField(max_length=50, choices=AWS_REGION_CHOICES, help_text="The AWS region where the Load Balancer is located")
     vpc = models.ForeignKey(
-        to=AWSVPC,  # Changed from ipam.VPC to AWSVPC
-        on_delete=models.SET_NULL,  # Or models.PROTECT
+        to=AWSVPC,
+        on_delete=models.PROTECT,
+        related_name="vpc_load_balancers",
         null=True,
         blank=True,
-        related_name="aws_load_balancers",  # Keep or change related_name as preferred
-        help_text="The AWS VPC this Load Balancer is associated with (optional)",
+        help_text="The VPC this Load Balancer is associated with",
     )
-    type = models.CharField(
-        max_length=20,
-        choices=LOADBALANCER_TYPE_CHOICES,
-        help_text="The type of Load Balancer (Application, Network, Gateway)",
+    type = models.CharField(max_length=50, choices=LOADBALANCER_TYPE_CHOICES, help_text="The type of Load Balancer (e.g., application, network, gateway)")
+    scheme = models.CharField(max_length=50, choices=LOADBALANCER_SCHEME_CHOICES, help_text="The scheme of the Load Balancer (e.g., internet-facing, internal)")
+    dns_name = models.CharField(max_length=255, blank=True, help_text="The DNS name of the Load Balancer")
+    state = models.CharField(max_length=50, choices=LOADBALANCER_STATE_CHOICES, help_text="The state of the Load Balancer (e.g., active, provisioning, failed)")
+    subnets = models.ManyToManyField(
+        to=AWSSubnet,
+        related_name="load_balancers",
+        blank=True,
+        help_text="Subnets associated with this Load Balancer. Should be within the selected VPC."
     )
-    scheme = models.CharField(
-        max_length=20,
-        choices=LOADBALANCER_SCHEME_CHOICES,
-        help_text="The scheme of the Load Balancer (internal or internet-facing)",
-    )
-    dns_name = models.CharField(
-        max_length=255,
-        blank=True,  # Can be blank as it might take time to provision
-        help_text="The DNS name of the Load Balancer",
-    )
-    state = models.CharField(
-        max_length=20,
-        choices=LOADBALANCER_STATE_CHOICES,
-        default="unknown",
-        help_text="The current state of the Load Balancer",
-    )
-
-    class Meta:
-        ordering = ("name", "region", "aws_account")
-        verbose_name = "AWS Load Balancer"
-        verbose_name_plural = "AWS Load Balancers"
-        constraints = [
-            models.UniqueConstraint(
-                fields=["aws_account", "region", "name"], name="unique_awsloadbalancer_account_region_name"
-            )
-        ]
 
     def __str__(self):
         return self.name
 
     def get_absolute_url(self):
-        # Placeholder: URL will be defined in urls.py later
         return reverse("plugins:netbox_aws_resources_plugin:awsloadbalancer", args=[self.pk])
+
+    def save(self, *args, **kwargs):
+        if self.vpc:
+            self.region = self.vpc.region
+        super().save(*args, **kwargs)
+
+    class Meta:
+        ordering = ("name",)

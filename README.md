@@ -9,43 +9,44 @@ NetBox plugin for discovering and managing various AWS Resources within NetBox. 
 
 ## Features
 
-Currently, the plugin provides the following features, primarily focused on AWS Account management:
+Currently, the plugin provides the following features, focused on AWS resource management:
 
 *   **AWS Account Tracking:**
     *   Store AWS Account ID (12-digit), a descriptive Name, and associate with a NetBox Tenant.
     *   Support for hierarchical relationships using a `Parent Account` field, allowing for representation of AWS Organizations structures or other parent-child account relationships.
+*   **AWS VPC Management:**
+    *   Store VPC ID, a descriptive Name, CIDR block (linked to `ipam.Prefix`), and associate with an AWS Account and NetBox Tenant.
+*   **AWS Subnet Management:**
+    *   Store Subnet ID, a descriptive Name, CIDR block (linked to `ipam.Prefix`), Availability Zone, and associate with an AWS VPC and NetBox Tenant.
+*   **AWS Load Balancer Management (ALB/NLB):**
+    *   Store Load Balancer ARN, Name, Type (Application/Network), Scheme (Internal/Internet-facing), DNS Name, and associate with an AWS Account, VPC, and NetBox Tenant.
+    *   Track associated Subnets.
 *   **User Interface Enhancements:**
-    *   Dedicated list view for AWS Accounts with custom columns like "Account Type" (Root/Sub-account) and "Parent Account".
-    *   Filtering options, including a specific filter for "Is Root Account" (Yes/No/Any).
-    *   Detailed AWS Account page displaying parent account information and a table of any child accounts.
+    *   Dedicated list views for AWS Accounts, VPCs, Subnets, and Load Balancers with relevant custom columns.
+    *   Filtering options for all managed resources.
+    *   Detailed pages for each resource displaying its attributes and related items (e.g., VPCs under an Account, Subnets under a VPC, Load Balancers under an Account/VPC).
 *   **Bulk Operations:**
-    *   Bulk editing of AWS Accounts.
-    *   Bulk deletion of AWS Accounts.
+    *   Bulk editing and deletion for all managed resources.
 *   **Search Integration:**
-    *   AWS Accounts (including their ID, name, and tenant) are searchable via NetBox's global search.
-    *   Ability to find child accounts by searching for their parent account's ID or name.
+    *   All managed AWS resources are searchable via NetBox's global search.
 
 **Future planned features include support for:**
-*   AWS Load Balancers (ALB/NLB)
 *   Target Groups
-*   ECS Clusters, Services, and Tasks
 
 ## Models
 
-### AWSAccount
+The plugin introduces the following NetBox models. For detailed information on each model, please refer to the documentation links below:
 
-Represents an individual AWS Account.
-
-*   **`account_id`**: The unique 12-digit AWS Account ID.
-*   **`name`**: A user-defined descriptive name for the account.
-*   **`tenant`**: The NetBox Tenant this AWS Account is associated with (optional).
-*   **`parent_account`**: A foreign key to another `AWSAccount` instance, representing the parent in a hierarchy. If null, the account is considered a "Root" account.
+*   [AWSAccount](./docs/models/aws_account.md)
+*   [AWSVPC](./docs/models/aws_vpc.md)
+*   [AWSSubnet](./docs/models/aws_subnet.md)
+*   [AWSLoadBalancer](./docs/models/aws_load_balancer.md)
 
 ## Compatibility
 
 | NetBox Version | Plugin Version |
 |----------------|----------------|
-|     4.0        |      0.1.0     |
+|     4.0        |   4.0.0-alpha1 |
 
 ## Installing
 

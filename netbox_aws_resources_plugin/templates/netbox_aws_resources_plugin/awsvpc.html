@@ -2,70 +2,98 @@
 {% load helpers %}
 {% load plugins %}
 
-{% block content_left_page %}
-    <div class="panel panel-default">
-        <div class="panel-heading">
-            <strong>AWS VPC Details</strong>
+{% block content %}
+    <div class="row">
+        <div class="col col-md-6">
+            {# AWS VPC Details Panel #}
+            <div class="card">
+                <div class="card-header">
+                    <strong>AWS VPC Details</strong>
+                </div>
+                <table class="table table-hover attr-table">
+                    <tr>
+                        <td>Name</td>
+                        <td>{{ object.name|placeholder }}</td>
+                    </tr>
+                    <tr>
+                        <td>VPC ID</td>
+                        <td>{{ object.vpc_id }}</td>
+                    </tr>
+                    <tr>
+                        <td>AWS Account</td>
+                        <td>
+                            {% if object.aws_account %}
+                                <a href="{% url 'plugins:netbox_aws_resources_plugin:awsaccount' pk=object.aws_account.pk %}">{{ object.aws_account }}</a>
+                            {% else %}
+                                {{ ''|placeholder }}
+                            {% endif %}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Region</td>
+                        <td>{{ object.get_region_display }}</td>
+                    </tr>
+                    <tr>
+                        <td>Primary CIDR (Prefix)</td>
+                        <td>
+                            {% if object.cidr_block %}
+                                <a href="{% url 'ipam:prefix' pk=object.cidr_block.pk %}">{{ object.cidr_block }}</a>
+                            {% else %}
+                                {{ ''|placeholder }}
+                            {% endif %}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>State</td>
+                        <td>{{ object.get_state_display }}</td>
+                    </tr>
+                    <tr>
+                        <td>Is Default</td>
+                        <td>{{ object.is_default|yesno }}</td>
+                    </tr>
+                </table>
+            </div>
         </div>
-        <table class="table table-hover panel-body attr-table">
-            <tr>
-                <td>Name</td>
-                <td>{{ object.name|placeholder }}</td>
-            </tr>
-            <tr>
-                <td>VPC ID</td>
-                <td>{{ object.vpc_id }}</td>
-            </tr>
-            <tr>
-                <td>AWS Account</td>
-                <td>
-                    {% if object.aws_account %}
-                        <a href="{% url 'plugins:netbox_aws_resources_plugin:awsaccount' pk=object.aws_account.pk %}">{{ object.aws_account }}</a>
-                    {% else %}
-                        {{ ''|placeholder }}
+        <div class="col col-md-6">
+            {# Associated AWS Load Balancers Panel #}
+            <div class="card">
+                <div class="card-header">
+                    <strong>Associated AWS Load Balancers</strong>
+                </div>
+                {% if awsloadbalancer_table.rows %}
+                    {% include 'inc/table.html' with table=awsloadbalancer_table %}
+                {% else %}
+                    <div class="card-body text-muted">
+                        No Load Balancers found for this VPC.
+                    </div>
+                {% endif %}
+                <div class="card-footer noprint">
+                    {% if perms.netbox_aws_resources_plugin.add_awsloadbalancer %}
+                        <a href="{% url 'plugins:netbox_aws_resources_plugin:awsloadbalancer_add' %}?vpc={{ object.pk }}&aws_account={{ object.aws_account.pk|default:'' }}&region={{ object.region|default:'' }}" class="btn btn-xs btn-success">
+                            <span class="mdi mdi-plus-thick" aria-hidden="true"></span> Add Load Balancer
+                        </a>
                     {% endif %}
-                </td>
-            </tr>
-            <tr>
-                <td>Region</td>
-                <td>{{ object.get_region_display }}</td>
-            </tr>
-            <tr>
-                <td>Primary CIDR (Prefix)</td>
-                <td>
-                    {% if object.cidr_block %}
-                        <a href="{% url 'ipam:prefix' pk=object.cidr_block.pk %}">{{ object.cidr_block }}</a>
-                    {% else %}
-                        {{ ''|placeholder }}
-                    {% endif %}
-                </td>
-            </tr>
-            <tr>
-                <td>State</td>
-                <td>{{ object.get_state_display }}</td>
-            </tr>
-            <tr>
-                <td>Is Default</td>
-                <td>{{ object.is_default|yesno }}</td>
-            </tr>
-        </table>
+                </div>
+            </div>
+        </div>
     </div>
-    {% plugin_left_page object %}
-{% endblock %}
 
-{% block content_full_width_page %}
-    <div class="panel panel-default">
-        <div class="panel-heading">
-            <strong>AWS Subnets</strong>
-        </div>
-        {% include 'inc/table.html' with table=awssubnet_table %}
-        <div class="panel-footer noprint">
-            {% if perms.netbox_aws_resources_plugin.add_awssubnet %}
-                <a href="{% url 'plugins:netbox_aws_resources_plugin:awssubnet_add' %}?aws_vpc={{ object.pk }}&region={{ object.region.pk|default:'' }}" class="btn btn-xs btn-success">
-                    <span class="mdi mdi-plus-thick" aria-hidden="true"></span> Add Subnet
-                </a>
-            {% endif %}
+    <div class="row">
+        <div class="col col-md-12">
+            {# AWS Subnets Panel #}
+            <div class="card">
+                <div class="card-header">
+                    <strong>AWS Subnets</strong>
+                </div>
+                {% include 'inc/table.html' with table=awssubnet_table %}
+                <div class="card-footer noprint">
+                    {% if perms.netbox_aws_resources_plugin.add_awssubnet %}
+                        <a href="{% url 'plugins:netbox_aws_resources_plugin:awssubnet_add' %}?aws_vpc={{ object.pk }}&region={{ object.region|default:'' }}" class="btn btn-xs btn-success">
+                            <span class="mdi mdi-plus-thick" aria-hidden="true"></span> Add Subnet
+                        </a>
+                    {% endif %}
+                </div>
+            </div>
         </div>
     </div>
-    {% plugin_full_width_page object %}
 {% endblock %}

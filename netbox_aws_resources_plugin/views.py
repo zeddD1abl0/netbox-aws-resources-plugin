@@ -1,10 +1,38 @@
 from netbox.views import generic
+from ipam.tables import IPAddressTable  # noqa # type: ignore
+from ipam.models import IPAddress  # noqa # type: ignore
 
 from . import filtersets, forms, models, tables
+from .models import AWSAccount, AWSVPC, AWSSubnet, AWSLoadBalancer # Ensure all models are imported
+from .tables import AWSSubnetTable # Ensure AWSSubnetTable is imported
 
 
 class AWSAccountView(generic.ObjectView):
-    queryset = models.AWSAccount.objects.all()
+    queryset = models.AWSAccount.objects.prefetch_related('tags', 'child_accounts')
+
+    def get_extra_context(self, request, instance):
+        # Child Accounts Table
+        child_accounts = instance.child_accounts.all()
+        child_accounts_table = tables.AWSAccountTable(child_accounts, user=request.user, exclude=("parent_account",))
+        child_accounts_table.configure(request)
+
+        # Related VPCs Table
+        vpcs = instance.vpcs.all().select_related('aws_account', 'region', 'cidr_block')
+        aws_vpc_table = tables.AWSVPCTable(vpcs, user=request.user, exclude=("aws_account",))
+        aws_vpc_table.configure(request)
+
+        # Related Load Balancers Table (assuming related_name='load_balancers' or 'aws_load_balancers' on AWSLoadBalancer model for AWSAccount)
+        # If the related_name is different, this line will need adjustment.
+        # For example, if AWSLoadBalancer.aws_account has related_name="account_load_balancers"
+        load_balancers = models.AWSLoadBalancer.objects.filter(aws_account=instance).select_related('aws_account', 'region', 'vpc')
+        aws_load_balancer_table = tables.AWSLoadBalancerTable(load_balancers, user=request.user, exclude=("aws_account",))
+        aws_load_balancer_table.configure(request)
+
+        return {
+            "child_accounts_table": child_accounts_table,
+            "aws_vpc_table": aws_vpc_table,
+            "aws_load_balancer_table": aws_load_balancer_table,
+        }
 
 
 class AWSAccountListView(generic.ObjectListView):
@@ -44,15 +72,22 @@ class AWSVPCView(generic.ObjectView):
     # Template: netbox_aws_resources_plugin/awsvpc.html (lowercase model name)
 
     def get_extra_context(self, request, instance):
-        # Get related subnets
+        # Table of associated Load Balancers
+        # Use the related_name 'vpc_load_balancers' from AWSLoadBalancer.vpc field
+        load_balancers = instance.vpc_load_balancers.all().select_related('aws_account', 'vpc') # Removed 'region' from select_related
+        load_balancers_table = tables.AWSLoadBalancerTable(load_balancers, user=request.user)
+        load_balancers_table.configure(request)
+
+        # Table of associated Subnets
         subnets = models.AWSSubnet.objects.filter(aws_vpc=instance).select_related(
             "cidr_block", "aws_vpc__aws_account"  # Optimize query for table display
         )
-        awssubnet_table = tables.AWSSubnetTable(subnets)
+        awssubnet_table = tables.AWSSubnetTable(subnets, user=request.user)
         awssubnet_table.configure(request)
 
         return {
             "awssubnet_table": awssubnet_table,
+            "awsloadbalancer_table": load_balancers_table,
         }
 
 
@@ -90,8 +125,27 @@ class AWSVPCBulkDeleteView(generic.BulkDeleteView):
 
 
 class AWSSubnetView(generic.ObjectView):
-    queryset = models.AWSSubnet.objects.select_related("aws_vpc", "cidr_block", "aws_vpc__aws_account")
-    # Template: netbox_aws_resources_plugin/awssubnet.html
+    queryset = models.AWSSubnet.objects.select_related(
+        "aws_vpc__aws_account", "cidr_block"
+    )
+
+    def get_extra_context(self, request, instance):
+        # Get IP Addresses in this subnet
+        ip_addresses = IPAddress.objects.none() # Default to no IPs
+        if instance.cidr_block: # Ensure the subnet has a CIDR block assigned
+            ip_addresses = IPAddress.objects.restrict(request.user, 'view').filter(
+                address__net_contained=str(instance.cidr_block) # Filter IPs contained within the subnet's prefix
+            ).select_related('vrf', 'tenant')
+        
+        ip_addresses_table = IPAddressTable(ip_addresses, user=request.user)
+        if not request.user.has_perm('ipam.view_ipaddress'):
+            ip_addresses_table = None # Clear table if no permission
+        elif ip_addresses_table:
+            ip_addresses_table.configure(request)
+
+        return {
+            "ip_addresses_table": ip_addresses_table,
+        }
 
 
 class AWSSubnetListView(generic.ObjectListView):
@@ -128,10 +182,20 @@ class AWSSubnetBulkDeleteView(generic.BulkDeleteView):
 
 
 class AWSLoadBalancerView(generic.ObjectView):
-    queryset = models.AWSLoadBalancer.objects.all()
-    # NetBox will conventionally look for a template at
-    # netbox_aws_resources_plugin/awsloadbalancer.html (lowercase model name)
-    # We will create this template later if specific customizations are needed beyond generic/object.html
+    queryset = models.AWSLoadBalancer.objects.select_related(
+        "aws_account", "vpc"
+    ).prefetch_related(
+        "subnets", "tags"
+    )
+
+    def get_extra_context(self, request, instance):
+        # 'instance.subnets.all()' will now use prefetched data
+        subnets_table = tables.AWSSubnetTable(instance.subnets.all(), user=request.user)
+        subnets_table.configure(request)
+
+        return {
+            "subnets_table": subnets_table,
+        }
 
 
 class AWSLoadBalancerListView(generic.ObjectListView):

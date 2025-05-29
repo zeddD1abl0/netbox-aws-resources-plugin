@@ -1,11 +1,11 @@
 import django_filters
 from django import forms
 from ipam.models import Prefix
-from netbox.filtersets import NetBoxModelFilterSet
+from netbox.filtersets import NetBoxModelFilterSet, TagFilter
 from tenancy.filtersets import TenancyFilterSet
 from utilities.filters import MultiValueCharFilter
 
-from .models import AWSVPC, AWSAccount, AWSLoadBalancer, AWSSubnet
+from .models import AWSAccount, AWSLoadBalancer, AWSSubnet, AWSVPC
 
 
 class AWSAccountFilterSet(NetBoxModelFilterSet, TenancyFilterSet):
@@ -104,17 +104,23 @@ class AWSLoadBalancerFilterSet(NetBoxModelFilterSet):
     aws_account_id = django_filters.ModelMultipleChoiceFilter(
         queryset=AWSAccount.objects.all(), label="AWS Account (ID)"
     )
-    region = django_filters.MultipleChoiceFilter(
-        choices=AWSLoadBalancer._meta.get_field("region").choices, label="Region"
-    )
+    # region = django_filters.MultipleChoiceFilter( # Region is now derived from VPC
+    #     choices=AWSLoadBalancer._meta.get_field("region").choices,
+    #     label="Region",
+    # )
     vpc_id = django_filters.ModelMultipleChoiceFilter(queryset=AWSVPC.objects.all(), label="AWS VPC (ID)")
     type = django_filters.MultipleChoiceFilter(choices=AWSLoadBalancer._meta.get_field("type").choices, label="Type")
-    scheme = django_filters.MultipleChoiceFilter(
-        choices=AWSLoadBalancer._meta.get_field("scheme").choices, label="Scheme"
-    )
+    scheme = django_filters.MultipleChoiceFilter(choices=AWSLoadBalancer._meta.get_field("scheme").choices, label="Scheme")
     state = django_filters.MultipleChoiceFilter(choices=AWSLoadBalancer._meta.get_field("state").choices, label="State")
-    # tags will be inherited from NetBoxModelFilterSet
+    subnets = django_filters.ModelMultipleChoiceFilter(
+        queryset=AWSSubnet.objects.all(),
+        label="Subnets (ID)",
+        # Conjunction=True, # Uncomment for AND logic (LB must be in ALL selected subnets)
+    )
+    tag = TagFilter()  # Explicitly define the tag filter (singular)
 
     class Meta:
         model = AWSLoadBalancer
-        fields = ["id", "name", "arn", "aws_account_id", "region", "vpc_id", "type", "scheme", "state", "tag"]
+        fields = ["id", "name", "arn", "aws_account_id", "vpc_id", "type", "scheme", "state", "subnets", "tag"]  # Changed 'tags' to 'tag'
+
+# If you need to filter other models, define their FilterSets here

@@ -95,13 +95,17 @@ class AWSLoadBalancerTable(NetBoxTable):
     name = tables.Column(linkify=True)
     arn = tables.Column(linkify=True, verbose_name="ARN")
     aws_account = tables.Column(linkify=True, verbose_name="AWS Account")
-    region = tables.Column(verbose_name="Region")
-    vpc = tables.Column(linkify=True, verbose_name="AWS VPC")
+    region = tables.Column(verbose_name="Region") 
+    vpc = tables.Column(linkify=True, verbose_name="VPC")
+    dns_name = tables.Column(verbose_name="DNS Name")
     type = tables.Column(verbose_name="Type")
     scheme = tables.Column(verbose_name="Scheme")
-    dns_name = tables.Column(verbose_name="DNS Name")
-    state = columns.ChoiceFieldColumn(verbose_name="State")  # Renders display value for choice fields
-    # tags column is inherited
+    state = columns.ChoiceFieldColumn(verbose_name="State") 
+    subnets_count = tables.Column(verbose_name="Subnets")
+    tags = columns.TagColumn(url_name='plugins:netbox_aws_resources_plugin:awsloadbalancer_list') 
+
+    def render_subnets_count(self, record):
+        return record.subnets.count()
 
     class Meta(NetBoxTable.Meta):
         model = AWSLoadBalancer
@@ -113,11 +117,25 @@ class AWSLoadBalancerTable(NetBoxTable):
             "aws_account",
             "region",
             "vpc",
+            "dns_name",
+            "subnets_count", 
             "type",
             "scheme",
-            "dns_name",
             "state",
             "tags",
+            "created",
+            "last_updated",
             "actions",
         )
-        default_columns = ("name", "arn", "aws_account", "region", "vpc", "type", "scheme", "state", "actions")
+        default_columns = (
+            "name",
+            "arn",
+            "aws_account",
+            "region",
+            "vpc",
+            "dns_name",
+            "subnets_count", 
+            "type",
+            "scheme",
+            "state",
+        )

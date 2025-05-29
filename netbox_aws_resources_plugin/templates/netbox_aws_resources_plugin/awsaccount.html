@@ -3,13 +3,13 @@
 
 {% block content %}
     <div class="row">
-        <div class="col-md-12">
+        <div class="col col-md-6">
             {# AWS Account Details Panel #}
-            <div class="panel panel-default">
-                <div class="panel-heading">
+            <div class="card">
+                <div class="card-header">
                     <strong>AWS Account Details</strong>
                 </div>
-                <table class="table table-hover panel-body attr-table">
+                <table class="table table-hover attr-table">
                     <tr>
                         <td>Account ID</td>
                         <td>{{ object.account_id }}</td>
@@ -40,16 +40,21 @@
                     </tr>
                 </table>
             </div>
-
+        </div>
+        <div class="col col-md-6">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col col-md-12">
             {# Child Accounts Panel #}
             {% with child_accounts=object.child_accounts.all %}
                 {% if child_accounts %}
-                <div class="panel panel-default">
-                    <div class="panel-heading">
+                <div class="card">
+                    <div class="card-header">
                         <strong>Child Accounts</strong>
                     </div>
                     <div class="table-responsive">
-                        <table class="table table-hover panel-body">
+                        <table class="table table-hover attr-table">
                             <thead>
                                 <tr>
                                     <th>Account ID</th>
@@ -78,11 +83,11 @@
                 {% else %}
                     {# Optionally, display a message if there are no child accounts #}
                     {#
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
+                    <div class="card">
+                        <div class="card-header">
                             <strong>Child Accounts</strong>
                         </div>
-                        <div class="panel-body">
+                        <div class="card-body">
                             <span class="text-muted">No child accounts found.</span>
                         </div>
                     </div>
