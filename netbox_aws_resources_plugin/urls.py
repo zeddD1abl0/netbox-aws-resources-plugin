@@ -76,4 +76,22 @@ urlpatterns = [
     ),
     # If you add bulk import later for Load Balancers:
     # path('aws-load-balancers/import/', views.AWSLoadBalancerBulkImportView.as_view(), name='awsloadbalancer_import'),
+
+    # AWS Target Groups - List, Add, Individual View, Edit, Delete
+    path("aws-target-groups/", views.AWSTargetGroupListView.as_view(), name="awstargetgroup_list"),
+    path("aws-target-groups/add/", views.AWSTargetGroupEditView.as_view(), name="awstargetgroup_add"),
+    path("aws-target-groups/<int:pk>/", views.AWSTargetGroupView.as_view(), name="awstargetgroup"),
+    path("aws-target-groups/<int:pk>/edit/", views.AWSTargetGroupEditView.as_view(), name="awstargetgroup_edit"),
+    path("aws-target-groups/<int:pk>/delete/", views.AWSTargetGroupDeleteView.as_view(), name="awstargetgroup_delete"),
+    path(
+        "aws-target-groups/<int:pk>/changelog/",
+        ObjectChangeLogView.as_view(),
+        name="awstargetgroup_changelog",
+        kwargs={"model": models.AWSTargetGroup},
+    ),
+    # AWS Target Groups - Bulk Operations
+    path("aws-target-groups/edit/", views.AWSTargetGroupBulkEditView.as_view(), name="awstargetgroup_bulk_edit"),
+    path("aws-target-groups/delete/", views.AWSTargetGroupBulkDeleteView.as_view(), name="awstargetgroup_bulk_delete"),
+    # If you add bulk import later for Target Groups:
+    # path('aws-target-groups/import/', views.AWSTargetGroupBulkImportView.as_view(), name='awstargetgroup_import'),
 ]

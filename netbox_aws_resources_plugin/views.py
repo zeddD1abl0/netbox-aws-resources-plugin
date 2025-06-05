@@ -3,7 +3,7 @@ from ipam.tables import IPAddressTable  # noqa # type: ignore
 from ipam.models import IPAddress  # noqa # type: ignore
 
 from . import filtersets, forms, models, tables
-from .models import AWSAccount, AWSVPC, AWSSubnet, AWSLoadBalancer # Ensure all models are imported
+from .models import AWSAccount, AWSVPC, AWSSubnet, AWSLoadBalancer, AWSTargetGroup # Ensure all models are imported
 from .tables import AWSSubnetTable # Ensure AWSSubnetTable is imported
 
 
@@ -226,3 +226,58 @@ class AWSLoadBalancerBulkEditView(generic.BulkEditView):
 class AWSLoadBalancerBulkDeleteView(generic.BulkDeleteView):
     queryset = models.AWSLoadBalancer.objects.all()
     table = tables.AWSLoadBalancerTable
+
+
+# Views for AWSTargetGroup
+
+class AWSTargetGroupView(generic.ObjectView):
+    queryset = models.AWSTargetGroup.objects.select_related(
+        "aws_account", "vpc"
+    ).prefetch_related(
+        "load_balancers", "tags"
+    )
+
+    def get_extra_context(self, request, instance):
+        # Associated Load Balancers Table
+        load_balancers_table = tables.AWSLoadBalancerTable(instance.load_balancers.all(), user=request.user)
+        load_balancers_table.configure(request)
+
+        return {
+            "load_balancers_table": load_balancers_table,
+        }
+
+
+class AWSTargetGroupListView(generic.ObjectListView):
+    queryset = models.AWSTargetGroup.objects.select_related(
+        "aws_account", "vpc"
+    ).prefetch_related(
+        "load_balancers", "tags"
+    )
+    table = tables.AWSTargetGroupTable
+    filterset = filtersets.AWSTargetGroupFilterSet
+    filterset_form = forms.AWSTargetGroupFilterForm
+
+
+class AWSTargetGroupEditView(generic.ObjectEditView):
+    queryset = models.AWSTargetGroup.objects.all()
+    form = forms.AWSTargetGroupForm
+
+
+class AWSTargetGroupDeleteView(generic.ObjectDeleteView):
+    queryset = models.AWSTargetGroup.objects.all()
+
+
+class AWSTargetGroupBulkEditView(generic.BulkEditView):
+    queryset = models.AWSTargetGroup.objects.select_related(
+        "aws_account", "vpc"
+    ).prefetch_related(
+        "load_balancers", "tags"
+    )
+    filterset = filtersets.AWSTargetGroupFilterSet
+    table = tables.AWSTargetGroupTable
+    form = forms.AWSTargetGroupBulkEditForm
+
+
+class AWSTargetGroupBulkDeleteView(generic.BulkDeleteView):
+    queryset = models.AWSTargetGroup.objects.all()
+    table = tables.AWSTargetGroupTable

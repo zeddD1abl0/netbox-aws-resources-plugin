@@ -1,0 +1,135 @@
+{% extends 'generic/object.html' %}
+{% load helpers %}
+{% load plugins %}
+
+{% block content %}
+    <div class="row">
+        <div class="col col-md-12">
+            {% plugin_buttons object %}
+        </div>
+    </div>
+    <div class="row">
+        {# Left Column: Main Details #}
+        <div class="col col-md-6">
+            <div class="card">
+                <h5 class="card-header">Target Group Details</h5>
+                <div class="card-body">
+                    <table class="table table-hover attr-table">
+                        <tr>
+                            <th scope="row">Name</th>
+                            <td>{{ object.name }}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">ARN</th>
+                            <td>{{ object.arn }}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">AWS Account</th>
+                            <td>
+                                {% if object.aws_account %}
+                                    <a href="{% url 'plugins:netbox_aws_resources_plugin:awsaccount' pk=object.aws_account.pk %}">{{ object.aws_account }}</a>
+                                {% else %}
+                                    &mdash;
+                                {% endif %}
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Region</th>
+                            <td>{{ object.get_region_display|placeholder }}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">VPC</th>
+                            <td>
+                                {% if object.vpc %}
+                                    <a href="{% url 'plugins:netbox_aws_resources_plugin:awsvpc' pk=object.vpc.pk %}">{{ object.vpc }}</a>
+                                {% else %}
+                                    &mdash;
+                                {% endif %}
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Protocol</th>
+                            <td>{{ object.get_protocol_display|placeholder }}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Port</th>
+                            <td>{{ object.port|placeholder }}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Target Type</th>
+                            <td>{{ object.get_target_type_display|placeholder }}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">State</th>
+                            <td>{{ object.get_state_display|placeholder }}</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="card">
+                <h5 class="card-header">Health Check Details</h5>
+                <div class="card-body">
+                    <table class="table table-hover attr-table">
+                        <tr>
+                            <th scope="row">Health Check Protocol</th>
+                            <td>{{ object.get_health_check_protocol_display|placeholder }}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Health Check Port</th>
+                            <td>{{ object.health_check_port|placeholder }}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Health Check Path</th>
+                            <td>{{ object.health_check_path|placeholder }}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Health Check Interval (seconds)</th>
+                            <td>{{ object.health_check_interval_seconds|placeholder }}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Health Check Timeout (seconds)</th>
+                            <td>{{ object.health_check_timeout_seconds|placeholder }}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Healthy Threshold Count</th>
+                            <td>{{ object.healthy_threshold_count|placeholder }}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Unhealthy Threshold Count</th>
+                            <td>{{ object.unhealthy_threshold_count|placeholder }}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Health Check Matcher</th>
+                            <td>{{ object.health_check_matcher|placeholder }}</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            {% include 'inc/panels/tags.html' %}
+            {% include 'inc/panels/comments.html' %}
+            {% plugin_left_page object %}
+        </div>
+
+        {# Right Column: Associated Load Balancers #}
+        <div class="col col-md-6">
+            <div class="card mb-3">
+                <h5 class="card-header">Associated Load Balancers</h5>
+                <div class="card-body">
+                    {% if load_balancers_table.rows %}
+                        {% render_table load_balancers_table %}
+                    {% else %}
+                        <span class="text-muted">No Load Balancers associated.</span>
+                    {% endif %}
+                </div>
+            </div>
+            {% plugin_right_page object %}
+        </div>
+    </div>
+
+    {# Full Width Panels (if any) #}
+    <div class="row">
+        <div class="col col-md-12">
+            {% plugin_full_width_page object %}
+        </div>
+    </div>
+{% endblock %}

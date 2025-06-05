@@ -8,5 +8,7 @@ router = NetBoxRouter()
 router.register("aws-accounts", views.AWSAccountViewSet)
 router.register("aws-vpcs", views.AWSVPCViewSet)
 router.register("aws-subnets", views.AWSSubnetViewSet)
+router.register("aws-load-balancers", views.AWSLoadBalancerViewSet)
+router.register("aws-target-groups", views.AWSTargetGroupViewSet)
 
 urlpatterns = router.urls

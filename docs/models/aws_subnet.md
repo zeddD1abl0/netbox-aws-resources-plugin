@@ -14,5 +14,5 @@ Represents an AWS Subnet within NetBox.
 *   **`cidr_block`**: The IPv4 CIDR block for the Subnet, linked to an `ipam.Prefix` (optional).
 *   **`availability_zone`**: The AWS Availability Zone of the Subnet (e.g., `us-east-1a`) (optional).
 *   **`availability_zone_id`**: The ID of the Availability Zone (e.g., `use1-az1`) (optional).
-*   **`state`**: The current state of the Subnet (e.g., `available`, `pending`). (**Required**, defaults to `available`)
+*   **`state`**: The current state of the Subnet (e.g., `planned`, `available`, `pending`). (**Required**, defaults to `available`)
 *   **`map_public_ip_on_launch`**: Whether instances in this subnet get a public IP on launch by default. (**Required**, defaults to `False`)

@@ -5,7 +5,10 @@ from netbox.filtersets import NetBoxModelFilterSet, TagFilter
 from tenancy.filtersets import TenancyFilterSet
 from utilities.filters import MultiValueCharFilter
 
-from .models import AWSAccount, AWSLoadBalancer, AWSSubnet, AWSVPC
+from .models import (
+    AWSAccount, AWSLoadBalancer, AWSSubnet, AWSVPC, AWSTargetGroup,
+    AWS_REGION_CHOICES, TARGET_GROUP_PROTOCOL_CHOICES, TARGET_GROUP_TYPE_CHOICES, AWS_TARGET_GROUP_STATE_CHOICES
+)
 
 
 class AWSAccountFilterSet(NetBoxModelFilterSet, TenancyFilterSet):
@@ -124,3 +127,30 @@ class AWSLoadBalancerFilterSet(NetBoxModelFilterSet):
         fields = ["id", "name", "arn", "aws_account_id", "vpc_id", "type", "scheme", "state", "subnets", "tag"]  # Changed 'tags' to 'tag'
 
 # If you need to filter other models, define their FilterSets here
+
+
+class AWSTargetGroupFilterSet(NetBoxModelFilterSet):
+    name = django_filters.CharFilter(lookup_expr="icontains", label="Name (contains)")
+    arn = django_filters.CharFilter(lookup_expr="icontains", label="ARN (contains)")
+    aws_account_id = django_filters.ModelMultipleChoiceFilter(
+        queryset=AWSAccount.objects.all(), label="AWS Account (ID)"
+    )
+    region = django_filters.MultipleChoiceFilter(choices=AWS_REGION_CHOICES, label="Region")
+    vpc_id = django_filters.ModelMultipleChoiceFilter(queryset=AWSVPC.objects.all(), label="AWS VPC (ID)")
+    protocol = django_filters.MultipleChoiceFilter(choices=TARGET_GROUP_PROTOCOL_CHOICES, label="Protocol")
+    port = django_filters.NumberFilter(label="Port")
+    target_type = django_filters.MultipleChoiceFilter(choices=TARGET_GROUP_TYPE_CHOICES, label="Target Type")
+    state = django_filters.MultipleChoiceFilter(choices=AWS_TARGET_GROUP_STATE_CHOICES, label="State")
+    load_balancers = django_filters.ModelMultipleChoiceFilter(
+        queryset=AWSLoadBalancer.objects.all(),
+        label="Load Balancers (ID)",
+        field_name='load_balancers' # Explicitly specify field_name for M2M
+    )
+    tag = TagFilter()
+
+    class Meta:
+        model = AWSTargetGroup
+        fields = [
+            "id", "name", "arn", "aws_account_id", "region", "vpc_id",
+            "protocol", "port", "target_type", "state", "load_balancers", "tag"
+        ]

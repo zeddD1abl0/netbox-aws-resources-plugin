@@ -19,8 +19,8 @@ class AWSLoadBalancerForm(NetBoxModelForm):
     vpc = DynamicModelChoiceField(
         queryset=AWSVPC.objects.all(),
         label="AWS VPC",
-        required=False,
-        help_text="The AWS VPC this Load Balancer is associated with (optional)",
+        # required=True by default as model field AWSLoadBalancer.vpc is not blank=True
+        help_text="The AWS VPC this Load Balancer is associated with. Region is derived from this VPC.",
         query_params={"aws_account_id": "$aws_account"}, # Filters VPCs by selected account
     )
     subnets = DynamicModelMultipleChoiceField(
@@ -36,7 +36,7 @@ class AWSLoadBalancerForm(NetBoxModelForm):
         model = AWSLoadBalancer
         fields = ("name", "arn", "aws_account", "vpc", "subnets", "type", "scheme", "dns_name", "state", "tags")
         widgets = {
-            "aws_account": APISelect(attrs={"data-dynamic-parameters": "region_id"}),
+            "aws_account": APISelect(), # Removed data-dynamic-parameters for region_id as region is derived
             # vpc field uses default widget from DynamicModelChoiceField (APISelect)
             # type field uses default widget (Select) as per previous fix
             # scheme field uses default widget (Select) as it has choices in the model
@@ -46,27 +46,28 @@ class AWSLoadBalancerForm(NetBoxModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
 
-        # If a VPC is already selected (e.g. when editing an existing LB),
-        # limit the choices for the subnets field to that VPC.
+        # Filter subnets based on the selected VPC.
         # The APISelectMultiple widget with query_params handles dynamic client-side filtering.
         # This server-side filtering is for initial queryset population and validation.
-        if self.instance and self.instance.pk and self.instance.vpc:
-            self.fields['subnets'].queryset = AWSSubnet.objects.filter(aws_vpc=self.instance.vpc)
+        selected_vpc_id = None
+        if self.instance and self.instance.pk and self.instance.vpc_id:
+            selected_vpc_id = self.instance.vpc_id
         elif 'vpc' in self.initial and self.initial['vpc']:
-            try:
-                vpc_id = int(self.initial['vpc'])
-                self.fields['subnets'].queryset = AWSSubnet.objects.filter(aws_vpc_id=vpc_id)
-            except (ValueError, TypeError):
-                self.fields['subnets'].queryset = AWSSubnet.objects.none()
+            selected_vpc_id = self.initial['vpc']
         elif self.is_bound and self.data.get('vpc'):
+            selected_vpc_id = self.data.get('vpc')
+
+        if selected_vpc_id:
             try:
-                vpc_id = int(self.data.get('vpc'))
-                self.fields['subnets'].queryset = AWSSubnet.objects.filter(aws_vpc_id=vpc_id)
+                # Ensure selected_vpc_id is an integer if it's a string representation of pk
+                vpc_pk = int(selected_vpc_id)
+                self.fields['subnets'].queryset = AWSSubnet.objects.filter(aws_vpc_id=vpc_pk)
             except (ValueError, TypeError):
-                 self.fields['subnets'].queryset = AWSSubnet.objects.none()
+                # Handle cases where selected_vpc_id might not be a valid PK (e.g. empty string from form)
+                self.fields['subnets'].queryset = AWSSubnet.objects.none()
         else:
-            # If no VPC is selected, no subnets can be chosen initially.
-            # The dynamic JS filtering will populate this once a VPC is selected.
+            # If no VPC is selected (e.g. on a new form before VPC is chosen),
+            # no subnets can be chosen initially.
             self.fields['subnets'].queryset = AWSSubnet.objects.none()
 
 

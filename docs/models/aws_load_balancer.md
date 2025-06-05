@@ -13,10 +13,10 @@ Represents an AWS Elastic Load Balancer (Application or Network) within NetBox.
 *   **`name`**: The name of the Load Balancer. (**Required**)
 *   **`arn`**: The Amazon Resource Name (ARN) of the Load Balancer (optional, unique).
 *   **`aws_account`**: The [`AWSAccount`](./aws_account.md) this Load Balancer belongs to. (**Required**)
-*   **`vpc`**: The [`AWSVPC`](./aws_vpc.md) this Load Balancer is deployed in (optional).
+*   **`vpc`**: The [`AWSVPC`](./aws_vpc.md) this Load Balancer is deployed in. (**Required**)
 *   **`subnets`**: Many-to-many relationship with [`AWSSubnet`](./aws_subnet.md) instances associated with the Load Balancer (optional).
 *   **`type`**: The type of Load Balancer (e.g., `application`, `network`). (**Required**)
 *   **`scheme`**: The scheme of the Load Balancer (e.g., `internal`, `internet-facing`). (**Required**)
 *   **`dns_name`**: The DNS name of the Load Balancer (optional).
-*   **`state`**: The state of the Load Balancer (e.g., `active`, `provisioning`, `failed`). (**Required**)
-*   **`region`**: The AWS region where the Load Balancer is located. (**Required** - automatically set if `vpc` is specified).
+*   **`state`**: The state of the Load Balancer (e.g., `planned`, `active`, `provisioning`, `failed`). (**Required**)
+*   **`region`**: The AWS region where the Load Balancer is located. (**Required** - automatically set from the selected `vpc`).

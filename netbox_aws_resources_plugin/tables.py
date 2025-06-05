@@ -1,7 +1,7 @@
 import django_tables2 as tables
 from netbox.tables import NetBoxTable, columns
 
-from .models import AWSVPC, AWSAccount, AWSLoadBalancer, AWSSubnet
+from .models import AWSVPC, AWSAccount, AWSLoadBalancer, AWSSubnet, AWSTargetGroup
 
 
 class AWSAccountTable(NetBoxTable):
@@ -137,5 +137,57 @@ class AWSLoadBalancerTable(NetBoxTable):
             "subnets_count", 
             "type",
             "scheme",
+            "state",
+        )
+
+
+class AWSTargetGroupTable(NetBoxTable):
+    name = tables.Column(linkify=True)
+    arn = tables.Column(linkify=True, verbose_name="ARN")
+    aws_account = tables.Column(linkify=True, verbose_name="AWS Account")
+    region = tables.Column(verbose_name="Region")
+    vpc = tables.Column(linkify=True, verbose_name="VPC")
+    protocol = tables.Column(verbose_name="Protocol")
+    port = tables.Column(verbose_name="Port")
+    target_type = tables.Column(verbose_name="Target Type")
+    state = columns.ChoiceFieldColumn(verbose_name="State")
+    load_balancers_count = tables.Column(verbose_name="LBs")
+    tags = columns.TagColumn(url_name='plugins:netbox_aws_resources_plugin:awstargetgroup_list')
+
+    def render_load_balancers_count(self, record):
+        return record.load_balancers.count()
+
+    class Meta(NetBoxTable.Meta):
+        model = AWSTargetGroup
+        fields = (
+            "pk",
+            "id",
+            "name",
+            "arn",
+            "aws_account",
+            "region",
+            "vpc",
+            "protocol",
+            "port",
+            "target_type",
+            "load_balancers_count",
+            "state",
+            "health_check_protocol",
+            "health_check_port",
+            "tags",
+            "created",
+            "last_updated",
+            "actions",
+        )
+        default_columns = (
+            "name",
+            "arn",
+            "aws_account",
+            "region",
+            "vpc",
+            "protocol",
+            "port",
+            "target_type",
+            "load_balancers_count",
             "state",
         )

@@ -13,5 +13,5 @@ Represents an AWS Virtual Private Cloud within NetBox.
 *   **`aws_account`**: The [`AWSAccount`](./aws_account.md) this VPC belongs to. (**Required**)
 *   **`region`**: The AWS region where the VPC is located. (**Required**)
 *   **`cidr_block`**: The primary IPv4 CIDR block for the VPC, linked to an `ipam.Prefix`. (**Required**)
-*   **`state`**: The current state of the VPC (e.g., `available`, `pending`). (**Required**, defaults to `available`)
+*   **`state`**: The current state of the VPC (e.g., `planned`, `available`, `pending`). (**Required**, defaults to `available`)
 *   **`is_default`**: Whether this is the default VPC for the account/region. (**Required**, defaults to `False`)

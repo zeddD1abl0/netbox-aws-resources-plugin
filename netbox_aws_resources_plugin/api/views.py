@@ -1,10 +1,16 @@
 from netbox.api.viewsets import NetBoxModelViewSet
 
 from .. import filtersets
-from ..models import AWSVPC, AWSAccount, AWSSubnet
+from ..models import AWSVPC, AWSAccount, AWSSubnet, AWSLoadBalancer, AWSTargetGroup
 
 # The serializers.py is one level up from the 'api' directory
-from .serializers import AWSAccountSerializer, AWSSubnetSerializer, AWSVPCSerializer
+from .serializers import (
+    AWSAccountSerializer,
+    AWSSubnetSerializer,
+    AWSVPCSerializer,
+    AWSLoadBalancerSerializer,
+    AWSTargetGroupSerializer,
+)
 
 
 class AWSAccountViewSet(NetBoxModelViewSet):
@@ -25,3 +31,19 @@ class AWSSubnetViewSet(NetBoxModelViewSet):
     queryset = AWSSubnet.objects.prefetch_related("tags", "aws_vpc", "cidr_block")
     serializer_class = AWSSubnetSerializer
     filterset_class = filtersets.AWSSubnetFilterSet
+
+
+class AWSLoadBalancerViewSet(NetBoxModelViewSet):
+    queryset = AWSLoadBalancer.objects.prefetch_related(
+        "tags", "aws_account", "vpc", "subnets"
+    )
+    serializer_class = AWSLoadBalancerSerializer
+    filterset_class = filtersets.AWSLoadBalancerFilterSet
+
+
+class AWSTargetGroupViewSet(NetBoxModelViewSet):
+    queryset = AWSTargetGroup.objects.prefetch_related(
+        "tags", "aws_account", "vpc", "load_balancers"
+    )
+    serializer_class = AWSTargetGroupSerializer
+    filterset_class = filtersets.AWSTargetGroupFilterSet

@@ -77,6 +77,7 @@ LOADBALANCER_SCHEME_CHOICES = [
 ]
 
 LOADBALANCER_STATE_CHOICES = [
+    ('planned', 'Planned'),
     ("active", "Active"),
     ("provisioning", "Provisioning"),
     ("active_impaired", "Active Impaired"),
@@ -85,13 +86,47 @@ LOADBALANCER_STATE_CHOICES = [
 ]
 
 AWS_VPC_STATE_CHOICES = [
+    ('planned', 'Planned'),
     ("pending", "Pending"),
     ("available", "Available"),
 ]
 
 AWS_SUBNET_STATE_CHOICES = [
+    ('planned', 'Planned'),
     ("pending", "Pending"),
     ("available", "Available"),
+]
+
+# Choices for TargetGroup model fields
+TARGET_GROUP_PROTOCOL_CHOICES = [
+    ('HTTP', 'HTTP'),
+    ('HTTPS', 'HTTPS'),
+    ('TCP', 'TCP'),
+    ('TLS', 'TLS'),
+    ('UDP', 'UDP'),
+    ('TCP_UDP', 'TCP_UDP'),
+    ('GENEVE', 'GENEVE'),
+]
+
+TARGET_GROUP_TYPE_CHOICES = [
+    ('instance', 'EC2 Instance'),
+    ('ip', 'IP Address'),
+    # ('lambda', 'Lambda function'), # Lambda targets are not supported by this plugin model
+    ('alb', 'Application Load Balancer'),
+]
+
+TARGET_GROUP_HEALTH_CHECK_PROTOCOL_CHOICES = [
+    ('HTTP', 'HTTP'),
+    ('HTTPS', 'HTTPS'),
+    ('TCP', 'TCP'),
+]
+
+AWS_TARGET_GROUP_STATE_CHOICES = [
+    ('planned', 'Planned'),
+    ('creating', 'Creating'),
+    ('active', 'Active'),
+    ('deleting', 'Deleting'),
+    ('failed', 'Failed'),
 ]
 
 
@@ -207,7 +242,7 @@ class AWSSubnet(NetBoxModel):
 
 class AWSLoadBalancer(NetBoxModel):
     name = models.CharField(max_length=255, help_text="The name of the Load Balancer")
-    arn = models.CharField(max_length=255, unique=True, blank=True, help_text="Amazon Resource Name for the Load Balancer")
+    arn = models.CharField(max_length=255, unique=True, blank=True, verbose_name="ARN", help_text="Amazon Resource Name for the Load Balancer")
     aws_account = models.ForeignKey(
         to=AWSAccount, on_delete=models.PROTECT, related_name="account_load_balancers", help_text="The AWS Account this Load Balancer belongs to"
     )
@@ -216,9 +251,7 @@ class AWSLoadBalancer(NetBoxModel):
         to=AWSVPC,
         on_delete=models.PROTECT,
         related_name="vpc_load_balancers",
-        null=True,
-        blank=True,
-        help_text="The VPC this Load Balancer is associated with",
+        help_text="The VPC this Load Balancer is associated with. Region is derived from this VPC.",
     )
     type = models.CharField(max_length=50, choices=LOADBALANCER_TYPE_CHOICES, help_text="The type of Load Balancer (e.g., application, network, gateway)")
     scheme = models.CharField(max_length=50, choices=LOADBALANCER_SCHEME_CHOICES, help_text="The scheme of the Load Balancer (e.g., internet-facing, internal)")
@@ -238,9 +271,63 @@ class AWSLoadBalancer(NetBoxModel):
         return reverse("plugins:netbox_aws_resources_plugin:awsloadbalancer", args=[self.pk])
 
     def save(self, *args, **kwargs):
-        if self.vpc:
-            self.region = self.vpc.region
+        # VPC is now mandatory, so self.vpc will always be set.
+        self.region = self.vpc.region
         super().save(*args, **kwargs)
 
     class Meta:
         ordering = ("name",)
+
+
+class AWSTargetGroup(NetBoxModel):
+    name = models.CharField(max_length=255, help_text="The name of the Target Group")
+    arn = models.CharField(max_length=255, unique=True, blank=True, null=True, verbose_name="ARN", help_text="Amazon Resource Name for the Target Group")
+    aws_account = models.ForeignKey(
+        to=AWSAccount, on_delete=models.PROTECT, related_name="target_groups", help_text="The AWS Account this Target Group belongs to"
+    )
+    region = models.CharField(max_length=50, choices=AWS_REGION_CHOICES, help_text="The AWS region where the Target Group is located")
+    vpc = models.ForeignKey(
+        to=AWSVPC,
+        on_delete=models.PROTECT,
+        related_name="target_groups",
+        help_text="The VPC this Target Group is associated with. Region is derived from this VPC.",
+    )
+    protocol = models.CharField(max_length=10, choices=TARGET_GROUP_PROTOCOL_CHOICES, help_text="Protocol for routing traffic to targets")
+    port = models.PositiveIntegerField(help_text="Port on which targets receive traffic")
+    target_type = models.CharField(max_length=10, choices=TARGET_GROUP_TYPE_CHOICES, help_text="Type of targets (instance, ip, alb)")
+    load_balancers = models.ManyToManyField(
+        to=AWSLoadBalancer,
+        related_name="target_groups",
+        blank=True,
+        help_text="Load Balancers associated with this Target Group"
+    )
+    # Health Check Settings
+    health_check_protocol = models.CharField(
+        max_length=10, choices=TARGET_GROUP_HEALTH_CHECK_PROTOCOL_CHOICES, blank=True, null=True, help_text="Protocol for health checks"
+    )
+    health_check_port = models.CharField(
+        max_length=20, default='traffic-port', blank=True, null=True, help_text="Port for health checks (default: 'traffic-port')"
+    )
+    health_check_path = models.CharField(max_length=255, blank=True, null=True, help_text="Destination for HTTP/HTTPS health checks")
+    health_check_interval_seconds = models.PositiveIntegerField(blank=True, null=True, help_text="Approximate interval between health checks (seconds)")
+    health_check_timeout_seconds = models.PositiveIntegerField(blank=True, null=True, help_text="Timeout for a health check response (seconds)")
+    healthy_threshold_count = models.PositiveIntegerField(blank=True, null=True, help_text="Number of consecutive successful health checks to become healthy")
+    unhealthy_threshold_count = models.PositiveIntegerField(blank=True, null=True, help_text="Number of consecutive failed health checks to become unhealthy")
+    state = models.CharField(max_length=30, choices=AWS_TARGET_GROUP_STATE_CHOICES, default='active', help_text="The current state of the Target Group")
+
+    def __str__(self):
+        return self.name
+
+    def get_absolute_url(self):
+        # TODO: Update when AWSTargetGroup view is created
+        return reverse("plugins:netbox_aws_resources_plugin:awsloadbalancer_list") # Placeholder
+
+    def save(self, *args, **kwargs):
+        # VPC is now mandatory, so self.vpc will always be set.
+        self.region = self.vpc.region
+        super().save(*args, **kwargs)
+
+    class Meta:
+        ordering = ("name",)
+        verbose_name = "AWS Target Group"
+        verbose_name_plural = "AWS Target Groups"
