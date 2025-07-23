@@ -1,5 +1,5 @@
 from ipam.api.serializers import (
-    NestedPrefixSerializer as NetBoxNestedPrefixSerializer,
+    PrefixSerializer as NetBoxNestedPrefixSerializer,
 )  # Use NetBox's nested Prefix serializer
 from netbox.api.serializers import NetBoxModelSerializer, WritableNestedSerializer
 from rest_framework import serializers
@@ -71,7 +71,7 @@ class NestedAWSVPCSerializer(WritableNestedSerializer):
 class AWSVPCSerializer(NetBoxModelSerializer):
     url = serializers.HyperlinkedIdentityField(view_name="plugins-api:netbox_aws_resources_plugin-api:awsvpc-detail")
     aws_account = NestedAWSAccountSerializer(read_only=True)  # Or queryset if writable is needed
-    cidr_block = NetBoxPrefixSerializer(read_only=True)  # Use NetBox's nested Prefix serializer
+    cidr_block = NetBoxNestedPrefixSerializer(read_only=True)  # Use NetBox's nested Prefix serializer
     # For writable nested fields, you would typically provide a queryset and remove read_only=True
     # Example for aws_account if it were writable:
     # aws_account = NestedAWSAccountSerializer(queryset=AWSAccount.objects.all())
