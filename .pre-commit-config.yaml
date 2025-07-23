@@ -20,3 +20,14 @@ repos:
     hooks:
       - id: check-manifest
         stages: [manual]
+
+-   repo: local
+    hooks:
+    -   id: update-aws-data
+        name: Update AWS Instance Data
+        entry: scripts/update_instance_data.py
+        language: python
+        additional_dependencies: [boto3]
+        stages: [commit]
+        pass_filenames: false
+        require_serial: true

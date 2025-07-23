@@ -3,7 +3,7 @@ from ipam.tables import IPAddressTable  # noqa # type: ignore
 from ipam.models import IPAddress  # noqa # type: ignore
 
 from . import filtersets, forms, models, tables
-from .models import AWSAccount, AWSVPC, AWSSubnet, AWSLoadBalancer, AWSTargetGroup # Ensure all models are imported
+from .models import AWSAccount, AWSVPC, AWSSubnet, AWSLoadBalancer, AWSTargetGroup, AWSEC2Instance # Ensure all models are imported
 from .tables import AWSSubnetTable # Ensure AWSSubnetTable is imported
 
 
@@ -119,6 +119,37 @@ class AWSVPCBulkEditView(generic.BulkEditView):
 class AWSVPCBulkDeleteView(generic.BulkDeleteView):
     queryset = models.AWSVPC.objects.all()
     table = tables.AWSVPCTable
+
+
+#
+# Views for AWSEC2Instance
+#
+
+class AWSEC2InstanceView(generic.ObjectView):
+    queryset = models.AWSEC2Instance.objects.select_related('aws_account', 'vpc')
+
+class AWSEC2InstanceListView(generic.ObjectListView):
+    queryset = models.AWSEC2Instance.objects.select_related('aws_account', 'vpc')
+    table = tables.AWSEC2InstanceTable
+    filterset = filtersets.AWSEC2InstanceFilterSet
+    filterset_form = forms.AWSEC2InstanceFilterForm
+
+class AWSEC2InstanceEditView(generic.ObjectEditView):
+    queryset = models.AWSEC2Instance.objects.all()
+    form = forms.AWSEC2InstanceForm
+
+class AWSEC2InstanceDeleteView(generic.ObjectDeleteView):
+    queryset = models.AWSEC2Instance.objects.all()
+
+class AWSEC2InstanceBulkEditView(generic.BulkEditView):
+    queryset = models.AWSEC2Instance.objects.select_related('aws_account', 'vpc')
+    filterset = filtersets.AWSEC2InstanceFilterSet
+    table = tables.AWSEC2InstanceTable
+    form = forms.AWSEC2InstanceBulkEditForm
+
+class AWSEC2InstanceBulkDeleteView(generic.BulkDeleteView):
+    queryset = models.AWSEC2Instance.objects.all()
+    table = tables.AWSEC2InstanceTable
 
 
 # Views for AWSSubnet

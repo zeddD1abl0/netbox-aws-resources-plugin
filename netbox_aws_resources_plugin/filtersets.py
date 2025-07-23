@@ -6,7 +6,7 @@ from tenancy.filtersets import TenancyFilterSet
 from utilities.filters import MultiValueCharFilter
 
 from .models import (
-    AWSAccount, AWSLoadBalancer, AWSSubnet, AWSVPC, AWSTargetGroup,
+    AWSAccount, AWSLoadBalancer, AWSSubnet, AWSVPC, AWSTargetGroup, AWSEC2Instance,
     AWS_REGION_CHOICES, TARGET_GROUP_PROTOCOL_CHOICES, TARGET_GROUP_TYPE_CHOICES, AWS_TARGET_GROUP_STATE_CHOICES
 )
 
@@ -99,6 +99,15 @@ class AWSSubnetFilterSet(NetBoxModelFilterSet):
             "map_public_ip_on_launch",
             "tag",
         ]
+
+
+class AWSEC2InstanceFilterSet(NetBoxModelFilterSet):
+    class Meta:
+        model = AWSEC2Instance
+        fields = ('id', 'name', 'instance_id', 'aws_account', 'region', 'vpc', 'state')
+
+    def search(self, queryset, name, value):
+        return queryset.filter(name__icontains=value)
 
 
 class AWSLoadBalancerFilterSet(NetBoxModelFilterSet):

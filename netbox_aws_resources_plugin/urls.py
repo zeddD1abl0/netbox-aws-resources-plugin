@@ -94,4 +94,20 @@ urlpatterns = [
     path("aws-target-groups/delete/", views.AWSTargetGroupBulkDeleteView.as_view(), name="awstargetgroup_bulk_delete"),
     # If you add bulk import later for Target Groups:
     # path('aws-target-groups/import/', views.AWSTargetGroupBulkImportView.as_view(), name='awstargetgroup_import'),
+
+    # AWS EC2 Instances - List, Add, Individual View, Edit, Delete
+    path("aws-ec2-instances/", views.AWSEC2InstanceListView.as_view(), name="awsec2instance_list"),
+    path("aws-ec2-instances/add/", views.AWSEC2InstanceEditView.as_view(), name="awsec2instance_add"),
+    path("aws-ec2-instances/<int:pk>/", views.AWSEC2InstanceView.as_view(), name="awsec2instance"),
+    path("aws-ec2-instances/<int:pk>/edit/", views.AWSEC2InstanceEditView.as_view(), name="awsec2instance_edit"),
+    path("aws-ec2-instances/<int:pk>/delete/", views.AWSEC2InstanceDeleteView.as_view(), name="awsec2instance_delete"),
+    path(
+        "aws-ec2-instances/<int:pk>/changelog/",
+        ObjectChangeLogView.as_view(),
+        name="awsec2instance_changelog",
+        kwargs={"model": models.AWSEC2Instance},
+    ),
+    # AWS EC2 Instances - Bulk Operations
+    path("aws-ec2-instances/edit/", views.AWSEC2InstanceBulkEditView.as_view(), name="awsec2instance_bulk_edit"),
+    path("aws-ec2-instances/delete/", views.AWSEC2InstanceBulkDeleteView.as_view(), name="awsec2instance_bulk_delete"),
 ]

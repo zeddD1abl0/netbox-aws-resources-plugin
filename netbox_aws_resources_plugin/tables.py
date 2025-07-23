@@ -1,7 +1,7 @@
 import django_tables2 as tables
 from netbox.tables import NetBoxTable, columns
 
-from .models import AWSVPC, AWSAccount, AWSLoadBalancer, AWSSubnet, AWSTargetGroup
+from .models import AWSVPC, AWSAccount, AWSLoadBalancer, AWSSubnet, AWSTargetGroup, AWSEC2Instance
 
 
 class AWSAccountTable(NetBoxTable):
@@ -98,9 +98,23 @@ class AWSLoadBalancerTable(NetBoxTable):
     region = tables.Column(verbose_name="Region") 
     vpc = tables.Column(linkify=True, verbose_name="VPC")
     dns_name = tables.Column(verbose_name="DNS Name")
-    type = tables.Column(verbose_name="Type")
-    scheme = tables.Column(verbose_name="Scheme")
-    state = columns.ChoiceFieldColumn(verbose_name="State") 
+
+
+class AWSEC2InstanceTable(NetBoxTable):
+    name = tables.Column(linkify=True)
+    instance_id = tables.Column(linkify=True, verbose_name="Instance ID")
+    aws_account = tables.Column(linkify=True, verbose_name="AWS Account")
+    region = tables.Column(verbose_name="Region")
+    vpc = tables.Column(linkify=True, verbose_name="VPC")
+    instance_type = tables.Column(verbose_name="Instance Type")
+    state = columns.ChoiceFieldColumn(verbose_name="State")
+
+    class Meta(NetBoxTable.Meta):
+        model = AWSEC2Instance
+        fields = (
+            "pk", "id", "name", "instance_id", "aws_account", "region", "vpc", "instance_type", "state", "tags", "actions"
+        )
+        default_columns = ("name", "instance_id", "aws_account", "region", "vpc", "instance_type", "state", "actions") 
     subnets_count = tables.Column(verbose_name="Subnets")
     tags = columns.TagColumn(url_name='plugins:netbox_aws_resources_plugin:awsloadbalancer_list') 
 

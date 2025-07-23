@@ -3,6 +3,7 @@ from django.urls import reverse
 from ipam.models import Prefix  # Import NetBox Prefix model
 from netbox.models import NetBoxModel
 from tenancy.models import Tenant
+from virtualization.models import VirtualMachine
 
 
 class AWSAccount(NetBoxModel):
@@ -255,7 +256,7 @@ class AWSLoadBalancer(NetBoxModel):
     )
     type = models.CharField(max_length=50, choices=LOADBALANCER_TYPE_CHOICES, help_text="The type of Load Balancer (e.g., application, network, gateway)")
     scheme = models.CharField(max_length=50, choices=LOADBALANCER_SCHEME_CHOICES, help_text="The scheme of the Load Balancer (e.g., internet-facing, internal)")
-    dns_name = models.CharField(max_length=255, blank=True, help_text="The DNS name of the Load Balancer")
+    dns_name = models.CharField(max_length=255, blank=True, verbose_name="DNS Name", help_text="The DNS name of the Load Balancer")
     state = models.CharField(max_length=50, choices=LOADBALANCER_STATE_CHOICES, help_text="The state of the Load Balancer (e.g., active, provisioning, failed)")
     subnets = models.ManyToManyField(
         to=AWSSubnet,
@@ -279,6 +280,34 @@ class AWSLoadBalancer(NetBoxModel):
         ordering = ("name",)
 
 
+# Choices for EC2 Instance model fields
+RDS_INSTANCE_STATE_CHOICES = [
+    ('available', 'Available'),
+    ('creating', 'Creating'),
+    ('deleting', 'Deleting'),
+    ('failed', 'Failed'),
+    ('inaccessible-encryption-credentials', 'Inaccessible Encryption Credentials'),
+    ('modifying', 'Modifying'),
+    ('rebooting', 'Rebooting'),
+    ('renaming', 'Renaming'),
+    ('starting', 'Starting'),
+    ('stopped', 'Stopped'),
+    ('stopping', 'Stopping'),
+    ('storage-full', 'Storage Full'),
+    ('upgrading', 'Upgrading'),
+]
+
+# Choices for EC2 Instance model fields
+EC2_INSTANCE_STATE_CHOICES = [
+    ('pending', 'Pending'),
+    ('running', 'Running'),
+    ('shutting-down', 'Shutting Down'),
+    ('terminated', 'Terminated'),
+    ('stopping', 'Stopping'),
+    ('stopped', 'Stopped'),
+]
+
+
 class AWSTargetGroup(NetBoxModel):
     name = models.CharField(max_length=255, help_text="The name of the Target Group")
     arn = models.CharField(max_length=255, unique=True, blank=True, null=True, verbose_name="ARN", help_text="Amazon Resource Name for the Target Group")
@@ -294,7 +323,7 @@ class AWSTargetGroup(NetBoxModel):
     )
     protocol = models.CharField(max_length=10, choices=TARGET_GROUP_PROTOCOL_CHOICES, help_text="Protocol for routing traffic to targets")
     port = models.PositiveIntegerField(help_text="Port on which targets receive traffic")
-    target_type = models.CharField(max_length=10, choices=TARGET_GROUP_TYPE_CHOICES, help_text="Type of targets (instance, ip, alb)")
+    target_type = models.CharField(max_length=10, choices=TARGET_GROUP_TYPE_CHOICES, verbose_name="Target Type", help_text="Type of targets (instance, ip, alb)")
     load_balancers = models.ManyToManyField(
         to=AWSLoadBalancer,
         related_name="target_groups",
@@ -303,16 +332,16 @@ class AWSTargetGroup(NetBoxModel):
     )
     # Health Check Settings
     health_check_protocol = models.CharField(
-        max_length=10, choices=TARGET_GROUP_HEALTH_CHECK_PROTOCOL_CHOICES, blank=True, null=True, help_text="Protocol for health checks"
+        max_length=10, choices=TARGET_GROUP_HEALTH_CHECK_PROTOCOL_CHOICES, blank=True, null=True, verbose_name="Health Check Protocol", help_text="Protocol for health checks"
     )
     health_check_port = models.CharField(
-        max_length=20, default='traffic-port', blank=True, null=True, help_text="Port for health checks (default: 'traffic-port')"
+        max_length=20, default='traffic-port', blank=True, null=True, verbose_name="Health Check Port", help_text="Port for health checks (default: 'traffic-port')"
     )
-    health_check_path = models.CharField(max_length=255, blank=True, null=True, help_text="Destination for HTTP/HTTPS health checks")
-    health_check_interval_seconds = models.PositiveIntegerField(blank=True, null=True, help_text="Approximate interval between health checks (seconds)")
-    health_check_timeout_seconds = models.PositiveIntegerField(blank=True, null=True, help_text="Timeout for a health check response (seconds)")
-    healthy_threshold_count = models.PositiveIntegerField(blank=True, null=True, help_text="Number of consecutive successful health checks to become healthy")
-    unhealthy_threshold_count = models.PositiveIntegerField(blank=True, null=True, help_text="Number of consecutive failed health checks to become unhealthy")
+    health_check_path = models.CharField(max_length=255, blank=True, null=True, verbose_name="Health Check Path", help_text="Destination for HTTP/HTTPS health checks")
+    health_check_interval_seconds = models.PositiveIntegerField(blank=True, null=True, verbose_name="Health Check Interval Seconds", help_text="Approximate interval between health checks (seconds)")
+    health_check_timeout_seconds = models.PositiveIntegerField(blank=True, null=True, verbose_name="Health Check Timeout Seconds", help_text="Timeout for a health check response (seconds)")
+    healthy_threshold_count = models.PositiveIntegerField(blank=True, null=True, verbose_name="Healthy Threshold Count", help_text="Number of consecutive successful health checks to become healthy")
+    unhealthy_threshold_count = models.PositiveIntegerField(blank=True, null=True, verbose_name="Unhealthy Threshold Count", help_text="Number of consecutive failed health checks to become unhealthy")
     state = models.CharField(max_length=30, choices=AWS_TARGET_GROUP_STATE_CHOICES, default='active', help_text="The current state of the Target Group")
 
     def __str__(self):
@@ -331,3 +360,139 @@ class AWSTargetGroup(NetBoxModel):
         ordering = ("name",)
         verbose_name = "AWS Target Group"
         verbose_name_plural = "AWS Target Groups"
+
+
+class AWSEC2Instance(NetBoxModel):
+    name = models.CharField(
+        max_length=255,
+        help_text="The name of the EC2 Instance"
+    )
+    instance_id = models.CharField(
+        max_length=24,
+        unique=True,
+        verbose_name="Instance ID",
+        help_text="The unique ID of the EC2 Instance"
+    )
+    aws_account = models.ForeignKey(
+        to=AWSAccount,
+        on_delete=models.PROTECT,
+        related_name="ec2_instances",
+        help_text="The AWS Account this EC2 Instance belongs to"
+    )
+    region = models.CharField(
+        max_length=50,
+        choices=AWS_REGION_CHOICES,
+        help_text="The AWS region where the EC2 Instance is located"
+    )
+    vpc = models.ForeignKey(
+        to=AWSVPC,
+        on_delete=models.PROTECT,
+        related_name="ec2_instances",
+        help_text="The VPC this EC2 Instance is associated with.",
+        blank=True,
+        null=True, # EC2 classic instances might not have a VPC
+    )
+    instance_type = models.CharField(
+        max_length=255,
+        blank=True,
+        help_text="The type of the EC2 instance (e.g. t2.micro)"
+    )
+    state = models.CharField(
+        max_length=30,
+        choices=EC2_INSTANCE_STATE_CHOICES,
+        blank=True,
+        help_text="The current state of the EC2 Instance"
+    )
+    # Link to NetBox's VirtualMachine model
+    virtual_machine = models.OneToOneField(
+        to=VirtualMachine,
+        on_delete=models.SET_NULL,
+        related_name="aws_ec2_instance",
+        blank=True,
+        null=True
+    )
+
+    class Meta:
+        ordering = ("name",)
+        verbose_name = "AWS EC2 Instance"
+        verbose_name_plural = "AWS EC2 Instances"
+
+    def __str__(self):
+        return self.name or self.instance_id
+
+    def get_absolute_url(self):
+        # TODO: Create a view for AWSEC2Instance
+        return reverse("plugins:netbox_aws_resources_plugin:awsaccount_list") # Placeholder
+
+
+class AWSRDSInstance(NetBoxModel):
+    name = models.CharField(
+        max_length=255,
+        help_text="The name of the RDS Instance"
+    )
+    instance_id = models.CharField(
+        max_length=255, 
+        unique=True, 
+        verbose_name="DB Identifier", 
+        help_text="The unique identifier for the RDS instance"
+    )
+    aws_account = models.ForeignKey(
+        to=AWSAccount, 
+        on_delete=models.PROTECT, 
+        related_name="rds_instances", 
+        help_text="The AWS Account this RDS Instance belongs to"
+    )
+    region = models.CharField(
+        max_length=50, 
+        choices=AWS_REGION_CHOICES, 
+        help_text="The AWS region where the RDS Instance is located"
+    )
+    vpc = models.ForeignKey(
+        to=AWSVPC, 
+        on_delete=models.PROTECT, 
+        related_name="rds_instances", 
+        help_text="The VPC this RDS Instance is associated with.", 
+        blank=True, 
+        null=True
+    )
+    instance_class = models.CharField(
+        max_length=255, 
+        blank=True, 
+        help_text="The compute and memory capacity of the DB instance (e.g., db.t3.micro)"
+    )
+    engine = models.CharField(
+        max_length=50, 
+        blank=True, 
+        help_text="The name of the database engine to be used for this instance (e.g., postgres, mysql)"
+    )
+    engine_version = models.CharField(
+        max_length=50, 
+        blank=True, 
+        help_text="The version number of the database engine"
+    )
+    state = models.CharField(
+        max_length=50, 
+        choices=RDS_INSTANCE_STATE_CHOICES, 
+        blank=True, 
+        help_text="The current state of the RDS Instance"
+    )
+    # Link to NetBox's VirtualMachine model
+    virtual_machine = models.OneToOneField(
+        to=VirtualMachine, 
+        on_delete=models.SET_NULL, 
+        related_name="aws_rds_instance", 
+        blank=True, 
+        null=True
+    )
+
+    class Meta:
+        ordering = ("name",)
+        verbose_name = "AWS RDS Instance"
+        verbose_name_plural = "AWS RDS Instances"
+
+    def __str__(self):
+        return self.name or self.instance_id
+
+    def get_absolute_url(self):
+        # TODO: Create a view for AWSRDSInstance
+        return reverse("plugins:netbox_aws_resources_plugin:awsaccount_list")  # Placeholder
