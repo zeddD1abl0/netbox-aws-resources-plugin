@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+         <loc>https://zeddD1abl0.github.io/netbox-aws-resources-plugin/</loc>
+         <lastmod>2025-07-25</lastmod>
+    </url>
+    <url>
+         <loc>https://zeddD1abl0.github.io/netbox-aws-resources-plugin/changelog/</loc>
+         <lastmod>2025-07-25</lastmod>
+    </url>
+    <url>
+         <loc>https://zeddD1abl0.github.io/netbox-aws-resources-plugin/contributing/</loc>
+         <lastmod>2025-07-25</lastmod>
+    </url>
+    <url>
+         <loc>https://zeddD1abl0.github.io/netbox-aws-resources-plugin/models/aws_account/</loc>
+         <lastmod>2025-07-25</lastmod>
+    </url>
+    <url>
+         <loc>https://zeddD1abl0.github.io/netbox-aws-resources-plugin/models/aws_load_balancer/</loc>
+         <lastmod>2025-07-25</lastmod>
+    </url>
+    <url>
+         <loc>https://zeddD1abl0.github.io/netbox-aws-resources-plugin/models/aws_subnet/</loc>
+         <lastmod>2025-07-25</lastmod>
+    </url>
+    <url>
+         <loc>https://zeddD1abl0.github.io/netbox-aws-resources-plugin/models/aws_target_group/</loc>
+         <lastmod>2025-07-25</lastmod>
+    </url>
+    <url>
+         <loc>https://zeddD1abl0.github.io/netbox-aws-resources-plugin/models/aws_vpc/</loc>
+         <lastmod>2025-07-25</lastmod>
+    </url>
+</urlset>
