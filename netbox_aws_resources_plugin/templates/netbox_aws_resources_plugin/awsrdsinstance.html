@@ -1,0 +1,73 @@
+{% extends 'generic/object.html' %}
+{% load helpers %}
+
+{% block content %}
+<div class="row">
+    <div class="col col-md-6">
+        <div class="card">
+            <h5 class="card-header">AWS RDS Instance Details</h5>
+            <div class="card-body">
+                <table class="table table-hover attr-table">
+                    <tr>
+                        <th scope="row">Name</th>
+                        <td>{{ object.name }}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">AWS Account</th>
+                        <td><a href="{% url 'plugins:netbox_aws_resources_plugin:awsaccount' pk=object.aws_account.pk %}">{{ object.aws_account }}</a></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">AWS VPC</th>
+                        <td><a href="{% url 'plugins:netbox_aws_resources_plugin:awsvpc' pk=object.vpc.pk %}">{{ object.vpc }}</a></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">State</th>
+                        <td>{{ object.get_state_display }}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Estimated Hourly Cost (USD)</th>
+                        <td>${{ object.estimated_cost_usd_hourly|floatformat:4 }}</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="col col-md-6">
+        <div class="card">
+            <h5 class="card-header">NetBox Virtual Machine</h5>
+            <div class="card-body">
+                {% if object.virtual_machine %}
+                    <table class="table table-hover attr-table">
+                        <tr>
+                            <th scope="row">Name</th>
+                            <td><a href="{% url 'virtualization:virtualmachine' pk=object.virtual_machine.pk %}">{{ object.virtual_machine.name }}</a></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Status</th>
+                            <td>{% badge object.virtual_machine.get_status_display bg_color=object.virtual_machine.get_status_color %}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Cluster</th>
+                            <td><a href="{% url 'virtualization:cluster' pk=object.virtual_machine.cluster.pk %}">{{ object.virtual_machine.cluster }}</a></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">vCPUs</th>
+                            <td>{{ object.virtual_machine.vcpus }}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Memory</th>
+                            <td>{{ object.virtual_machine.memory }} MB</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Disk</th>
+                            <td>{{ object.virtual_machine.disk }} GB</td>
+                        </tr>
+                    </table>
+                {% else %}
+                    <span class="text-muted">Not linked to a NetBox Virtual Machine.</span>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

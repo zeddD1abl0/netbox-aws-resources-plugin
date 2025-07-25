@@ -1,0 +1,6251 @@
+{
+  "ec2": {
+    "c7i-flex.4xlarge": {
+      "vcpu": 16,
+      "ram_gb": 32,
+      "price_usd_hourly": 2.5983
+    },
+    "r5dn.4xlarge": {
+      "vcpu": 16,
+      "ram_gb": 128,
+      "price_usd_hourly": 0.0
+    },
+    "r5b.4xlarge": {
+      "vcpu": 16,
+      "ram_gb": 128,
+      "price_usd_hourly": 3.112
+    },
+    "m8gd.metal-48xl": {
+      "vcpu": 192,
+      "ram_gb": 768,
+      "price_usd_hourly": 0.0
+    },
+    "r5b.metal": {
+      "vcpu": 96,
+      "ram_gb": 768,
+      "price_usd_hourly": 8.7744
+    },
+    "c8gd.large": {
+      "vcpu": 2,
+      "ram_gb": 4,
+      "price_usd_hourly": 0.09798
+    },
+    "m7a.24xlarge": {
+      "vcpu": 96,
+      "ram_gb": 384,
+      "price_usd_hourly": 41.56416
+    },
+    "m6i.4xlarge": {
+      "vcpu": 16,
+      "ram_gb": 64,
+      "price_usd_hourly": 2.688
+    },
+    "c5d.xlarge": {
+      "vcpu": 4,
+      "ram_gb": 8,
+      "price_usd_hourly": 0.0
+    },
+    "c5a.12xlarge": {
+      "vcpu": 48,
+      "ram_gb": 96,
+      "price_usd_hourly": 2.659
+    },
+    "d3en.4xlarge": {
+      "vcpu": 16,
+      "ram_gb": 64,
+      "price_usd_hourly": 2.103
+    },
+    "r5n.2xlarge": {
+      "vcpu": 8,
+      "ram_gb": 64,
+      "price_usd_hourly": 3.596
+    },
+    "m6i.2xlarge": {
+      "vcpu": 8,
+      "ram_gb": 32,
+      "price_usd_hourly": 1.344
+    },
+    "d3.2xlarge": {
+      "vcpu": 8,
+      "ram_gb": 64,
+      "price_usd_hourly": 0.0
+    },
+    "c5d.9xlarge": {
+      "vcpu": 36,
+      "ram_gb": 72,
+      "price_usd_hourly": 6.048
+    },
+    "m6id.large": {
+      "vcpu": 2,
+      "ram_gb": 8,
+      "price_usd_hourly": 0.59865
+    },
+    "r7iz.2xlarge": {
+      "vcpu": 8,
+      "ram_gb": 64,
+      "price_usd_hourly": 0.8792
+    },
+    "c7gn.2xlarge": {
+      "vcpu": 8,
+      "ram_gb": 16,
+      "price_usd_hourly": 0.4992
+    },
+    "r6i.12xlarge": {
+      "vcpu": 48,
+      "ram_gb": 384,
+      "price_usd_hourly": 0.0
+    },
+    "m5dn.24xlarge": {
+      "vcpu": 96,
+      "ram_gb": 384,
+      "price_usd_hourly": 0.0
+    },
+    "m7i-flex.4xlarge": {
+      "vcpu": 16,
+      "ram_gb": 64,
+      "price_usd_hourly": 2.68608
+    },
+    "g5g.4xlarge": {
+      "vcpu": 16,
+      "ram_gb": 32,
+      "price_usd_hourly": 0.828
+    },
+    "r5dn.2xlarge": {
+      "vcpu": 8,
+      "ram_gb": 64,
+      "price_usd_hourly": 0.668
+    },
+    "m6id.12xlarge": {
+      "vcpu": 48,
+      "ram_gb": 192,
+      "price_usd_hourly": 8.6076
+    },
+    "m6in.2xlarge": {
+      "vcpu": 8,
+      "ram_gb": 32,
+      "price_usd_hourly": 0.0
+    },
+    "c6a.16xlarge": {
+      "vcpu": 64,
+      "ram_gb": 128,
+      "price_usd_hourly": 3.5296
+    },
+    "c7a.32xlarge": {
+      "vcpu": 128,
+      "ram_gb": 256,
+      "price_usd_hourly": 8.73216
+    },
+    "m6idn.12xlarge": {
+      "vcpu": 48,
+      "ram_gb": 192,
+      "price_usd_hourly": 4.63008
+    },
+    "c6id.metal": {
+      "vcpu": 128,
+      "ram_gb": 256,
+      "price_usd_hourly": 0.0
+    },
+    "c5n.large": {
+      "vcpu": 2,
+      "ram_gb": 5,
+      "price_usd_hourly": 0.0
+    },
+    "d3.8xlarge": {
+      "vcpu": 32,
+      "ram_gb": 256,
+      "price_usd_hourly": 4.53632
+    },
+    "r6a.12xlarge": {
+      "vcpu": 48,
+      "ram_gb": 384,
+      "price_usd_hourly": 8.4816
+    },
+    "i3en.2xlarge": {
+      "vcpu": 8,
+      "ram_gb": 64,
+      "price_usd_hourly": 1.864
+    },
+    "c5a.large": {
+      "vcpu": 2,
+      "ram_gb": 4,
+      "price_usd_hourly": 0.0
+    },
+    "r7iz.xlarge": {
+      "vcpu": 4,
+      "ram_gb": 32,
+      "price_usd_hourly": 0.0
+    },
+    "m7a.4xlarge": {
+      "vcpu": 16,
+      "ram_gb": 64,
+      "price_usd_hourly": 0.0
+    },
+    "i7i.8xlarge": {
+      "vcpu": 32,
+      "ram_gb": 256,
+      "price_usd_hourly": 0.0
+    },
+    "r5a.4xlarge": {
+      "vcpu": 16,
+      "ram_gb": 128,
+      "price_usd_hourly": 6.904
+    },
+    "x2iedn.xlarge": {
+      "vcpu": 4,
+      "ram_gb": 128,
+      "price_usd_hourly": 0.90123
+    },
+    "r7i.12xlarge": {
+      "vcpu": 48,
+      "ram_gb": 384,
+      "price_usd_hourly": 21.1752
+    },
+    "c6i.24xlarge": {
+      "vcpu": 96,
+      "ram_gb": 192,
+      "price_usd_hourly": 15.6
+    },
+    "g6.24xlarge": {
+      "vcpu": 96,
+      "ram_gb": 384,
+      "price_usd_hourly": 6.6752
+    },
+    "r6g.12xlarge": {
+      "vcpu": 48,
+      "ram_gb": 384,
+      "price_usd_hourly": 2.4192
+    },
+    "i4i.4xlarge": {
+      "vcpu": 16,
+      "ram_gb": 128,
+      "price_usd_hourly": 1.373
+    },
+    "r6id.xlarge": {
+      "vcpu": 4,
+      "ram_gb": 32,
+      "price_usd_hourly": 0.0
+    },
+    "m7i.metal-24xl": {
+      "vcpu": 96,
+      "ram_gb": 384,
+      "price_usd_hourly": 16.3584
+    },
+    "m5d.16xlarge": {
+      "vcpu": 64,
+      "ram_gb": 256,
+      "price_usd_hourly": 27.616
+    },
+    "c7a.24xlarge": {
+      "vcpu": 96,
+      "ram_gb": 192,
+      "price_usd_hourly": 0.0
+    },
+    "c6id.24xlarge": {
+      "vcpu": 96,
+      "ram_gb": 192,
+      "price_usd_hourly": 4.8384
+    },
+    "r6a.32xlarge": {
+      "vcpu": 128,
+      "ram_gb": 1024,
+      "price_usd_hourly": 9.4208
+    },
+    "i2.xlarge": {
+      "vcpu": 4,
+      "ram_gb": 30,
+      "price_usd_hourly": 0.853
+    },
+    "m6a.4xlarge": {
+      "vcpu": 16,
+      "ram_gb": 64,
+      "price_usd_hourly": 0.0
+    },
+    "r5b.2xlarge": {
+      "vcpu": 8,
+      "ram_gb": 64,
+      "price_usd_hourly": 1.556
+    },
+    "m6id.32xlarge": {
+      "vcpu": 128,
+      "ram_gb": 512,
+      "price_usd_hourly": 0.0
+    },
+    "r6a.24xlarge": {
+      "vcpu": 96,
+      "ram_gb": 768,
+      "price_usd_hourly": 0.0
+    },
+    "i4i.16xlarge": {
+      "vcpu": 64,
+      "ram_gb": 512,
+      "price_usd_hourly": 29.491
+    },
+    "m6in.16xlarge": {
+      "vcpu": 64,
+      "ram_gb": 256,
+      "price_usd_hourly": 0.0
+    },
+    "c6a.2xlarge": {
+      "vcpu": 8,
+      "ram_gb": 16,
+      "price_usd_hourly": 3.306
+    },
+    "i4i.xlarge": {
+      "vcpu": 4,
+      "ram_gb": 32,
+      "price_usd_hourly": 0.0
+    },
+    "m5dn.large": {
+      "vcpu": 2,
+      "ram_gb": 8,
+      "price_usd_hourly": 0.0
+    },
+    "c5n.18xlarge": {
+      "vcpu": 72,
+      "ram_gb": 192,
+      "price_usd_hourly": 0.0
+    },
+    "m6g.large": {
+      "vcpu": 2,
+      "ram_gb": 8,
+      "price_usd_hourly": 0.077
+    },
+    "t3.xlarge": {
+      "vcpu": 4,
+      "ram_gb": 16,
+      "price_usd_hourly": 0.0
+    },
+    "i7ie.18xlarge": {
+      "vcpu": 72,
+      "ram_gb": 576,
+      "price_usd_hourly": 36.3564
+    },
+    "x2iezn.12xlarge": {
+      "vcpu": 48,
+      "ram_gb": 1536,
+      "price_usd_hourly": 28.008
+    },
+    "m5ad.4xlarge": {
+      "vcpu": 16,
+      "ram_gb": 64,
+      "price_usd_hourly": 2.744
+    },
+    "m5n.24xlarge": {
+      "vcpu": 96,
+      "ram_gb": 384,
+      "price_usd_hourly": 0.0
+    },
+    "m6in.xlarge": {
+      "vcpu": 4,
+      "ram_gb": 16,
+      "price_usd_hourly": 1.77846
+    },
+    "i3.2xlarge": {
+      "vcpu": 8,
+      "ram_gb": 61,
+      "price_usd_hourly": 0.624
+    },
+    "r5dn.16xlarge": {
+      "vcpu": 64,
+      "ram_gb": 512,
+      "price_usd_hourly": 0.0
+    },
+    "x2iezn.6xlarge": {
+      "vcpu": 24,
+      "ram_gb": 768,
+      "price_usd_hourly": 7.884
+    },
+    "r7a.xlarge": {
+      "vcpu": 4,
+      "ram_gb": 32,
+      "price_usd_hourly": 0.0
+    },
+    "c5ad.8xlarge": {
+      "vcpu": 32,
+      "ram_gb": 64,
+      "price_usd_hourly": 1.917
+    },
+    "r6idn.2xlarge": {
+      "vcpu": 8,
+      "ram_gb": 64,
+      "price_usd_hourly": 3.78156
+    },
+    "i7i.48xlarge": {
+      "vcpu": 192,
+      "ram_gb": 1536,
+      "price_usd_hourly": 0.0
+    },
+    "c7i.xlarge": {
+      "vcpu": 4,
+      "ram_gb": 8,
+      "price_usd_hourly": 0.0
+    },
+    "r6in.4xlarge": {
+      "vcpu": 16,
+      "ram_gb": 128,
+      "price_usd_hourly": 0.0
+    },
+    "r6gd.8xlarge": {
+      "vcpu": 32,
+      "ram_gb": 256,
+      "price_usd_hourly": 0.0
+    },
+    "r6a.16xlarge": {
+      "vcpu": 64,
+      "ram_gb": 512,
+      "price_usd_hourly": 3.6288
+    },
+    "m5a.24xlarge": {
+      "vcpu": 96,
+      "ram_gb": 384,
+      "price_usd_hourly": 0.0
+    },
+    "r5dn.8xlarge": {
+      "vcpu": 32,
+      "ram_gb": 256,
+      "price_usd_hourly": 2.672
+    },
+    "z1d.2xlarge": {
+      "vcpu": 8,
+      "ram_gb": 64,
+      "price_usd_hourly": 0.0
+    },
+    "i7i.12xlarge": {
+      "vcpu": 48,
+      "ram_gb": 384,
+      "price_usd_hourly": 5.3414
+    },
+    "m7i-flex.large": {
+      "vcpu": 2,
+      "ram_gb": 8,
+      "price_usd_hourly": 0.16336
+    },
+    "m7i.metal-48xl": {
+      "vcpu": 192,
+      "ram_gb": 768,
+      "price_usd_hourly": 12.9216
+    },
+    "m6in.large": {
+      "vcpu": 2,
+      "ram_gb": 8,
+      "price_usd_hourly": 0.13923
+    },
+    "m6i.large": {
+      "vcpu": 2,
+      "ram_gb": 8,
+      "price_usd_hourly": 0.1636
+    },
+    "m6gd.xlarge": {
+      "vcpu": 4,
+      "ram_gb": 16,
+      "price_usd_hourly": 0.1808
+    },
+    "i4g.4xlarge": {
+      "vcpu": 16,
+      "ram_gb": 128,
+      "price_usd_hourly": 0.0
+    },
+    "m7g.large": {
+      "vcpu": 2,
+      "ram_gb": 8,
+      "price_usd_hourly": 0.0
+    },
+    "r7i.xlarge": {
+      "vcpu": 4,
+      "ram_gb": 32,
+      "price_usd_hourly": 0.7446
+    },
+    "c5a.8xlarge": {
+      "vcpu": 32,
+      "ram_gb": 64,
+      "price_usd_hourly": 0.0
+    },
+    "z1d.12xlarge": {
+      "vcpu": 48,
+      "ram_gb": 384,
+      "price_usd_hourly": 10.224
+    },
+    "m6idn.4xlarge": {
+      "vcpu": 16,
+      "ram_gb": 64,
+      "price_usd_hourly": 0.0
+    },
+    "m6idn.24xlarge": {
+      "vcpu": 96,
+      "ram_gb": 384,
+      "price_usd_hourly": 9.26016
+    },
+    "r7a.48xlarge": {
+      "vcpu": 192,
+      "ram_gb": 1536,
+      "price_usd_hourly": 37.6464
+    },
+    "x2iedn.4xlarge": {
+      "vcpu": 16,
+      "ram_gb": 512,
+      "price_usd_hourly": 9.3345
+    },
+    "x2iezn.8xlarge": {
+      "vcpu": 32,
+      "ram_gb": 1024,
+      "price_usd_hourly": 0.0
+    },
+    "m5ad.8xlarge": {
+      "vcpu": 32,
+      "ram_gb": 128,
+      "price_usd_hourly": 2.189
+    },
+    "r6idn.metal": {
+      "vcpu": 128,
+      "ram_gb": 1024,
+      "price_usd_hourly": 14.66816
+    },
+    "r6i.32xlarge": {
+      "vcpu": 128,
+      "ram_gb": 1024,
+      "price_usd_hourly": 0.0
+    },
+    "x1e.xlarge": {
+      "vcpu": 4,
+      "ram_gb": 122,
+      "price_usd_hourly": 2.334
+    },
+    "r5n.4xlarge": {
+      "vcpu": 16,
+      "ram_gb": 128,
+      "price_usd_hourly": 7.192
+    },
+    "i3.16xlarge": {
+      "vcpu": 64,
+      "ram_gb": 488,
+      "price_usd_hourly": 0.0
+    },
+    "d3en.2xlarge": {
+      "vcpu": 8,
+      "ram_gb": 32,
+      "price_usd_hourly": 0.0
+    },
+    "r7a.2xlarge": {
+      "vcpu": 8,
+      "ram_gb": 64,
+      "price_usd_hourly": 0.0
+    },
+    "x2gd.8xlarge": {
+      "vcpu": 32,
+      "ram_gb": 512,
+      "price_usd_hourly": 2.672
+    },
+    "m5dn.metal": {
+      "vcpu": 96,
+      "ram_gb": 384,
+      "price_usd_hourly": 8.15
+    },
+    "m6in.12xlarge": {
+      "vcpu": 48,
+      "ram_gb": 192,
+      "price_usd_hourly": 3.34152
+    },
+    "m7i.large": {
+      "vcpu": 2,
+      "ram_gb": 8,
+      "price_usd_hourly": 0.1008
+    },
+    "m5zn.12xlarge": {
+      "vcpu": 48,
+      "ram_gb": 192,
+      "price_usd_hourly": 4.7753
+    },
+    "m5.8xlarge": {
+      "vcpu": 32,
+      "ram_gb": 128,
+      "price_usd_hourly": 2.077
+    },
+    "r7iz.large": {
+      "vcpu": 2,
+      "ram_gb": 16,
+      "price_usd_hourly": 0.186
+    },
+    "r5d.4xlarge": {
+      "vcpu": 16,
+      "ram_gb": 128,
+      "price_usd_hourly": 7.152
+    },
+    "i7ie.3xlarge": {
+      "vcpu": 12,
+      "ram_gb": 96,
+      "price_usd_hourly": 1.7622
+    },
+    "m5d.xlarge": {
+      "vcpu": 4,
+      "ram_gb": 16,
+      "price_usd_hourly": 1.726
+    },
+    "r6a.xlarge": {
+      "vcpu": 4,
+      "ram_gb": 32,
+      "price_usd_hourly": 0.7068
+    },
+    "c6id.16xlarge": {
+      "vcpu": 64,
+      "ram_gb": 128,
+      "price_usd_hourly": 0.0
+    },
+    "i7i.2xlarge": {
+      "vcpu": 8,
+      "ram_gb": 64,
+      "price_usd_hourly": 1.715
+    },
+    "c7i.large": {
+      "vcpu": 2,
+      "ram_gb": 4,
+      "price_usd_hourly": 0.56925
+    },
+    "m7a.metal-48xl": {
+      "vcpu": 192,
+      "ram_gb": 768,
+      "price_usd_hourly": 83.12832
+    },
+    "m6id.2xlarge": {
+      "vcpu": 8,
+      "ram_gb": 32,
+      "price_usd_hourly": 0.4746
+    },
+    "m5.xlarge": {
+      "vcpu": 4,
+      "ram_gb": 16,
+      "price_usd_hourly": 0.26
+    },
+    "i7ie.48xlarge": {
+      "vcpu": 192,
+      "ram_gb": 1536,
+      "price_usd_hourly": 24.9504
+    },
+    "i3en.metal": {
+      "vcpu": 96,
+      "ram_gb": 768,
+      "price_usd_hourly": 0.0
+    },
+    "t1.micro": {
+      "vcpu": 1,
+      "ram_gb": 0,
+      "price_usd_hourly": 0.02
+    },
+    "r5ad.12xlarge": {
+      "vcpu": 48,
+      "ram_gb": 384,
+      "price_usd_hourly": 8.904
+    },
+    "r4.16xlarge": {
+      "vcpu": 64,
+      "ram_gb": 488,
+      "price_usd_hourly": 28.256
+    },
+    "h1.16xlarge": {
+      "vcpu": 64,
+      "ram_gb": 256,
+      "price_usd_hourly": 11.424
+    },
+    "c5d.24xlarge": {
+      "vcpu": 96,
+      "ram_gb": 192,
+      "price_usd_hourly": 16.128
+    },
+    "c5ad.4xlarge": {
+      "vcpu": 16,
+      "ram_gb": 32,
+      "price_usd_hourly": 0.0
+    },
+    "r5.24xlarge": {
+      "vcpu": 96,
+      "ram_gb": 768,
+      "price_usd_hourly": 7.67
+    },
+    "r5ad.2xlarge": {
+      "vcpu": 8,
+      "ram_gb": 64,
+      "price_usd_hourly": 1.484
+    },
+    "m6gd.medium": {
+      "vcpu": 1,
+      "ram_gb": 4,
+      "price_usd_hourly": 0.0452
+    },
+    "i3en.3xlarge": {
+      "vcpu": 12,
+      "ram_gb": 96,
+      "price_usd_hourly": 1.559
+    },
+    "m5zn.2xlarge": {
+      "vcpu": 8,
+      "ram_gb": 32,
+      "price_usd_hourly": 0.7959
+    },
+    "m5dn.4xlarge": {
+      "vcpu": 16,
+      "ram_gb": 64,
+      "price_usd_hourly": 7.088
+    },
+    "c5.24xlarge": {
+      "vcpu": 96,
+      "ram_gb": 192,
+      "price_usd_hourly": 0.0
+    },
+    "r5n.8xlarge": {
+      "vcpu": 32,
+      "ram_gb": 256,
+      "price_usd_hourly": 2.925
+    },
+    "r6in.large": {
+      "vcpu": 2,
+      "ram_gb": 16,
+      "price_usd_hourly": 0.0
+    },
+    "r6in.32xlarge": {
+      "vcpu": 128,
+      "ram_gb": 1024,
+      "price_usd_hourly": 13.32032
+    },
+    "c6in.large": {
+      "vcpu": 2,
+      "ram_gb": 4,
+      "price_usd_hourly": 0.181
+    },
+    "m5n.12xlarge": {
+      "vcpu": 48,
+      "ram_gb": 192,
+      "price_usd_hourly": 8.616
+    },
+    "trn1n.32xlarge": {
+      "vcpu": 128,
+      "ram_gb": 512,
+      "price_usd_hourly": 24.78
+    },
+    "m6a.32xlarge": {
+      "vcpu": 128,
+      "ram_gb": 512,
+      "price_usd_hourly": 20.8896
+    },
+    "c6id.8xlarge": {
+      "vcpu": 32,
+      "ram_gb": 64,
+      "price_usd_hourly": 2.1536
+    },
+    "m5d.2xlarge": {
+      "vcpu": 8,
+      "ram_gb": 32,
+      "price_usd_hourly": 0.587
+    },
+    "g6.48xlarge": {
+      "vcpu": 192,
+      "ram_gb": 768,
+      "price_usd_hourly": 0.0
+    },
+    "r5ad.24xlarge": {
+      "vcpu": 96,
+      "ram_gb": 768,
+      "price_usd_hourly": 0.0
+    },
+    "c7gd.medium": {
+      "vcpu": 1,
+      "ram_gb": 2,
+      "price_usd_hourly": 0.0454
+    },
+    "r5n.xlarge": {
+      "vcpu": 4,
+      "ram_gb": 32,
+      "price_usd_hourly": 0.0
+    },
+    "d3en.6xlarge": {
+      "vcpu": 24,
+      "ram_gb": 96,
+      "price_usd_hourly": 6.034
+    },
+    "m6a.8xlarge": {
+      "vcpu": 32,
+      "ram_gb": 128,
+      "price_usd_hourly": 5.2224
+    },
+    "x2iezn.2xlarge": {
+      "vcpu": 8,
+      "ram_gb": 256,
+      "price_usd_hourly": 4.668
+    },
+    "m5zn.metal": {
+      "vcpu": 48,
+      "ram_gb": 192,
+      "price_usd_hourly": 9.7241
+    },
+    "m6in.metal": {
+      "vcpu": 128,
+      "ram_gb": 512,
+      "price_usd_hourly": 0.0
+    },
+    "r6id.4xlarge": {
+      "vcpu": 16,
+      "ram_gb": 128,
+      "price_usd_hourly": 0.0
+    },
+    "c7i-flex.large": {
+      "vcpu": 2,
+      "ram_gb": 4,
+      "price_usd_hourly": 0.15239
+    },
+    "m6i.32xlarge": {
+      "vcpu": 128,
+      "ram_gb": 512,
+      "price_usd_hourly": 6.144
+    },
+    "c8gd.24xlarge": {
+      "vcpu": 96,
+      "ram_gb": 192,
+      "price_usd_hourly": 0.0
+    },
+    "r7a.16xlarge": {
+      "vcpu": 64,
+      "ram_gb": 512,
+      "price_usd_hourly": 0.0
+    },
+    "m5dn.2xlarge": {
+      "vcpu": 8,
+      "ram_gb": 32,
+      "price_usd_hourly": 0.0
+    },
+    "m7a.8xlarge": {
+      "vcpu": 32,
+      "ram_gb": 128,
+      "price_usd_hourly": 2.39552
+    },
+    "r7g.2xlarge": {
+      "vcpu": 8,
+      "ram_gb": 64,
+      "price_usd_hourly": 0.4284
+    },
+    "c7a.48xlarge": {
+      "vcpu": 192,
+      "ram_gb": 384,
+      "price_usd_hourly": 0.0
+    },
+    "m5n.metal": {
+      "vcpu": 96,
+      "ram_gb": 384,
+      "price_usd_hourly": 41.712
+    },
+    "is4gen.8xlarge": {
+      "vcpu": 32,
+      "ram_gb": 192,
+      "price_usd_hourly": 4.6104
+    },
+    "m6i.8xlarge": {
+      "vcpu": 32,
+      "ram_gb": 128,
+      "price_usd_hourly": 5.376
+    },
+    "i3en.large": {
+      "vcpu": 2,
+      "ram_gb": 16,
+      "price_usd_hourly": 0.294
+    },
+    "c5ad.xlarge": {
+      "vcpu": 4,
+      "ram_gb": 8,
+      "price_usd_hourly": 1.672
+    },
+    "r7a.metal-48xl": {
+      "vcpu": 192,
+      "ram_gb": 1536,
+      "price_usd_hourly": 86.6064
+    },
+    "m5zn.xlarge": {
+      "vcpu": 4,
+      "ram_gb": 16,
+      "price_usd_hourly": 0.0
+    },
+    "c5a.xlarge": {
+      "vcpu": 4,
+      "ram_gb": 8,
+      "price_usd_hourly": 0.0
+    },
+    "m7i.xlarge": {
+      "vcpu": 4,
+      "ram_gb": 16,
+      "price_usd_hourly": 0.2692
+    },
+    "m5.16xlarge": {
+      "vcpu": 64,
+      "ram_gb": 256,
+      "price_usd_hourly": 0.0
+    },
+    "r6in.24xlarge": {
+      "vcpu": 96,
+      "ram_gb": 768,
+      "price_usd_hourly": 0.0
+    },
+    "m7i-flex.xlarge": {
+      "vcpu": 4,
+      "ram_gb": 16,
+      "price_usd_hourly": 0.19152
+    },
+    "m7g.medium": {
+      "vcpu": 1,
+      "ram_gb": 4,
+      "price_usd_hourly": 0.0
+    },
+    "r5dn.24xlarge": {
+      "vcpu": 96,
+      "ram_gb": 768,
+      "price_usd_hourly": 19.536
+    },
+    "m5d.metal": {
+      "vcpu": 96,
+      "ram_gb": 384,
+      "price_usd_hourly": 7.046
+    },
+    "c5a.16xlarge": {
+      "vcpu": 64,
+      "ram_gb": 128,
+      "price_usd_hourly": 26.464
+    },
+    "c5.9xlarge": {
+      "vcpu": 36,
+      "ram_gb": 72,
+      "price_usd_hourly": 0.0
+    },
+    "i7i.metal-48xl": {
+      "vcpu": 192,
+      "ram_gb": 1536,
+      "price_usd_hourly": 18.121
+    },
+    "i3en.12xlarge": {
+      "vcpu": 48,
+      "ram_gb": 384,
+      "price_usd_hourly": 11.184
+    },
+    "r5dn.metal": {
+      "vcpu": 96,
+      "ram_gb": 768,
+      "price_usd_hourly": 9.638
+    },
+    "r6in.metal": {
+      "vcpu": 128,
+      "ram_gb": 1024,
+      "price_usd_hourly": 0.0
+    },
+    "r5b.large": {
+      "vcpu": 2,
+      "ram_gb": 16,
+      "price_usd_hourly": 0.149
+    },
+    "r6id.16xlarge": {
+      "vcpu": 64,
+      "ram_gb": 512,
+      "price_usd_hourly": 0.0
+    },
+    "c5ad.12xlarge": {
+      "vcpu": 48,
+      "ram_gb": 96,
+      "price_usd_hourly": 2.875
+    },
+    "p5en.48xlarge": {
+      "vcpu": 192,
+      "ram_gb": 2048,
+      "price_usd_hourly": 0.0
+    },
+    "a1.metal": {
+      "vcpu": 16,
+      "ram_gb": 32,
+      "price_usd_hourly": 0.0
+    },
+    "c5.18xlarge": {
+      "vcpu": 72,
+      "ram_gb": 144,
+      "price_usd_hourly": 0.0
+    },
+    "m5d.4xlarge": {
+      "vcpu": 16,
+      "ram_gb": 64,
+      "price_usd_hourly": 0.0
+    },
+    "r6id.8xlarge": {
+      "vcpu": 32,
+      "ram_gb": 256,
+      "price_usd_hourly": 6.2592
+    },
+    "m7a.32xlarge": {
+      "vcpu": 128,
+      "ram_gb": 512,
+      "price_usd_hourly": 22.77888
+    },
+    "r5.large": {
+      "vcpu": 2,
+      "ram_gb": 16,
+      "price_usd_hourly": 0.194
+    },
+    "i3en.xlarge": {
+      "vcpu": 4,
+      "ram_gb": 32,
+      "price_usd_hourly": 0.0
+    },
+    "r5.8xlarge": {
+      "vcpu": 32,
+      "ram_gb": 256,
+      "price_usd_hourly": 14.016
+    },
+    "m5zn.large": {
+      "vcpu": 2,
+      "ram_gb": 8,
+      "price_usd_hourly": 0.2328
+    },
+    "i8g.2xlarge": {
+      "vcpu": 8,
+      "ram_gb": 64,
+      "price_usd_hourly": 0.6864
+    },
+    "c6id.4xlarge": {
+      "vcpu": 16,
+      "ram_gb": 32,
+      "price_usd_hourly": 2.7264
+    },
+    "r5d.16xlarge": {
+      "vcpu": 64,
+      "ram_gb": 512,
+      "price_usd_hourly": 0.0
+    },
+    "r8g.large": {
+      "vcpu": 2,
+      "ram_gb": 16,
+      "price_usd_hourly": 0.11782
+    },
+    "c5.2xlarge": {
+      "vcpu": 8,
+      "ram_gb": 16,
+      "price_usd_hourly": 1.3
+    },
+    "m7i.4xlarge": {
+      "vcpu": 16,
+      "ram_gb": 64,
+      "price_usd_hourly": 0.8064
+    },
+    "m6i.24xlarge": {
+      "vcpu": 96,
+      "ram_gb": 384,
+      "price_usd_hourly": 0.0
+    },
+    "c8g.medium": {
+      "vcpu": 1,
+      "ram_gb": 2,
+      "price_usd_hourly": 0.03988
+    },
+    "t2.2xlarge": {
+      "vcpu": 8,
+      "ram_gb": 32,
+      "price_usd_hourly": 0.3712
+    },
+    "c5n.9xlarge": {
+      "vcpu": 36,
+      "ram_gb": 96,
+      "price_usd_hourly": 15.444
+    },
+    "m5dn.16xlarge": {
+      "vcpu": 64,
+      "ram_gb": 256,
+      "price_usd_hourly": 0.0
+    },
+    "r7i.8xlarge": {
+      "vcpu": 32,
+      "ram_gb": 256,
+      "price_usd_hourly": 2.6576
+    },
+    "c5d.metal": {
+      "vcpu": 96,
+      "ram_gb": 192,
+      "price_usd_hourly": 4.608
+    },
+    "x1e.8xlarge": {
+      "vcpu": 32,
+      "ram_gb": 976,
+      "price_usd_hourly": 0.0
+    },
+    "r5.16xlarge": {
+      "vcpu": 64,
+      "ram_gb": 512,
+      "price_usd_hourly": 4.032
+    },
+    "m6idn.2xlarge": {
+      "vcpu": 8,
+      "ram_gb": 32,
+      "price_usd_hourly": 1.59648
+    },
+    "m7a.16xlarge": {
+      "vcpu": 64,
+      "ram_gb": 256,
+      "price_usd_hourly": 3.70944
+    },
+    "m6a.2xlarge": {
+      "vcpu": 8,
+      "ram_gb": 32,
+      "price_usd_hourly": 0.0
+    },
+    "c6in.4xlarge": {
+      "vcpu": 16,
+      "ram_gb": 32,
+      "price_usd_hourly": 0.0
+    },
+    "r7a.24xlarge": {
+      "vcpu": 96,
+      "ram_gb": 768,
+      "price_usd_hourly": 43.3032
+    },
+    "c6in.metal": {
+      "vcpu": 128,
+      "ram_gb": 256,
+      "price_usd_hourly": 22.6176
+    },
+    "r6i.16xlarge": {
+      "vcpu": 64,
+      "ram_gb": 512,
+      "price_usd_hourly": 0.0
+    },
+    "i7ie.6xlarge": {
+      "vcpu": 24,
+      "ram_gb": 192,
+      "price_usd_hourly": 5.9988
+    },
+    "c5ad.24xlarge": {
+      "vcpu": 96,
+      "ram_gb": 192,
+      "price_usd_hourly": 0.0
+    },
+    "i4i.12xlarge": {
+      "vcpu": 48,
+      "ram_gb": 384,
+      "price_usd_hourly": 4.118
+    },
+    "p2.8xlarge": {
+      "vcpu": 32,
+      "ram_gb": 488,
+      "price_usd_hourly": 7.2
+    },
+    "r6id.2xlarge": {
+      "vcpu": 8,
+      "ram_gb": 64,
+      "price_usd_hourly": 0.0
+    },
+    "m6idn.metal": {
+      "vcpu": 128,
+      "ram_gb": 512,
+      "price_usd_hourly": 25.54368
+    },
+    "x2iedn.8xlarge": {
+      "vcpu": 32,
+      "ram_gb": 1024,
+      "price_usd_hourly": 18.669
+    },
+    "c5a.4xlarge": {
+      "vcpu": 16,
+      "ram_gb": 32,
+      "price_usd_hourly": 0.616
+    },
+    "r5d.metal": {
+      "vcpu": 96,
+      "ram_gb": 768,
+      "price_usd_hourly": 0.0
+    },
+    "m6id.8xlarge": {
+      "vcpu": 32,
+      "ram_gb": 128,
+      "price_usd_hourly": 1.8984
+    },
+    "m7i-flex.8xlarge": {
+      "vcpu": 32,
+      "ram_gb": 128,
+      "price_usd_hourly": 2.07296
+    },
+    "r6idn.32xlarge": {
+      "vcpu": 128,
+      "ram_gb": 1024,
+      "price_usd_hourly": 0.0
+    },
+    "m5.12xlarge": {
+      "vcpu": 48,
+      "ram_gb": 192,
+      "price_usd_hourly": 0.0
+    },
+    "r5a.xlarge": {
+      "vcpu": 4,
+      "ram_gb": 32,
+      "price_usd_hourly": 0.706
+    },
+    "r7iz.4xlarge": {
+      "vcpu": 16,
+      "ram_gb": 128,
+      "price_usd_hourly": 1.7584
+    },
+    "h1.8xlarge": {
+      "vcpu": 32,
+      "ram_gb": 128,
+      "price_usd_hourly": 1.872
+    },
+    "p3dn.24xlarge": {
+      "vcpu": 96,
+      "ram_gb": 768,
+      "price_usd_hourly": 0.0
+    },
+    "m6id.24xlarge": {
+      "vcpu": 96,
+      "ram_gb": 384,
+      "price_usd_hourly": 0.0
+    },
+    "x2gd.2xlarge": {
+      "vcpu": 8,
+      "ram_gb": 128,
+      "price_usd_hourly": 0.0
+    },
+    "r5b.8xlarge": {
+      "vcpu": 32,
+      "ram_gb": 256,
+      "price_usd_hourly": 2.384
+    },
+    "m8gd.large": {
+      "vcpu": 2,
+      "ram_gb": 8,
+      "price_usd_hourly": 0.11532
+    },
+    "r7i.4xlarge": {
+      "vcpu": 16,
+      "ram_gb": 128,
+      "price_usd_hourly": 1.3288
+    },
+    "i4i.24xlarge": {
+      "vcpu": 96,
+      "ram_gb": 768,
+      "price_usd_hourly": 44.2368
+    },
+    "d3en.xlarge": {
+      "vcpu": 4,
+      "ram_gb": 16,
+      "price_usd_hourly": 0.0
+    },
+    "is4gen.xlarge": {
+      "vcpu": 4,
+      "ram_gb": 24,
+      "price_usd_hourly": 0.5763
+    },
+    "c8gd.medium": {
+      "vcpu": 1,
+      "ram_gb": 2,
+      "price_usd_hourly": 0.04899
+    },
+    "c7a.large": {
+      "vcpu": 2,
+      "ram_gb": 4,
+      "price_usd_hourly": 0.58264
+    },
+    "r7a.8xlarge": {
+      "vcpu": 32,
+      "ram_gb": 256,
+      "price_usd_hourly": 0.0
+    },
+    "r3.2xlarge": {
+      "vcpu": 8,
+      "ram_gb": 61,
+      "price_usd_hourly": 3.664
+    },
+    "c3.2xlarge": {
+      "vcpu": 8,
+      "ram_gb": 15,
+      "price_usd_hourly": 0.0
+    },
+    "m5n.large": {
+      "vcpu": 2,
+      "ram_gb": 8,
+      "price_usd_hourly": 0.0
+    },
+    "i7i.large": {
+      "vcpu": 2,
+      "ram_gb": 16,
+      "price_usd_hourly": 0.1888
+    },
+    "g6e.48xlarge": {
+      "vcpu": 192,
+      "ram_gb": 1536,
+      "price_usd_hourly": 30.13118
+    },
+    "c6i.4xlarge": {
+      "vcpu": 16,
+      "ram_gb": 32,
+      "price_usd_hourly": 0.9504
+    },
+    "r6a.48xlarge": {
+      "vcpu": 192,
+      "ram_gb": 1536,
+      "price_usd_hourly": 0.0
+    },
+    "i7ie.large": {
+      "vcpu": 2,
+      "ram_gb": 16,
+      "price_usd_hourly": 0.2599
+    },
+    "c6i.8xlarge": {
+      "vcpu": 32,
+      "ram_gb": 64,
+      "price_usd_hourly": 5.2
+    },
+    "x2gd.4xlarge": {
+      "vcpu": 16,
+      "ram_gb": 256,
+      "price_usd_hourly": 1.336
+    },
+    "r4.8xlarge": {
+      "vcpu": 32,
+      "ram_gb": 244,
+      "price_usd_hourly": 14.128
+    },
+    "r6in.2xlarge": {
+      "vcpu": 8,
+      "ram_gb": 64,
+      "price_usd_hourly": 1.65732
+    },
+    "t3a.xlarge": {
+      "vcpu": 4,
+      "ram_gb": 16,
+      "price_usd_hourly": 0.1504
+    },
+    "m6idn.16xlarge": {
+      "vcpu": 64,
+      "ram_gb": 256,
+      "price_usd_hourly": 29.09184
+    },
+    "m6a.large": {
+      "vcpu": 2,
+      "ram_gb": 8,
+      "price_usd_hourly": 0.0
+    },
+    "r6id.12xlarge": {
+      "vcpu": 48,
+      "ram_gb": 384,
+      "price_usd_hourly": 0.0
+    },
+    "t4g.large": {
+      "vcpu": 2,
+      "ram_gb": 8,
+      "price_usd_hourly": 0.0672
+    },
+    "r6i.metal": {
+      "vcpu": 128,
+      "ram_gb": 1024,
+      "price_usd_hourly": 0.0
+    },
+    "r7i.2xlarge": {
+      "vcpu": 8,
+      "ram_gb": 64,
+      "price_usd_hourly": 0.6644
+    },
+    "c8gd.4xlarge": {
+      "vcpu": 16,
+      "ram_gb": 32,
+      "price_usd_hourly": 0.78384
+    },
+    "r6id.32xlarge": {
+      "vcpu": 128,
+      "ram_gb": 1024,
+      "price_usd_hourly": 9.6768
+    },
+    "t3a.small": {
+      "vcpu": 2,
+      "ram_gb": 2,
+      "price_usd_hourly": 0.0
+    },
+    "c6gn.2xlarge": {
+      "vcpu": 8,
+      "ram_gb": 16,
+      "price_usd_hourly": 0.3456
+    },
+    "m7i-flex.16xlarge": {
+      "vcpu": 64,
+      "ram_gb": 256,
+      "price_usd_hourly": 27.06432
+    },
+    "c7a.4xlarge": {
+      "vcpu": 16,
+      "ram_gb": 32,
+      "price_usd_hourly": 0.0
+    },
+    "r5ad.4xlarge": {
+      "vcpu": 16,
+      "ram_gb": 128,
+      "price_usd_hourly": 1.318
+    },
+    "c8gd.8xlarge": {
+      "vcpu": 32,
+      "ram_gb": 64,
+      "price_usd_hourly": 1.56768
+    },
+    "m6a.12xlarge": {
+      "vcpu": 48,
+      "ram_gb": 192,
+      "price_usd_hourly": 2.0736
+    },
+    "x2iedn.32xlarge": {
+      "vcpu": 128,
+      "ram_gb": 4096,
+      "price_usd_hourly": 42.036
+    },
+    "r4.xlarge": {
+      "vcpu": 4,
+      "ram_gb": 30,
+      "price_usd_hourly": 0.0
+    },
+    "m4.10xlarge": {
+      "vcpu": 40,
+      "ram_gb": 160,
+      "price_usd_hourly": 6.8
+    },
+    "i7ie.metal-24xl": {
+      "vcpu": 96,
+      "ram_gb": 768,
+      "price_usd_hourly": 0.0
+    },
+    "c5.xlarge": {
+      "vcpu": 4,
+      "ram_gb": 8,
+      "price_usd_hourly": 0.17
+    },
+    "t3.large": {
+      "vcpu": 2,
+      "ram_gb": 8,
+      "price_usd_hourly": 0.0832
+    },
+    "r7iz.12xlarge": {
+      "vcpu": 48,
+      "ram_gb": 384,
+      "price_usd_hourly": 10.224
+    },
+    "m5a.8xlarge": {
+      "vcpu": 32,
+      "ram_gb": 128,
+      "price_usd_hourly": 0.0
+    },
+    "r5d.24xlarge": {
+      "vcpu": 96,
+      "ram_gb": 768,
+      "price_usd_hourly": 42.912
+    },
+    "r5dn.xlarge": {
+      "vcpu": 4,
+      "ram_gb": 32,
+      "price_usd_hourly": 0.814
+    },
+    "c6in.8xlarge": {
+      "vcpu": 32,
+      "ram_gb": 64,
+      "price_usd_hourly": 13.8144
+    },
+    "u7i-8tb.112xlarge": {
+      "vcpu": 448,
+      "ram_gb": 8192,
+      "price_usd_hourly": 251.72
+    },
+    "r7g.4xlarge": {
+      "vcpu": 16,
+      "ram_gb": 128,
+      "price_usd_hourly": 0.8568
+    },
+    "r5.12xlarge": {
+      "vcpu": 48,
+      "ram_gb": 384,
+      "price_usd_hourly": 3.835
+    },
+    "i7i.metal-24xl": {
+      "vcpu": 96,
+      "ram_gb": 768,
+      "price_usd_hourly": 45.0605
+    },
+    "c4.4xlarge": {
+      "vcpu": 16,
+      "ram_gb": 30,
+      "price_usd_hourly": 0.0
+    },
+    "r6idn.xlarge": {
+      "vcpu": 4,
+      "ram_gb": 32,
+      "price_usd_hourly": 0.45838
+    },
+    "c7i-flex.12xlarge": {
+      "vcpu": 48,
+      "ram_gb": 96,
+      "price_usd_hourly": 2.8461
+    },
+    "c6a.48xlarge": {
+      "vcpu": 192,
+      "ram_gb": 384,
+      "price_usd_hourly": 0.0
+    },
+    "c8gd.metal-24xl": {
+      "vcpu": 96,
+      "ram_gb": 192,
+      "price_usd_hourly": 4.70304
+    },
+    "c6in.12xlarge": {
+      "vcpu": 48,
+      "ram_gb": 96,
+      "price_usd_hourly": 20.7216
+    },
+    "m6a.metal": {
+      "vcpu": 192,
+      "ram_gb": 768,
+      "price_usd_hourly": 0.0
+    },
+    "r7iz.32xlarge": {
+      "vcpu": 128,
+      "ram_gb": 1024,
+      "price_usd_hourly": 27.264
+    },
+    "i8g.12xlarge": {
+      "vcpu": 48,
+      "ram_gb": 384,
+      "price_usd_hourly": 0.0
+    },
+    "r6in.8xlarge": {
+      "vcpu": 32,
+      "ram_gb": 256,
+      "price_usd_hourly": 0.0
+    },
+    "d3.xlarge": {
+      "vcpu": 4,
+      "ram_gb": 32,
+      "price_usd_hourly": 0.979
+    },
+    "m6i.16xlarge": {
+      "vcpu": 64,
+      "ram_gb": 256,
+      "price_usd_hourly": 10.752
+    },
+    "i4i.8xlarge": {
+      "vcpu": 32,
+      "ram_gb": 256,
+      "price_usd_hourly": 3.286
+    },
+    "a1.xlarge": {
+      "vcpu": 4,
+      "ram_gb": 8,
+      "price_usd_hourly": 0.102
+    },
+    "m5ad.16xlarge": {
+      "vcpu": 64,
+      "ram_gb": 256,
+      "price_usd_hourly": 27.296
+    },
+    "m7a.medium": {
+      "vcpu": 1,
+      "ram_gb": 4,
+      "price_usd_hourly": 0.05796
+    },
+    "c6gd.4xlarge": {
+      "vcpu": 16,
+      "ram_gb": 32,
+      "price_usd_hourly": 0.0
+    },
+    "r6id.metal": {
+      "vcpu": 128,
+      "ram_gb": 1024,
+      "price_usd_hourly": 0.0
+    },
+    "r7iz.16xlarge": {
+      "vcpu": 64,
+      "ram_gb": 512,
+      "price_usd_hourly": 29.952
+    },
+    "m5.4xlarge": {
+      "vcpu": 16,
+      "ram_gb": 64,
+      "price_usd_hourly": 0.0
+    },
+    "c6a.large": {
+      "vcpu": 2,
+      "ram_gb": 4,
+      "price_usd_hourly": 0.0
+    },
+    "m5zn.3xlarge": {
+      "vcpu": 12,
+      "ram_gb": 48,
+      "price_usd_hourly": 1.1938
+    },
+    "m5ad.large": {
+      "vcpu": 2,
+      "ram_gb": 8,
+      "price_usd_hourly": 0.171
+    },
+    "m3.2xlarge": {
+      "vcpu": 8,
+      "ram_gb": 30,
+      "price_usd_hourly": 0.0
+    },
+    "inf2.24xlarge": {
+      "vcpu": 96,
+      "ram_gb": 384,
+      "price_usd_hourly": 6.49063
+    },
+    "c5.large": {
+      "vcpu": 2,
+      "ram_gb": 4,
+      "price_usd_hourly": 0.085
+    },
+    "m6idn.32xlarge": {
+      "vcpu": 128,
+      "ram_gb": 512,
+      "price_usd_hourly": 12.34688
+    },
+    "c6a.12xlarge": {
+      "vcpu": 48,
+      "ram_gb": 96,
+      "price_usd_hourly": 2.6472
+    },
+    "c6in.xlarge": {
+      "vcpu": 4,
+      "ram_gb": 8,
+      "price_usd_hourly": 0.0
+    },
+    "m7gd.2xlarge": {
+      "vcpu": 8,
+      "ram_gb": 32,
+      "price_usd_hourly": 0.0
+    },
+    "i3en.24xlarge": {
+      "vcpu": 96,
+      "ram_gb": 768,
+      "price_usd_hourly": 10.848
+    },
+    "u-12tb1.112xlarge": {
+      "vcpu": 448,
+      "ram_gb": 12288,
+      "price_usd_hourly": 109.2
+    },
+    "c6a.4xlarge": {
+      "vcpu": 16,
+      "ram_gb": 32,
+      "price_usd_hourly": 6.612
+    },
+    "inf1.2xlarge": {
+      "vcpu": 8,
+      "ram_gb": 16,
+      "price_usd_hourly": 1.322
+    },
+    "x2idn.metal": {
+      "vcpu": 128,
+      "ram_gb": 2048,
+      "price_usd_hourly": 28.698
+    },
+    "c6i.32xlarge": {
+      "vcpu": 128,
+      "ram_gb": 256,
+      "price_usd_hourly": 5.44
+    },
+    "g5.4xlarge": {
+      "vcpu": 16,
+      "ram_gb": 64,
+      "price_usd_hourly": 1.624
+    },
+    "c7i.12xlarge": {
+      "vcpu": 48,
+      "ram_gb": 96,
+      "price_usd_hourly": 7.902
+    },
+    "m7i.2xlarge": {
+      "vcpu": 8,
+      "ram_gb": 32,
+      "price_usd_hourly": 0.0
+    },
+    "i7i.16xlarge": {
+      "vcpu": 64,
+      "ram_gb": 512,
+      "price_usd_hourly": 7.1219
+    },
+    "h1.2xlarge": {
+      "vcpu": 8,
+      "ram_gb": 32,
+      "price_usd_hourly": 0.0
+    },
+    "x8g.large": {
+      "vcpu": 2,
+      "ram_gb": 32,
+      "price_usd_hourly": 0.1954
+    },
+    "m3.large": {
+      "vcpu": 2,
+      "ram_gb": 7,
+      "price_usd_hourly": 0.133
+    },
+    "r7a.medium": {
+      "vcpu": 1,
+      "ram_gb": 8,
+      "price_usd_hourly": 0.0
+    },
+    "t3.2xlarge": {
+      "vcpu": 8,
+      "ram_gb": 32,
+      "price_usd_hourly": 3.3328
+    },
+    "c6a.xlarge": {
+      "vcpu": 4,
+      "ram_gb": 8,
+      "price_usd_hourly": 0.633
+    },
+    "c6gd.2xlarge": {
+      "vcpu": 8,
+      "ram_gb": 16,
+      "price_usd_hourly": 0.0
+    },
+    "t3a.nano": {
+      "vcpu": 2,
+      "ram_gb": 0,
+      "price_usd_hourly": 0.0047
+    },
+    "c5n.4xlarge": {
+      "vcpu": 16,
+      "ram_gb": 42,
+      "price_usd_hourly": 6.864
+    },
+    "c6g.metal": {
+      "vcpu": 64,
+      "ram_gb": 128,
+      "price_usd_hourly": 2.176
+    },
+    "c7i-flex.16xlarge": {
+      "vcpu": 64,
+      "ram_gb": 128,
+      "price_usd_hourly": 3.7948
+    },
+    "r6gd.2xlarge": {
+      "vcpu": 8,
+      "ram_gb": 64,
+      "price_usd_hourly": 0.4608
+    },
+    "r6i.4xlarge": {
+      "vcpu": 16,
+      "ram_gb": 128,
+      "price_usd_hourly": 0.0
+    },
+    "r6in.xlarge": {
+      "vcpu": 4,
+      "ram_gb": 32,
+      "price_usd_hourly": 1.84866
+    },
+    "m6id.4xlarge": {
+      "vcpu": 16,
+      "ram_gb": 64,
+      "price_usd_hourly": 2.8692
+    },
+    "x2iedn.2xlarge": {
+      "vcpu": 8,
+      "ram_gb": 256,
+      "price_usd_hourly": 0.0
+    },
+    "m6gd.2xlarge": {
+      "vcpu": 8,
+      "ram_gb": 32,
+      "price_usd_hourly": 0.3616
+    },
+    "r6i.24xlarge": {
+      "vcpu": 96,
+      "ram_gb": 768,
+      "price_usd_hourly": 0.0
+    },
+    "c8g.2xlarge": {
+      "vcpu": 8,
+      "ram_gb": 16,
+      "price_usd_hourly": 0.31904
+    },
+    "c6id.2xlarge": {
+      "vcpu": 8,
+      "ram_gb": 16,
+      "price_usd_hourly": 0.5384
+    },
+    "i7ie.xlarge": {
+      "vcpu": 4,
+      "ram_gb": 32,
+      "price_usd_hourly": 0.0
+    },
+    "m6i.xlarge": {
+      "vcpu": 4,
+      "ram_gb": 16,
+      "price_usd_hourly": 0.2596
+    },
+    "m7a.12xlarge": {
+      "vcpu": 48,
+      "ram_gb": 192,
+      "price_usd_hourly": 20.78208
+    },
+    "i7ie.12xlarge": {
+      "vcpu": 48,
+      "ram_gb": 384,
+      "price_usd_hourly": 24.2376
+    },
+    "r5a.8xlarge": {
+      "vcpu": 32,
+      "ram_gb": 256,
+      "price_usd_hourly": 0.0
+    },
+    "r3.8xlarge": {
+      "vcpu": 32,
+      "ram_gb": 244,
+      "price_usd_hourly": 14.656
+    },
+    "m5n.4xlarge": {
+      "vcpu": 16,
+      "ram_gb": 64,
+      "price_usd_hourly": 0.952
+    },
+    "m6in.24xlarge": {
+      "vcpu": 96,
+      "ram_gb": 384,
+      "price_usd_hourly": 8.30544
+    },
+    "m6i.metal": {
+      "vcpu": 128,
+      "ram_gb": 512,
+      "price_usd_hourly": 0.0
+    },
+    "x1e.32xlarge": {
+      "vcpu": 128,
+      "ram_gb": 3904,
+      "price_usd_hourly": 74.688
+    },
+    "m7a.xlarge": {
+      "vcpu": 4,
+      "ram_gb": 16,
+      "price_usd_hourly": 0.29944
+    },
+    "x1.16xlarge": {
+      "vcpu": 64,
+      "ram_gb": 976,
+      "price_usd_hourly": 30.669
+    },
+    "c5a.24xlarge": {
+      "vcpu": 96,
+      "ram_gb": 192,
+      "price_usd_hourly": 0.0
+    },
+    "c8gd.metal-48xl": {
+      "vcpu": 192,
+      "ram_gb": 384,
+      "price_usd_hourly": 9.40608
+    },
+    "x2iezn.metal": {
+      "vcpu": 48,
+      "ram_gb": 1536,
+      "price_usd_hourly": 0.0
+    },
+    "x8g.2xlarge": {
+      "vcpu": 8,
+      "ram_gb": 128,
+      "price_usd_hourly": 0.0
+    },
+    "g6e.xlarge": {
+      "vcpu": 4,
+      "ram_gb": 32,
+      "price_usd_hourly": 0.0
+    },
+    "r5n.metal": {
+      "vcpu": 96,
+      "ram_gb": 768,
+      "price_usd_hourly": 43.152
+    },
+    "u7i-6tb.112xlarge": {
+      "vcpu": 448,
+      "ram_gb": 6144,
+      "price_usd_hourly": 230.79
+    },
+    "c8g.metal-24xl": {
+      "vcpu": 96,
+      "ram_gb": 192,
+      "price_usd_hourly": 0.0
+    },
+    "h1.4xlarge": {
+      "vcpu": 16,
+      "ram_gb": 64,
+      "price_usd_hourly": 0.0
+    },
+    "c7a.12xlarge": {
+      "vcpu": 48,
+      "ram_gb": 96,
+      "price_usd_hourly": 20.46336
+    },
+    "g5.2xlarge": {
+      "vcpu": 8,
+      "ram_gb": 32,
+      "price_usd_hourly": 1.212
+    },
+    "m5d.large": {
+      "vcpu": 2,
+      "ram_gb": 8,
+      "price_usd_hourly": 0.181
+    },
+    "r6g.medium": {
+      "vcpu": 1,
+      "ram_gb": 8,
+      "price_usd_hourly": 0.0504
+    },
+    "c6i.metal": {
+      "vcpu": 128,
+      "ram_gb": 256,
+      "price_usd_hourly": 0.0
+    },
+    "m1.large": {
+      "vcpu": 2,
+      "ram_gb": 7,
+      "price_usd_hourly": 0.175
+    },
+    "r5a.large": {
+      "vcpu": 2,
+      "ram_gb": 16,
+      "price_usd_hourly": 0.593
+    },
+    "m7gd.xlarge": {
+      "vcpu": 4,
+      "ram_gb": 16,
+      "price_usd_hourly": 0.0
+    },
+    "x8g.4xlarge": {
+      "vcpu": 16,
+      "ram_gb": 256,
+      "price_usd_hourly": 1.5632
+    },
+    "r6a.2xlarge": {
+      "vcpu": 8,
+      "ram_gb": 64,
+      "price_usd_hourly": 1.4136
+    },
+    "im4gn.xlarge": {
+      "vcpu": 4,
+      "ram_gb": 16,
+      "price_usd_hourly": 0.36379
+    },
+    "i7ie.2xlarge": {
+      "vcpu": 8,
+      "ram_gb": 64,
+      "price_usd_hourly": 1.1748
+    },
+    "m5ad.2xlarge": {
+      "vcpu": 8,
+      "ram_gb": 32,
+      "price_usd_hourly": 0.547
+    },
+    "d2.2xlarge": {
+      "vcpu": 8,
+      "ram_gb": 61,
+      "price_usd_hourly": 1.38
+    },
+    "m8g.medium": {
+      "vcpu": 1,
+      "ram_gb": 4,
+      "price_usd_hourly": 0.0
+    },
+    "u-3tb1.56xlarge": {
+      "vcpu": 224,
+      "ram_gb": 3072,
+      "price_usd_hourly": 54.18
+    },
+    "r7iz.metal-32xl": {
+      "vcpu": 128,
+      "ram_gb": 1024,
+      "price_usd_hourly": 14.0672
+    },
+    "m1.xlarge": {
+      "vcpu": 4,
+      "ram_gb": 15,
+      "price_usd_hourly": 0.35
+    },
+    "t3.small": {
+      "vcpu": 2,
+      "ram_gb": 2,
+      "price_usd_hourly": 0.0
+    },
+    "c6in.24xlarge": {
+      "vcpu": 96,
+      "ram_gb": 192,
+      "price_usd_hourly": 41.4432
+    },
+    "m7a.2xlarge": {
+      "vcpu": 8,
+      "ram_gb": 32,
+      "price_usd_hourly": 0.0
+    },
+    "m3.medium": {
+      "vcpu": 1,
+      "ram_gb": 3,
+      "price_usd_hourly": 0.0
+    },
+    "i3en.6xlarge": {
+      "vcpu": 24,
+      "ram_gb": 192,
+      "price_usd_hourly": 2.712
+    },
+    "i3.4xlarge": {
+      "vcpu": 16,
+      "ram_gb": 122,
+      "price_usd_hourly": 3.168
+    },
+    "m6a.16xlarge": {
+      "vcpu": 64,
+      "ram_gb": 256,
+      "price_usd_hourly": 10.4448
+    },
+    "i4i.32xlarge": {
+      "vcpu": 128,
+      "ram_gb": 1024,
+      "price_usd_hourly": 13.1456
+    },
+    "t3.medium": {
+      "vcpu": 2,
+      "ram_gb": 4,
+      "price_usd_hourly": 0.1092
+    },
+    "r5.2xlarge": {
+      "vcpu": 8,
+      "ram_gb": 64,
+      "price_usd_hourly": 0.639
+    },
+    "m5zn.6xlarge": {
+      "vcpu": 24,
+      "ram_gb": 96,
+      "price_usd_hourly": 10.982
+    },
+    "m6a.xlarge": {
+      "vcpu": 4,
+      "ram_gb": 16,
+      "price_usd_hourly": 0.0
+    },
+    "c4.xlarge": {
+      "vcpu": 4,
+      "ram_gb": 7,
+      "price_usd_hourly": 0.268
+    },
+    "u7in-32tb.224xlarge": {
+      "vcpu": 896,
+      "ram_gb": 32768,
+      "price_usd_hourly": 0.0
+    },
+    "c5n.metal": {
+      "vcpu": 72,
+      "ram_gb": 192,
+      "price_usd_hourly": 3.888
+    },
+    "c8gn.2xlarge": {
+      "vcpu": 8,
+      "ram_gb": 16,
+      "price_usd_hourly": 0.474
+    },
+    "u7in-16tb.224xlarge": {
+      "vcpu": 896,
+      "ram_gb": 16384,
+      "price_usd_hourly": 0.0
+    },
+    "r7g.xlarge": {
+      "vcpu": 4,
+      "ram_gb": 32,
+      "price_usd_hourly": 0.0
+    },
+    "r6g.2xlarge": {
+      "vcpu": 8,
+      "ram_gb": 64,
+      "price_usd_hourly": 0.0
+    },
+    "c3.4xlarge": {
+      "vcpu": 16,
+      "ram_gb": 30,
+      "price_usd_hourly": 2.76
+    },
+    "r8gd.xlarge": {
+      "vcpu": 4,
+      "ram_gb": 32,
+      "price_usd_hourly": 0.0
+    },
+    "c6gn.4xlarge": {
+      "vcpu": 16,
+      "ram_gb": 32,
+      "price_usd_hourly": 0.0
+    },
+    "c7i-flex.8xlarge": {
+      "vcpu": 32,
+      "ram_gb": 64,
+      "price_usd_hourly": 1.8974
+    },
+    "d2.xlarge": {
+      "vcpu": 4,
+      "ram_gb": 30,
+      "price_usd_hourly": 0.69
+    },
+    "i2.2xlarge": {
+      "vcpu": 8,
+      "ram_gb": 61,
+      "price_usd_hourly": 0.0
+    },
+    "c5d.18xlarge": {
+      "vcpu": 72,
+      "ram_gb": 144,
+      "price_usd_hourly": 30.456
+    },
+    "r5d.2xlarge": {
+      "vcpu": 8,
+      "ram_gb": 64,
+      "price_usd_hourly": 0.711
+    },
+    "r4.2xlarge": {
+      "vcpu": 8,
+      "ram_gb": 61,
+      "price_usd_hourly": 0.0
+    },
+    "x1e.4xlarge": {
+      "vcpu": 16,
+      "ram_gb": 488,
+      "price_usd_hourly": 9.336
+    },
+    "m7a.large": {
+      "vcpu": 2,
+      "ram_gb": 8,
+      "price_usd_hourly": 0.0
+    },
+    "t2.small": {
+      "vcpu": 1,
+      "ram_gb": 2,
+      "price_usd_hourly": 0.023
+    },
+    "m7i.12xlarge": {
+      "vcpu": 48,
+      "ram_gb": 192,
+      "price_usd_hourly": 0.0
+    },
+    "r6gd.large": {
+      "vcpu": 2,
+      "ram_gb": 16,
+      "price_usd_hourly": 0.1152
+    },
+    "m8g.metal-48xl": {
+      "vcpu": 192,
+      "ram_gb": 768,
+      "price_usd_hourly": 8.61696
+    },
+    "m5.large": {
+      "vcpu": 2,
+      "ram_gb": 8,
+      "price_usd_hourly": 0.0
+    },
+    "i7i.xlarge": {
+      "vcpu": 4,
+      "ram_gb": 32,
+      "price_usd_hourly": 0.0
+    },
+    "d2.8xlarge": {
+      "vcpu": 36,
+      "ram_gb": 244,
+      "price_usd_hourly": 0.0
+    },
+    "i8g.48xlarge": {
+      "vcpu": 192,
+      "ram_gb": 1536,
+      "price_usd_hourly": 16.4736
+    },
+    "hpc7g.4xlarge": {
+      "vcpu": 16,
+      "ram_gb": 128,
+      "price_usd_hourly": 1.6832
+    },
+    "c6id.xlarge": {
+      "vcpu": 4,
+      "ram_gb": 8,
+      "price_usd_hourly": 0.2692
+    },
+    "m6in.32xlarge": {
+      "vcpu": 128,
+      "ram_gb": 512,
+      "price_usd_hourly": 0.0
+    },
+    "c7a.medium": {
+      "vcpu": 1,
+      "ram_gb": 2,
+      "price_usd_hourly": 0.0
+    },
+    "t3a.2xlarge": {
+      "vcpu": 8,
+      "ram_gb": 32,
+      "price_usd_hourly": 0.0
+    },
+    "m4.4xlarge": {
+      "vcpu": 16,
+      "ram_gb": 64,
+      "price_usd_hourly": 1.0704
+    },
+    "u-24tb1.112xlarge": {
+      "vcpu": 448,
+      "ram_gb": 24576,
+      "price_usd_hourly": 225.9712
+    },
+    "c7a.metal-48xl": {
+      "vcpu": 192,
+      "ram_gb": 384,
+      "price_usd_hourly": 0.0
+    },
+    "i7i.24xlarge": {
+      "vcpu": 96,
+      "ram_gb": 768,
+      "price_usd_hourly": 45.0605
+    },
+    "r8g.metal-24xl": {
+      "vcpu": 96,
+      "ram_gb": 768,
+      "price_usd_hourly": 0.0
+    },
+    "r6g.8xlarge": {
+      "vcpu": 32,
+      "ram_gb": 256,
+      "price_usd_hourly": 1.6128
+    },
+    "u7in-24tb.224xlarge": {
+      "vcpu": 896,
+      "ram_gb": 24576,
+      "price_usd_hourly": 0.0
+    },
+    "r6id.large": {
+      "vcpu": 2,
+      "ram_gb": 16,
+      "price_usd_hourly": 0.0
+    },
+    "i3.xlarge": {
+      "vcpu": 4,
+      "ram_gb": 30,
+      "price_usd_hourly": 0.312
+    },
+    "u7i-12tb.224xlarge": {
+      "vcpu": 896,
+      "ram_gb": 12288,
+      "price_usd_hourly": 0.0
+    },
+    "r7i.48xlarge": {
+      "vcpu": 192,
+      "ram_gb": 1536,
+      "price_usd_hourly": 0.0
+    },
+    "r5ad.8xlarge": {
+      "vcpu": 32,
+      "ram_gb": 256,
+      "price_usd_hourly": 0.0
+    },
+    "u-9tb1.112xlarge": {
+      "vcpu": 448,
+      "ram_gb": 9216,
+      "price_usd_hourly": 135.66
+    },
+    "x2idn.32xlarge": {
+      "vcpu": 128,
+      "ram_gb": 2048,
+      "price_usd_hourly": 13.338
+    },
+    "r5dn.12xlarge": {
+      "vcpu": 48,
+      "ram_gb": 384,
+      "price_usd_hourly": 9.768
+    },
+    "m8gd.xlarge": {
+      "vcpu": 4,
+      "ram_gb": 16,
+      "price_usd_hourly": 0.23064
+    },
+    "inf1.6xlarge": {
+      "vcpu": 24,
+      "ram_gb": 48,
+      "price_usd_hourly": 1.586
+    },
+    "p4de.24xlarge": {
+      "vcpu": 96,
+      "ram_gb": 1152,
+      "price_usd_hourly": 27.44705
+    },
+    "im4gn.8xlarge": {
+      "vcpu": 32,
+      "ram_gb": 128,
+      "price_usd_hourly": 2.91034
+    },
+    "c7i.24xlarge": {
+      "vcpu": 96,
+      "ram_gb": 192,
+      "price_usd_hourly": 4.284
+    },
+    "m5.24xlarge": {
+      "vcpu": 96,
+      "ram_gb": 384,
+      "price_usd_hourly": 0.0
+    },
+    "c6i.12xlarge": {
+      "vcpu": 48,
+      "ram_gb": 96,
+      "price_usd_hourly": 7.8
+    },
+    "r5n.24xlarge": {
+      "vcpu": 96,
+      "ram_gb": 768,
+      "price_usd_hourly": 18.672
+    },
+    "d3.4xlarge": {
+      "vcpu": 16,
+      "ram_gb": 128,
+      "price_usd_hourly": 3.918
+    },
+    "i7ie.metal-48xl": {
+      "vcpu": 192,
+      "ram_gb": 1536,
+      "price_usd_hourly": 28.1952
+    },
+    "z1d.metal": {
+      "vcpu": 48,
+      "ram_gb": 384,
+      "price_usd_hourly": 0.0
+    },
+    "c6g.16xlarge": {
+      "vcpu": 64,
+      "ram_gb": 128,
+      "price_usd_hourly": 2.176
+    },
+    "c5d.12xlarge": {
+      "vcpu": 48,
+      "ram_gb": 96,
+      "price_usd_hourly": 0.0
+    },
+    "c5d.4xlarge": {
+      "vcpu": 16,
+      "ram_gb": 32,
+      "price_usd_hourly": 0.0
+    },
+    "g4ad.xlarge": {
+      "vcpu": 4,
+      "ram_gb": 16,
+      "price_usd_hourly": 0.37853
+    },
+    "r5.xlarge": {
+      "vcpu": 4,
+      "ram_gb": 32,
+      "price_usd_hourly": 0.0
+    },
+    "c7i.16xlarge": {
+      "vcpu": 64,
+      "ram_gb": 128,
+      "price_usd_hourly": 10.536
+    },
+    "r8g.4xlarge": {
+      "vcpu": 16,
+      "ram_gb": 128,
+      "price_usd_hourly": 0.94256
+    },
+    "m7g.4xlarge": {
+      "vcpu": 16,
+      "ram_gb": 64,
+      "price_usd_hourly": 0.6528
+    },
+    "c6g.xlarge": {
+      "vcpu": 4,
+      "ram_gb": 8,
+      "price_usd_hourly": 0.0
+    },
+    "i4i.2xlarge": {
+      "vcpu": 8,
+      "ram_gb": 64,
+      "price_usd_hourly": 0.822
+    },
+    "c5n.xlarge": {
+      "vcpu": 4,
+      "ram_gb": 10,
+      "price_usd_hourly": 0.696
+    },
+    "m5ad.24xlarge": {
+      "vcpu": 96,
+      "ram_gb": 384,
+      "price_usd_hourly": 40.944
+    },
+    "f2.12xlarge": {
+      "vcpu": 48,
+      "ram_gb": 512,
+      "price_usd_hourly": 0.0
+    },
+    "r5a.12xlarge": {
+      "vcpu": 48,
+      "ram_gb": 384,
+      "price_usd_hourly": 8.472
+    },
+    "r6i.2xlarge": {
+      "vcpu": 8,
+      "ram_gb": 64,
+      "price_usd_hourly": 3.504
+    },
+    "i4i.large": {
+      "vcpu": 2,
+      "ram_gb": 16,
+      "price_usd_hourly": 0.0
+    },
+    "c6in.16xlarge": {
+      "vcpu": 64,
+      "ram_gb": 128,
+      "price_usd_hourly": 0.0
+    },
+    "m5a.12xlarge": {
+      "vcpu": 48,
+      "ram_gb": 192,
+      "price_usd_hourly": 2.875
+    },
+    "c7a.xlarge": {
+      "vcpu": 4,
+      "ram_gb": 8,
+      "price_usd_hourly": 0.20528
+    },
+    "m8g.48xlarge": {
+      "vcpu": 192,
+      "ram_gb": 768,
+      "price_usd_hourly": 8.61696
+    },
+    "t2.xlarge": {
+      "vcpu": 4,
+      "ram_gb": 16,
+      "price_usd_hourly": 0.0
+    },
+    "m4.2xlarge": {
+      "vcpu": 8,
+      "ram_gb": 32,
+      "price_usd_hourly": 0.4
+    },
+    "c7i.2xlarge": {
+      "vcpu": 8,
+      "ram_gb": 16,
+      "price_usd_hourly": 0.0
+    },
+    "r5a.24xlarge": {
+      "vcpu": 96,
+      "ram_gb": 768,
+      "price_usd_hourly": 0.0
+    },
+    "r8g.xlarge": {
+      "vcpu": 4,
+      "ram_gb": 32,
+      "price_usd_hourly": 0.0
+    },
+    "c3.large": {
+      "vcpu": 2,
+      "ram_gb": 3,
+      "price_usd_hourly": 0.0
+    },
+    "f1.16xlarge": {
+      "vcpu": 64,
+      "ram_gb": 976,
+      "price_usd_hourly": 13.2
+    },
+    "m4.large": {
+      "vcpu": 2,
+      "ram_gb": 8,
+      "price_usd_hourly": 0.0
+    },
+    "c7i.4xlarge": {
+      "vcpu": 16,
+      "ram_gb": 32,
+      "price_usd_hourly": 0.9844
+    },
+    "c7a.8xlarge": {
+      "vcpu": 32,
+      "ram_gb": 64,
+      "price_usd_hourly": 5.48224
+    },
+    "m5a.4xlarge": {
+      "vcpu": 16,
+      "ram_gb": 64,
+      "price_usd_hourly": 0.958
+    },
+    "u-6tb1.112xlarge": {
+      "vcpu": 448,
+      "ram_gb": 6144,
+      "price_usd_hourly": 108.36
+    },
+    "r7iz.metal-16xl": {
+      "vcpu": 64,
+      "ram_gb": 512,
+      "price_usd_hourly": 0.0
+    },
+    "m5a.xlarge": {
+      "vcpu": 4,
+      "ram_gb": 16,
+      "price_usd_hourly": 1.672
+    },
+    "m5n.16xlarge": {
+      "vcpu": 64,
+      "ram_gb": 256,
+      "price_usd_hourly": 0.0
+    },
+    "m7g.8xlarge": {
+      "vcpu": 32,
+      "ram_gb": 128,
+      "price_usd_hourly": 1.3056
+    },
+    "g3.4xlarge": {
+      "vcpu": 16,
+      "ram_gb": 122,
+      "price_usd_hourly": 1.14
+    },
+    "r5d.12xlarge": {
+      "vcpu": 48,
+      "ram_gb": 384,
+      "price_usd_hourly": 4.267
+    },
+    "c4.2xlarge": {
+      "vcpu": 8,
+      "ram_gb": 15,
+      "price_usd_hourly": 0.0
+    },
+    "i4g.xlarge": {
+      "vcpu": 4,
+      "ram_gb": 32,
+      "price_usd_hourly": 0.30888
+    },
+    "x2iedn.metal": {
+      "vcpu": 128,
+      "ram_gb": 4096,
+      "price_usd_hourly": 0.0
+    },
+    "m7i.24xlarge": {
+      "vcpu": 96,
+      "ram_gb": 384,
+      "price_usd_hourly": 4.8384
+    },
+    "m7i.8xlarge": {
+      "vcpu": 32,
+      "ram_gb": 128,
+      "price_usd_hourly": 13.6128
+    },
+    "c7gd.4xlarge": {
+      "vcpu": 16,
+      "ram_gb": 32,
+      "price_usd_hourly": 0.7258
+    },
+    "x2iezn.4xlarge": {
+      "vcpu": 16,
+      "ram_gb": 512,
+      "price_usd_hourly": 0.0
+    },
+    "c5ad.2xlarge": {
+      "vcpu": 8,
+      "ram_gb": 16,
+      "price_usd_hourly": 0.0
+    },
+    "c6gd.16xlarge": {
+      "vcpu": 64,
+      "ram_gb": 128,
+      "price_usd_hourly": 2.4576
+    },
+    "c5a.2xlarge": {
+      "vcpu": 8,
+      "ram_gb": 16,
+      "price_usd_hourly": 0.308
+    },
+    "i3.large": {
+      "vcpu": 2,
+      "ram_gb": 15,
+      "price_usd_hourly": 0.0
+    },
+    "r5ad.large": {
+      "vcpu": 2,
+      "ram_gb": 16,
+      "price_usd_hourly": 0.611
+    },
+    "r5dn.large": {
+      "vcpu": 2,
+      "ram_gb": 16,
+      "price_usd_hourly": 0.235
+    },
+    "r7i.metal-48xl": {
+      "vcpu": 192,
+      "ram_gb": 1536,
+      "price_usd_hourly": 84.7008
+    },
+    "r6g.xlarge": {
+      "vcpu": 4,
+      "ram_gb": 32,
+      "price_usd_hourly": 0.2016
+    },
+    "t4g.2xlarge": {
+      "vcpu": 8,
+      "ram_gb": 32,
+      "price_usd_hourly": 0.0
+    },
+    "r7i.metal-24xl": {
+      "vcpu": 96,
+      "ram_gb": 768,
+      "price_usd_hourly": 6.3504
+    },
+    "m6id.metal": {
+      "vcpu": 128,
+      "ram_gb": 512,
+      "price_usd_hourly": 7.5936
+    },
+    "r6a.8xlarge": {
+      "vcpu": 32,
+      "ram_gb": 256,
+      "price_usd_hourly": 0.0
+    },
+    "i3.metal": {
+      "vcpu": 72,
+      "ram_gb": 512,
+      "price_usd_hourly": 12.672
+    },
+    "d2.4xlarge": {
+      "vcpu": 16,
+      "ram_gb": 122,
+      "price_usd_hourly": 2.76
+    },
+    "m7i.48xlarge": {
+      "vcpu": 192,
+      "ram_gb": 768,
+      "price_usd_hourly": 81.6768
+    },
+    "m8gd.16xlarge": {
+      "vcpu": 64,
+      "ram_gb": 256,
+      "price_usd_hourly": 3.69024
+    },
+    "c3.xlarge": {
+      "vcpu": 4,
+      "ram_gb": 7,
+      "price_usd_hourly": 0.69
+    },
+    "r5b.xlarge": {
+      "vcpu": 4,
+      "ram_gb": 32,
+      "price_usd_hourly": 0.3656
+    },
+    "r7a.large": {
+      "vcpu": 2,
+      "ram_gb": 16,
+      "price_usd_hourly": 0.21975
+    },
+    "c6a.metal": {
+      "vcpu": 192,
+      "ram_gb": 384,
+      "price_usd_hourly": 10.5888
+    },
+    "g4dn.xlarge": {
+      "vcpu": 4,
+      "ram_gb": 16,
+      "price_usd_hourly": 0.0
+    },
+    "r5d.xlarge": {
+      "vcpu": 4,
+      "ram_gb": 32,
+      "price_usd_hourly": 0.768
+    },
+    "r8gd.medium": {
+      "vcpu": 1,
+      "ram_gb": 8,
+      "price_usd_hourly": 0.07348
+    },
+    "c8g.8xlarge": {
+      "vcpu": 32,
+      "ram_gb": 64,
+      "price_usd_hourly": 1.27616
+    },
+    "m8gd.12xlarge": {
+      "vcpu": 48,
+      "ram_gb": 192,
+      "price_usd_hourly": 0.0
+    },
+    "i4i.metal": {
+      "vcpu": 128,
+      "ram_gb": 1024,
+      "price_usd_hourly": 0.0
+    },
+    "c6a.24xlarge": {
+      "vcpu": 96,
+      "ram_gb": 192,
+      "price_usd_hourly": 3.672
+    },
+    "m5a.large": {
+      "vcpu": 2,
+      "ram_gb": 8,
+      "price_usd_hourly": 0.154
+    },
+    "x8g.metal-48xl": {
+      "vcpu": 192,
+      "ram_gb": 3072,
+      "price_usd_hourly": 0.0
+    },
+    "m6i.12xlarge": {
+      "vcpu": 48,
+      "ram_gb": 192,
+      "price_usd_hourly": 8.064
+    },
+    "r6idn.8xlarge": {
+      "vcpu": 32,
+      "ram_gb": 256,
+      "price_usd_hourly": 3.12624
+    },
+    "c7gn.xlarge": {
+      "vcpu": 4,
+      "ram_gb": 8,
+      "price_usd_hourly": 0.2496
+    },
+    "c5.12xlarge": {
+      "vcpu": 48,
+      "ram_gb": 96,
+      "price_usd_hourly": 2.851
+    },
+    "c4.8xlarge": {
+      "vcpu": 36,
+      "ram_gb": 60,
+      "price_usd_hourly": 0.0
+    },
+    "c8gn.8xlarge": {
+      "vcpu": 32,
+      "ram_gb": 64,
+      "price_usd_hourly": 0.0
+    },
+    "m5.metal": {
+      "vcpu": 96,
+      "ram_gb": 384,
+      "price_usd_hourly": 16.128
+    },
+    "f1.2xlarge": {
+      "vcpu": 8,
+      "ram_gb": 122,
+      "price_usd_hourly": 1.65
+    },
+    "p4d.24xlarge": {
+      "vcpu": 96,
+      "ram_gb": 1152,
+      "price_usd_hourly": 0.0
+    },
+    "c6i.large": {
+      "vcpu": 2,
+      "ram_gb": 4,
+      "price_usd_hourly": 0.1526
+    },
+    "r7iz.8xlarge": {
+      "vcpu": 32,
+      "ram_gb": 256,
+      "price_usd_hourly": 3.5168
+    },
+    "r7g.12xlarge": {
+      "vcpu": 48,
+      "ram_gb": 384,
+      "price_usd_hourly": 2.5704
+    },
+    "c6a.32xlarge": {
+      "vcpu": 128,
+      "ram_gb": 256,
+      "price_usd_hourly": 20.256
+    },
+    "g2.8xlarge": {
+      "vcpu": 32,
+      "ram_gb": 60,
+      "price_usd_hourly": 2.6
+    },
+    "c6in.32xlarge": {
+      "vcpu": 128,
+      "ram_gb": 256,
+      "price_usd_hourly": 22.6176
+    },
+    "g6e.4xlarge": {
+      "vcpu": 16,
+      "ram_gb": 128,
+      "price_usd_hourly": 0.0
+    },
+    "m8g.12xlarge": {
+      "vcpu": 48,
+      "ram_gb": 192,
+      "price_usd_hourly": 2.15424
+    },
+    "t3a.large": {
+      "vcpu": 2,
+      "ram_gb": 8,
+      "price_usd_hourly": 0.1428
+    },
+    "r6idn.12xlarge": {
+      "vcpu": 48,
+      "ram_gb": 384,
+      "price_usd_hourly": 0.0
+    },
+    "c5n.2xlarge": {
+      "vcpu": 8,
+      "ram_gb": 21,
+      "price_usd_hourly": 0.567
+    },
+    "u-6tb1.56xlarge": {
+      "vcpu": 224,
+      "ram_gb": 6144,
+      "price_usd_hourly": 46.40391
+    },
+    "c7g.metal": {
+      "vcpu": 64,
+      "ram_gb": 128,
+      "price_usd_hourly": 2.32
+    },
+    "g6e.12xlarge": {
+      "vcpu": 48,
+      "ram_gb": 384,
+      "price_usd_hourly": 0.0
+    },
+    "m5a.16xlarge": {
+      "vcpu": 64,
+      "ram_gb": 256,
+      "price_usd_hourly": 2.752
+    },
+    "r6a.4xlarge": {
+      "vcpu": 16,
+      "ram_gb": 128,
+      "price_usd_hourly": 0.0
+    },
+    "r7g.8xlarge": {
+      "vcpu": 32,
+      "ram_gb": 256,
+      "price_usd_hourly": 1.7136
+    },
+    "c8gn.4xlarge": {
+      "vcpu": 16,
+      "ram_gb": 32,
+      "price_usd_hourly": 0.948
+    },
+    "m4.16xlarge": {
+      "vcpu": 64,
+      "ram_gb": 256,
+      "price_usd_hourly": 4.2816
+    },
+    "r6in.16xlarge": {
+      "vcpu": 64,
+      "ram_gb": 512,
+      "price_usd_hourly": 0.0
+    },
+    "r7a.4xlarge": {
+      "vcpu": 16,
+      "ram_gb": 128,
+      "price_usd_hourly": 0.0
+    },
+    "m5ad.12xlarge": {
+      "vcpu": 48,
+      "ram_gb": 192,
+      "price_usd_hourly": 0.0
+    },
+    "c7g.12xlarge": {
+      "vcpu": 48,
+      "ram_gb": 96,
+      "price_usd_hourly": 1.74
+    },
+    "r5n.16xlarge": {
+      "vcpu": 64,
+      "ram_gb": 512,
+      "price_usd_hourly": 12.448
+    },
+    "hpc7g.16xlarge": {
+      "vcpu": 64,
+      "ram_gb": 128,
+      "price_usd_hourly": 1.6832
+    },
+    "r5n.large": {
+      "vcpu": 2,
+      "ram_gb": 16,
+      "price_usd_hourly": 0.629
+    },
+    "g6e.24xlarge": {
+      "vcpu": 96,
+      "ram_gb": 768,
+      "price_usd_hourly": 15.06559
+    },
+    "c6in.2xlarge": {
+      "vcpu": 8,
+      "ram_gb": 16,
+      "price_usd_hourly": 0.5888
+    },
+    "m8g.xlarge": {
+      "vcpu": 4,
+      "ram_gb": 16,
+      "price_usd_hourly": 0.0
+    },
+    "m7g.metal": {
+      "vcpu": 64,
+      "ram_gb": 256,
+      "price_usd_hourly": 0.0
+    },
+    "c7i.metal-24xl": {
+      "vcpu": 96,
+      "ram_gb": 192,
+      "price_usd_hourly": 40.284
+    },
+    "m6g.medium": {
+      "vcpu": 1,
+      "ram_gb": 4,
+      "price_usd_hourly": 0.0385
+    },
+    "vt1.24xlarge": {
+      "vcpu": 96,
+      "ram_gb": 192,
+      "price_usd_hourly": 0.0
+    },
+    "r4.4xlarge": {
+      "vcpu": 16,
+      "ram_gb": 122,
+      "price_usd_hourly": 7.064
+    },
+    "trn1.2xlarge": {
+      "vcpu": 8,
+      "ram_gb": 32,
+      "price_usd_hourly": 1.34375
+    },
+    "g5g.metal": {
+      "vcpu": 64,
+      "ram_gb": 128,
+      "price_usd_hourly": 2.744
+    },
+    "x2iedn.16xlarge": {
+      "vcpu": 64,
+      "ram_gb": 2048,
+      "price_usd_hourly": 0.0
+    },
+    "f2.48xlarge": {
+      "vcpu": 192,
+      "ram_gb": 2048,
+      "price_usd_hourly": 0.0
+    },
+    "c6id.12xlarge": {
+      "vcpu": 48,
+      "ram_gb": 96,
+      "price_usd_hourly": 3.2304
+    },
+    "p6-b200.48xlarge": {
+      "vcpu": 192,
+      "ram_gb": 2048,
+      "price_usd_hourly": 113.9328
+    },
+    "m7i-flex.12xlarge": {
+      "vcpu": 48,
+      "ram_gb": 192,
+      "price_usd_hourly": 20.29824
+    },
+    "m6a.24xlarge": {
+      "vcpu": 96,
+      "ram_gb": 384,
+      "price_usd_hourly": 15.6672
+    },
+    "z1d.xlarge": {
+      "vcpu": 4,
+      "ram_gb": 32,
+      "price_usd_hourly": 0.0
+    },
+    "x1e.2xlarge": {
+      "vcpu": 8,
+      "ram_gb": 244,
+      "price_usd_hourly": 4.668
+    },
+    "m5d.12xlarge": {
+      "vcpu": 48,
+      "ram_gb": 192,
+      "price_usd_hourly": 2.712
+    },
+    "r5d.large": {
+      "vcpu": 2,
+      "ram_gb": 16,
+      "price_usd_hourly": 0.212
+    },
+    "g5g.2xlarge": {
+      "vcpu": 8,
+      "ram_gb": 16,
+      "price_usd_hourly": 0.556
+    },
+    "m5n.8xlarge": {
+      "vcpu": 32,
+      "ram_gb": 128,
+      "price_usd_hourly": 0.0
+    },
+    "m5dn.12xlarge": {
+      "vcpu": 48,
+      "ram_gb": 192,
+      "price_usd_hourly": 9.024
+    },
+    "c8g.24xlarge": {
+      "vcpu": 96,
+      "ram_gb": 192,
+      "price_usd_hourly": 3.82848
+    },
+    "i8g.xlarge": {
+      "vcpu": 4,
+      "ram_gb": 32,
+      "price_usd_hourly": 0.3432
+    },
+    "r6gd.medium": {
+      "vcpu": 1,
+      "ram_gb": 8,
+      "price_usd_hourly": 0.0
+    },
+    "r7gd.large": {
+      "vcpu": 2,
+      "ram_gb": 16,
+      "price_usd_hourly": 0.1361
+    },
+    "t4g.nano": {
+      "vcpu": 2,
+      "ram_gb": 0,
+      "price_usd_hourly": 0.0042
+    },
+    "c6g.large": {
+      "vcpu": 2,
+      "ram_gb": 4,
+      "price_usd_hourly": 0.068
+    },
+    "m6g.8xlarge": {
+      "vcpu": 32,
+      "ram_gb": 128,
+      "price_usd_hourly": 1.232
+    },
+    "r6in.12xlarge": {
+      "vcpu": 48,
+      "ram_gb": 384,
+      "price_usd_hourly": 0.0
+    },
+    "z1d.3xlarge": {
+      "vcpu": 12,
+      "ram_gb": 96,
+      "price_usd_hourly": 1.116
+    },
+    "x1e.16xlarge": {
+      "vcpu": 64,
+      "ram_gb": 1952,
+      "price_usd_hourly": 37.344
+    },
+    "m5dn.8xlarge": {
+      "vcpu": 32,
+      "ram_gb": 128,
+      "price_usd_hourly": 2.176
+    },
+    "m5dn.xlarge": {
+      "vcpu": 4,
+      "ram_gb": 16,
+      "price_usd_hourly": 0.0
+    },
+    "m7gd.4xlarge": {
+      "vcpu": 16,
+      "ram_gb": 64,
+      "price_usd_hourly": 0.0
+    },
+    "g5.8xlarge": {
+      "vcpu": 32,
+      "ram_gb": 128,
+      "price_usd_hourly": 2.448
+    },
+    "m6idn.large": {
+      "vcpu": 2,
+      "ram_gb": 8,
+      "price_usd_hourly": 0.0
+    },
+    "g5.xlarge": {
+      "vcpu": 4,
+      "ram_gb": 16,
+      "price_usd_hourly": 1.006
+    },
+    "u-18tb1.112xlarge": {
+      "vcpu": 448,
+      "ram_gb": 18432,
+      "price_usd_hourly": 0.0
+    },
+    "r7i.24xlarge": {
+      "vcpu": 96,
+      "ram_gb": 768,
+      "price_usd_hourly": 7.9728
+    },
+    "r6g.large": {
+      "vcpu": 2,
+      "ram_gb": 16,
+      "price_usd_hourly": 0.1008
+    },
+    "f1.4xlarge": {
+      "vcpu": 16,
+      "ram_gb": 244,
+      "price_usd_hourly": 3.3
+    },
+    "c7g.large": {
+      "vcpu": 2,
+      "ram_gb": 4,
+      "price_usd_hourly": 0.0
+    },
+    "r7a.32xlarge": {
+      "vcpu": 128,
+      "ram_gb": 1024,
+      "price_usd_hourly": 11.9008
+    },
+    "r5b.24xlarge": {
+      "vcpu": 96,
+      "ram_gb": 768,
+      "price_usd_hourly": 18.672
+    },
+    "i3.8xlarge": {
+      "vcpu": 32,
+      "ram_gb": 244,
+      "price_usd_hourly": 0.0
+    },
+    "c5.metal": {
+      "vcpu": 96,
+      "ram_gb": 192,
+      "price_usd_hourly": 5.702
+    },
+    "x2idn.16xlarge": {
+      "vcpu": 64,
+      "ram_gb": 1024,
+      "price_usd_hourly": 0.0
+    },
+    "z1d.large": {
+      "vcpu": 2,
+      "ram_gb": 16,
+      "price_usd_hourly": 0.186
+    },
+    "r7g.medium": {
+      "vcpu": 1,
+      "ram_gb": 8,
+      "price_usd_hourly": 0.0536
+    },
+    "m7g.16xlarge": {
+      "vcpu": 64,
+      "ram_gb": 256,
+      "price_usd_hourly": 2.6112
+    },
+    "r3.4xlarge": {
+      "vcpu": 16,
+      "ram_gb": 122,
+      "price_usd_hourly": 1.598
+    },
+    "x2idn.24xlarge": {
+      "vcpu": 96,
+      "ram_gb": 1536,
+      "price_usd_hourly": 21.5235
+    },
+    "r4.large": {
+      "vcpu": 2,
+      "ram_gb": 15,
+      "price_usd_hourly": 0.0
+    },
+    "m6g.12xlarge": {
+      "vcpu": 48,
+      "ram_gb": 192,
+      "price_usd_hourly": 0.0
+    },
+    "c7i-flex.xlarge": {
+      "vcpu": 4,
+      "ram_gb": 8,
+      "price_usd_hourly": 0.0
+    },
+    "m6in.8xlarge": {
+      "vcpu": 32,
+      "ram_gb": 128,
+      "price_usd_hourly": 2.76848
+    },
+    "c5ad.16xlarge": {
+      "vcpu": 64,
+      "ram_gb": 128,
+      "price_usd_hourly": 2.752
+    },
+    "i2.4xlarge": {
+      "vcpu": 16,
+      "ram_gb": 122,
+      "price_usd_hourly": 5.332
+    },
+    "g2.2xlarge": {
+      "vcpu": 8,
+      "ram_gb": 15,
+      "price_usd_hourly": 1.61
+    },
+    "c7gn.4xlarge": {
+      "vcpu": 16,
+      "ram_gb": 32,
+      "price_usd_hourly": 0.0
+    },
+    "z1d.6xlarge": {
+      "vcpu": 24,
+      "ram_gb": 192,
+      "price_usd_hourly": 11.232
+    },
+    "m5d.8xlarge": {
+      "vcpu": 32,
+      "ram_gb": 128,
+      "price_usd_hourly": 13.808
+    },
+    "x1.32xlarge": {
+      "vcpu": 128,
+      "ram_gb": 1952,
+      "price_usd_hourly": 28.698
+    },
+    "r5.4xlarge": {
+      "vcpu": 16,
+      "ram_gb": 128,
+      "price_usd_hourly": 0.0
+    },
+    "m6idn.8xlarge": {
+      "vcpu": 32,
+      "ram_gb": 128,
+      "price_usd_hourly": 2.54592
+    },
+    "c7g.medium": {
+      "vcpu": 1,
+      "ram_gb": 2,
+      "price_usd_hourly": 0.0363
+    },
+    "m5a.2xlarge": {
+      "vcpu": 8,
+      "ram_gb": 32,
+      "price_usd_hourly": 0.0
+    },
+    "d3en.8xlarge": {
+      "vcpu": 32,
+      "ram_gb": 128,
+      "price_usd_hourly": 16.20576
+    },
+    "p3.16xlarge": {
+      "vcpu": 64,
+      "ram_gb": 488,
+      "price_usd_hourly": 24.48
+    },
+    "m6in.4xlarge": {
+      "vcpu": 16,
+      "ram_gb": 64,
+      "price_usd_hourly": 7.11384
+    },
+    "r5d.8xlarge": {
+      "vcpu": 32,
+      "ram_gb": 256,
+      "price_usd_hourly": 2.304
+    },
+    "r5n.12xlarge": {
+      "vcpu": 48,
+      "ram_gb": 384,
+      "price_usd_hourly": 21.576
+    },
+    "r8gd.2xlarge": {
+      "vcpu": 8,
+      "ram_gb": 64,
+      "price_usd_hourly": 0.0
+    },
+    "im4gn.16xlarge": {
+      "vcpu": 64,
+      "ram_gb": 256,
+      "price_usd_hourly": 5.82067
+    },
+    "gr6.8xlarge": {
+      "vcpu": 32,
+      "ram_gb": 256,
+      "price_usd_hourly": 0.0
+    },
+    "r5ad.xlarge": {
+      "vcpu": 4,
+      "ram_gb": 32,
+      "price_usd_hourly": 1.762
+    },
+    "c6g.medium": {
+      "vcpu": 1,
+      "ram_gb": 2,
+      "price_usd_hourly": 0.034
+    },
+    "c8gd.2xlarge": {
+      "vcpu": 8,
+      "ram_gb": 16,
+      "price_usd_hourly": 0.0
+    },
+    "g5.48xlarge": {
+      "vcpu": 192,
+      "ram_gb": 768,
+      "price_usd_hourly": 16.288
+    },
+    "c7a.2xlarge": {
+      "vcpu": 8,
+      "ram_gb": 16,
+      "price_usd_hourly": 0.0
+    },
+    "c6i.2xlarge": {
+      "vcpu": 8,
+      "ram_gb": 16,
+      "price_usd_hourly": 0.4752
+    },
+    "r5b.12xlarge": {
+      "vcpu": 48,
+      "ram_gb": 384,
+      "price_usd_hourly": 4.3872
+    },
+    "m5n.xlarge": {
+      "vcpu": 4,
+      "ram_gb": 16,
+      "price_usd_hourly": 0.718
+    },
+    "g3.16xlarge": {
+      "vcpu": 64,
+      "ram_gb": 488,
+      "price_usd_hourly": 4.56
+    },
+    "x2iedn.24xlarge": {
+      "vcpu": 96,
+      "ram_gb": 3072,
+      "price_usd_hourly": 56.007
+    },
+    "c7i.metal-48xl": {
+      "vcpu": 192,
+      "ram_gb": 384,
+      "price_usd_hourly": 11.8128
+    },
+    "c7gd.2xlarge": {
+      "vcpu": 8,
+      "ram_gb": 16,
+      "price_usd_hourly": 0.3629
+    },
+    "m6g.metal": {
+      "vcpu": 64,
+      "ram_gb": 256,
+      "price_usd_hourly": 0.0
+    },
+    "c8gd.xlarge": {
+      "vcpu": 4,
+      "ram_gb": 8,
+      "price_usd_hourly": 0.19596
+    },
+    "r8g.48xlarge": {
+      "vcpu": 192,
+      "ram_gb": 1536,
+      "price_usd_hourly": 0.0
+    },
+    "c6gd.xlarge": {
+      "vcpu": 4,
+      "ram_gb": 8,
+      "price_usd_hourly": 0.0
+    },
+    "r7i.16xlarge": {
+      "vcpu": 64,
+      "ram_gb": 512,
+      "price_usd_hourly": 5.3152
+    },
+    "x8g.metal-24xl": {
+      "vcpu": 96,
+      "ram_gb": 1536,
+      "price_usd_hourly": 9.3792
+    },
+    "inf2.8xlarge": {
+      "vcpu": 32,
+      "ram_gb": 128,
+      "price_usd_hourly": 1.96786
+    },
+    "i8g.4xlarge": {
+      "vcpu": 16,
+      "ram_gb": 128,
+      "price_usd_hourly": 1.3728
+    },
+    "i8g.16xlarge": {
+      "vcpu": 64,
+      "ram_gb": 512,
+      "price_usd_hourly": 5.4912
+    },
+    "c7a.16xlarge": {
+      "vcpu": 64,
+      "ram_gb": 128,
+      "price_usd_hourly": 0.0
+    },
+    "c8gn.24xlarge": {
+      "vcpu": 96,
+      "ram_gb": 192,
+      "price_usd_hourly": 5.688
+    },
+    "dl1.24xlarge": {
+      "vcpu": 96,
+      "ram_gb": 768,
+      "price_usd_hourly": 13.10904
+    },
+    "im4gn.large": {
+      "vcpu": 2,
+      "ram_gb": 8,
+      "price_usd_hourly": 0.0
+    },
+    "c4.large": {
+      "vcpu": 2,
+      "ram_gb": 3,
+      "price_usd_hourly": 0.1
+    },
+    "x8g.xlarge": {
+      "vcpu": 4,
+      "ram_gb": 64,
+      "price_usd_hourly": 0.0
+    },
+    "r6idn.24xlarge": {
+      "vcpu": 96,
+      "ram_gb": 768,
+      "price_usd_hourly": 0.0
+    },
+    "m3.xlarge": {
+      "vcpu": 4,
+      "ram_gb": 15,
+      "price_usd_hourly": 1.768
+    },
+    "m2.xlarge": {
+      "vcpu": 2,
+      "ram_gb": 17,
+      "price_usd_hourly": 0.245
+    },
+    "g6.xlarge": {
+      "vcpu": 4,
+      "ram_gb": 16,
+      "price_usd_hourly": 0.8048
+    },
+    "c7i.8xlarge": {
+      "vcpu": 32,
+      "ram_gb": 64,
+      "price_usd_hourly": 1.428
+    },
+    "r6gd.16xlarge": {
+      "vcpu": 64,
+      "ram_gb": 512,
+      "price_usd_hourly": 0.0
+    },
+    "m5ad.xlarge": {
+      "vcpu": 4,
+      "ram_gb": 16,
+      "price_usd_hourly": 0.686
+    },
+    "m6gd.16xlarge": {
+      "vcpu": 64,
+      "ram_gb": 256,
+      "price_usd_hourly": 0.0
+    },
+    "m5d.24xlarge": {
+      "vcpu": 96,
+      "ram_gb": 384,
+      "price_usd_hourly": 0.0
+    },
+    "r6a.large": {
+      "vcpu": 2,
+      "ram_gb": 16,
+      "price_usd_hourly": 0.1134
+    },
+    "c6g.4xlarge": {
+      "vcpu": 16,
+      "ram_gb": 32,
+      "price_usd_hourly": 0.544
+    },
+    "m7gd.large": {
+      "vcpu": 2,
+      "ram_gb": 8,
+      "price_usd_hourly": 0.1068
+    },
+    "i8g.large": {
+      "vcpu": 2,
+      "ram_gb": 16,
+      "price_usd_hourly": 0.1716
+    },
+    "m7g.12xlarge": {
+      "vcpu": 48,
+      "ram_gb": 192,
+      "price_usd_hourly": 1.9584
+    },
+    "c6id.32xlarge": {
+      "vcpu": 128,
+      "ram_gb": 256,
+      "price_usd_hourly": 0.0
+    },
+    "r3.large": {
+      "vcpu": 2,
+      "ram_gb": 15,
+      "price_usd_hourly": 0.166
+    },
+    "m6g.xlarge": {
+      "vcpu": 4,
+      "ram_gb": 16,
+      "price_usd_hourly": 0.0
+    },
+    "r7g.16xlarge": {
+      "vcpu": 64,
+      "ram_gb": 512,
+      "price_usd_hourly": 3.4272
+    },
+    "r7gd.4xlarge": {
+      "vcpu": 16,
+      "ram_gb": 128,
+      "price_usd_hourly": 1.0886
+    },
+    "r7a.12xlarge": {
+      "vcpu": 48,
+      "ram_gb": 384,
+      "price_usd_hourly": 0.0
+    },
+    "d3en.12xlarge": {
+      "vcpu": 48,
+      "ram_gb": 192,
+      "price_usd_hourly": 0.0
+    },
+    "r6a.metal": {
+      "vcpu": 192,
+      "ram_gb": 1536,
+      "price_usd_hourly": 10.8864
+    },
+    "g4ad.4xlarge": {
+      "vcpu": 16,
+      "ram_gb": 64,
+      "price_usd_hourly": 0.867
+    },
+    "c7g.16xlarge": {
+      "vcpu": 64,
+      "ram_gb": 128,
+      "price_usd_hourly": 0.0
+    },
+    "r7gd.xlarge": {
+      "vcpu": 4,
+      "ram_gb": 32,
+      "price_usd_hourly": 0.2722
+    },
+    "r7i.large": {
+      "vcpu": 2,
+      "ram_gb": 16,
+      "price_usd_hourly": 0.1323
+    },
+    "m8gd.48xlarge": {
+      "vcpu": 192,
+      "ram_gb": 768,
+      "price_usd_hourly": 11.07072
+    },
+    "trn1.32xlarge": {
+      "vcpu": 128,
+      "ram_gb": 512,
+      "price_usd_hourly": 21.5
+    },
+    "r5b.16xlarge": {
+      "vcpu": 64,
+      "ram_gb": 512,
+      "price_usd_hourly": 0.0
+    },
+    "x2gd.medium": {
+      "vcpu": 1,
+      "ram_gb": 16,
+      "price_usd_hourly": 0.0
+    },
+    "m1.medium": {
+      "vcpu": 1,
+      "ram_gb": 3,
+      "price_usd_hourly": 0.087
+    },
+    "t3.micro": {
+      "vcpu": 2,
+      "ram_gb": 1,
+      "price_usd_hourly": 0.0
+    },
+    "p2.xlarge": {
+      "vcpu": 4,
+      "ram_gb": 61,
+      "price_usd_hourly": 0.0
+    },
+    "c8gn.48xlarge": {
+      "vcpu": 192,
+      "ram_gb": 384,
+      "price_usd_hourly": 11.376
+    },
+    "i2.8xlarge": {
+      "vcpu": 32,
+      "ram_gb": 244,
+      "price_usd_hourly": 6.82
+    },
+    "c3.8xlarge": {
+      "vcpu": 32,
+      "ram_gb": 60,
+      "price_usd_hourly": 0.0
+    },
+    "r8g.24xlarge": {
+      "vcpu": 96,
+      "ram_gb": 768,
+      "price_usd_hourly": 5.65536
+    },
+    "r6gd.xlarge": {
+      "vcpu": 4,
+      "ram_gb": 32,
+      "price_usd_hourly": 0.2304
+    },
+    "r5a.16xlarge": {
+      "vcpu": 64,
+      "ram_gb": 512,
+      "price_usd_hourly": 0.0
+    },
+    "g4dn.2xlarge": {
+      "vcpu": 8,
+      "ram_gb": 32,
+      "price_usd_hourly": 0.752
+    },
+    "c8g.12xlarge": {
+      "vcpu": 48,
+      "ram_gb": 96,
+      "price_usd_hourly": 0.0
+    },
+    "m6id.xlarge": {
+      "vcpu": 4,
+      "ram_gb": 16,
+      "price_usd_hourly": 0.2373
+    },
+    "t3a.medium": {
+      "vcpu": 2,
+      "ram_gb": 4,
+      "price_usd_hourly": 0.1052
+    },
+    "r8g.metal-48xl": {
+      "vcpu": 192,
+      "ram_gb": 1536,
+      "price_usd_hourly": 11.31072
+    },
+    "c8g.48xlarge": {
+      "vcpu": 192,
+      "ram_gb": 384,
+      "price_usd_hourly": 7.65696
+    },
+    "is4gen.2xlarge": {
+      "vcpu": 8,
+      "ram_gb": 48,
+      "price_usd_hourly": 1.1526
+    },
+    "t2.large": {
+      "vcpu": 2,
+      "ram_gb": 8,
+      "price_usd_hourly": 0.0
+    },
+    "g6.2xlarge": {
+      "vcpu": 8,
+      "ram_gb": 32,
+      "price_usd_hourly": 0.9776
+    },
+    "r8g.12xlarge": {
+      "vcpu": 48,
+      "ram_gb": 384,
+      "price_usd_hourly": 2.82768
+    },
+    "c6a.8xlarge": {
+      "vcpu": 32,
+      "ram_gb": 64,
+      "price_usd_hourly": 0.0
+    },
+    "m8g.4xlarge": {
+      "vcpu": 16,
+      "ram_gb": 64,
+      "price_usd_hourly": 0.0
+    },
+    "c7i.48xlarge": {
+      "vcpu": 192,
+      "ram_gb": 384,
+      "price_usd_hourly": 11.8128
+    },
+    "c6gn.medium": {
+      "vcpu": 1,
+      "ram_gb": 2,
+      "price_usd_hourly": 0.0
+    },
+    "m8g.metal-24xl": {
+      "vcpu": 96,
+      "ram_gb": 384,
+      "price_usd_hourly": 4.30848
+    },
+    "is4gen.large": {
+      "vcpu": 2,
+      "ram_gb": 12,
+      "price_usd_hourly": 0.28815
+    },
+    "m6id.16xlarge": {
+      "vcpu": 64,
+      "ram_gb": 256,
+      "price_usd_hourly": 0.0
+    },
+    "x2gd.xlarge": {
+      "vcpu": 4,
+      "ram_gb": 64,
+      "price_usd_hourly": 0.0
+    },
+    "a1.2xlarge": {
+      "vcpu": 8,
+      "ram_gb": 16,
+      "price_usd_hourly": 0.204
+    },
+    "i4g.large": {
+      "vcpu": 2,
+      "ram_gb": 16,
+      "price_usd_hourly": 0.15444
+    },
+    "is4gen.4xlarge": {
+      "vcpu": 16,
+      "ram_gb": 96,
+      "price_usd_hourly": 2.3052
+    },
+    "c7i-flex.2xlarge": {
+      "vcpu": 8,
+      "ram_gb": 16,
+      "price_usd_hourly": 1.29915
+    },
+    "r8gd.48xlarge": {
+      "vcpu": 192,
+      "ram_gb": 1536,
+      "price_usd_hourly": 14.10816
+    },
+    "m6a.48xlarge": {
+      "vcpu": 192,
+      "ram_gb": 768,
+      "price_usd_hourly": 8.2944
+    },
+    "g5.24xlarge": {
+      "vcpu": 96,
+      "ram_gb": 384,
+      "price_usd_hourly": 8.144
+    },
+    "hpc7g.8xlarge": {
+      "vcpu": 32,
+      "ram_gb": 128,
+      "price_usd_hourly": 1.6832
+    },
+    "r3.xlarge": {
+      "vcpu": 4,
+      "ram_gb": 30,
+      "price_usd_hourly": 0.0
+    },
+    "x8g.24xlarge": {
+      "vcpu": 96,
+      "ram_gb": 1536,
+      "price_usd_hourly": 0.0
+    },
+    "g4dn.8xlarge": {
+      "vcpu": 32,
+      "ram_gb": 128,
+      "price_usd_hourly": 0.0
+    },
+    "c6id.large": {
+      "vcpu": 2,
+      "ram_gb": 4,
+      "price_usd_hourly": 0.0
+    },
+    "r7gd.12xlarge": {
+      "vcpu": 48,
+      "ram_gb": 384,
+      "price_usd_hourly": 0.0
+    },
+    "inf1.24xlarge": {
+      "vcpu": 96,
+      "ram_gb": 192,
+      "price_usd_hourly": 0.0
+    },
+    "c5.4xlarge": {
+      "vcpu": 16,
+      "ram_gb": 32,
+      "price_usd_hourly": 0.0
+    },
+    "g4dn.12xlarge": {
+      "vcpu": 48,
+      "ram_gb": 192,
+      "price_usd_hourly": 3.912
+    },
+    "m6gd.8xlarge": {
+      "vcpu": 32,
+      "ram_gb": 128,
+      "price_usd_hourly": 0.0
+    },
+    "r6g.metal": {
+      "vcpu": 64,
+      "ram_gb": 512,
+      "price_usd_hourly": 3.2256
+    },
+    "c7g.8xlarge": {
+      "vcpu": 32,
+      "ram_gb": 64,
+      "price_usd_hourly": 1.16
+    },
+    "c5d.large": {
+      "vcpu": 2,
+      "ram_gb": 4,
+      "price_usd_hourly": 0.0
+    },
+    "m7gd.16xlarge": {
+      "vcpu": 64,
+      "ram_gb": 256,
+      "price_usd_hourly": 3.4171
+    },
+    "m5.2xlarge": {
+      "vcpu": 8,
+      "ram_gb": 32,
+      "price_usd_hourly": 0.0
+    },
+    "p3.2xlarge": {
+      "vcpu": 8,
+      "ram_gb": 61,
+      "price_usd_hourly": 3.06
+    },
+    "m2.2xlarge": {
+      "vcpu": 4,
+      "ram_gb": 34,
+      "price_usd_hourly": 0.49
+    },
+    "i8g.24xlarge": {
+      "vcpu": 96,
+      "ram_gb": 768,
+      "price_usd_hourly": 8.2368
+    },
+    "c6i.xlarge": {
+      "vcpu": 4,
+      "ram_gb": 8,
+      "price_usd_hourly": 0.65
+    },
+    "c6gn.12xlarge": {
+      "vcpu": 48,
+      "ram_gb": 96,
+      "price_usd_hourly": 2.0736
+    },
+    "x8g.12xlarge": {
+      "vcpu": 48,
+      "ram_gb": 768,
+      "price_usd_hourly": 4.6896
+    },
+    "m4.xlarge": {
+      "vcpu": 4,
+      "ram_gb": 16,
+      "price_usd_hourly": 1.7
+    },
+    "g4dn.4xlarge": {
+      "vcpu": 16,
+      "ram_gb": 64,
+      "price_usd_hourly": 1.204
+    },
+    "r6idn.4xlarge": {
+      "vcpu": 16,
+      "ram_gb": 128,
+      "price_usd_hourly": 0.0
+    },
+    "r5.metal": {
+      "vcpu": 96,
+      "ram_gb": 768,
+      "price_usd_hourly": 6.048
+    },
+    "c6gn.16xlarge": {
+      "vcpu": 64,
+      "ram_gb": 128,
+      "price_usd_hourly": 2.7648
+    },
+    "r6gd.12xlarge": {
+      "vcpu": 48,
+      "ram_gb": 384,
+      "price_usd_hourly": 2.7648
+    },
+    "m8gd.4xlarge": {
+      "vcpu": 16,
+      "ram_gb": 64,
+      "price_usd_hourly": 0.92256
+    },
+    "t4g.micro": {
+      "vcpu": 2,
+      "ram_gb": 1,
+      "price_usd_hourly": 0.0084
+    },
+    "r8gd.large": {
+      "vcpu": 2,
+      "ram_gb": 16,
+      "price_usd_hourly": 0.14696
+    },
+    "c8gn.metal-24xl": {
+      "vcpu": 96,
+      "ram_gb": 192,
+      "price_usd_hourly": 5.688
+    },
+    "m2.4xlarge": {
+      "vcpu": 8,
+      "ram_gb": 68,
+      "price_usd_hourly": 0.98
+    },
+    "r6idn.large": {
+      "vcpu": 2,
+      "ram_gb": 16,
+      "price_usd_hourly": 0.67539
+    },
+    "c7gn.16xlarge": {
+      "vcpu": 64,
+      "ram_gb": 128,
+      "price_usd_hourly": 0.0
+    },
+    "m7i-flex.2xlarge": {
+      "vcpu": 8,
+      "ram_gb": 32,
+      "price_usd_hourly": 1.34304
+    },
+    "m8gd.medium": {
+      "vcpu": 1,
+      "ram_gb": 4,
+      "price_usd_hourly": 0.05766
+    },
+    "t2.micro": {
+      "vcpu": 1,
+      "ram_gb": 1,
+      "price_usd_hourly": 0.0792
+    },
+    "m8gd.2xlarge": {
+      "vcpu": 8,
+      "ram_gb": 32,
+      "price_usd_hourly": 0.0
+    },
+    "g6.4xlarge": {
+      "vcpu": 16,
+      "ram_gb": 64,
+      "price_usd_hourly": 1.3232
+    },
+    "i7i.4xlarge": {
+      "vcpu": 16,
+      "ram_gb": 128,
+      "price_usd_hourly": 1.5101
+    },
+    "r8gd.16xlarge": {
+      "vcpu": 64,
+      "ram_gb": 512,
+      "price_usd_hourly": 0.0
+    },
+    "r8gd.12xlarge": {
+      "vcpu": 48,
+      "ram_gb": 384,
+      "price_usd_hourly": 3.52704
+    },
+    "m6gd.large": {
+      "vcpu": 2,
+      "ram_gb": 8,
+      "price_usd_hourly": 0.0904
+    },
+    "g4dn.16xlarge": {
+      "vcpu": 64,
+      "ram_gb": 256,
+      "price_usd_hourly": 4.352
+    },
+    "c6i.16xlarge": {
+      "vcpu": 64,
+      "ram_gb": 128,
+      "price_usd_hourly": 10.4
+    },
+    "t4g.xlarge": {
+      "vcpu": 4,
+      "ram_gb": 16,
+      "price_usd_hourly": 0.0
+    },
+    "m8g.24xlarge": {
+      "vcpu": 96,
+      "ram_gb": 384,
+      "price_usd_hourly": 4.30848
+    },
+    "r7g.metal": {
+      "vcpu": 64,
+      "ram_gb": 512,
+      "price_usd_hourly": 3.4272
+    },
+    "m6idn.xlarge": {
+      "vcpu": 4,
+      "ram_gb": 16,
+      "price_usd_hourly": 0.38584
+    },
+    "x8g.16xlarge": {
+      "vcpu": 64,
+      "ram_gb": 1024,
+      "price_usd_hourly": 0.0
+    },
+    "im4gn.4xlarge": {
+      "vcpu": 16,
+      "ram_gb": 64,
+      "price_usd_hourly": 0.0
+    },
+    "r6id.24xlarge": {
+      "vcpu": 96,
+      "ram_gb": 768,
+      "price_usd_hourly": 43.2576
+    },
+    "vt1.3xlarge": {
+      "vcpu": 12,
+      "ram_gb": 24,
+      "price_usd_hourly": 0.65
+    },
+    "c8g.16xlarge": {
+      "vcpu": 64,
+      "ram_gb": 128,
+      "price_usd_hourly": 0.0
+    },
+    "r7g.large": {
+      "vcpu": 2,
+      "ram_gb": 16,
+      "price_usd_hourly": 0.1071
+    },
+    "g6.8xlarge": {
+      "vcpu": 32,
+      "ram_gb": 128,
+      "price_usd_hourly": 0.0
+    },
+    "r6i.8xlarge": {
+      "vcpu": 32,
+      "ram_gb": 256,
+      "price_usd_hourly": 0.0
+    },
+    "c5ad.large": {
+      "vcpu": 2,
+      "ram_gb": 4,
+      "price_usd_hourly": 0.566
+    },
+    "c6g.8xlarge": {
+      "vcpu": 32,
+      "ram_gb": 64,
+      "price_usd_hourly": 1.088
+    },
+    "c7gd.12xlarge": {
+      "vcpu": 48,
+      "ram_gb": 96,
+      "price_usd_hourly": 2.1773
+    },
+    "inf1.xlarge": {
+      "vcpu": 4,
+      "ram_gb": 8,
+      "price_usd_hourly": 0.0
+    },
+    "r6i.xlarge": {
+      "vcpu": 4,
+      "ram_gb": 32,
+      "price_usd_hourly": 0.0
+    },
+    "r5ad.16xlarge": {
+      "vcpu": 64,
+      "ram_gb": 512,
+      "price_usd_hourly": 11.872
+    },
+    "c6g.2xlarge": {
+      "vcpu": 8,
+      "ram_gb": 16,
+      "price_usd_hourly": 0.0
+    },
+    "c6gn.8xlarge": {
+      "vcpu": 32,
+      "ram_gb": 64,
+      "price_usd_hourly": 0.0
+    },
+    "c8g.4xlarge": {
+      "vcpu": 16,
+      "ram_gb": 32,
+      "price_usd_hourly": 0.63808
+    },
+    "r8g.medium": {
+      "vcpu": 1,
+      "ram_gb": 8,
+      "price_usd_hourly": 0.0
+    },
+    "x2gd.16xlarge": {
+      "vcpu": 64,
+      "ram_gb": 1024,
+      "price_usd_hourly": 5.344
+    },
+    "x8g.medium": {
+      "vcpu": 1,
+      "ram_gb": 16,
+      "price_usd_hourly": 0.0
+    },
+    "m8gd.metal-24xl": {
+      "vcpu": 96,
+      "ram_gb": 384,
+      "price_usd_hourly": 5.53536
+    },
+    "c6gn.xlarge": {
+      "vcpu": 4,
+      "ram_gb": 8,
+      "price_usd_hourly": 0.0
+    },
+    "c7g.2xlarge": {
+      "vcpu": 8,
+      "ram_gb": 16,
+      "price_usd_hourly": 0.29
+    },
+    "g4ad.16xlarge": {
+      "vcpu": 64,
+      "ram_gb": 256,
+      "price_usd_hourly": 3.468
+    },
+    "c7gn.metal": {
+      "vcpu": 64,
+      "ram_gb": 128,
+      "price_usd_hourly": 3.9936
+    },
+    "r7gd.16xlarge": {
+      "vcpu": 64,
+      "ram_gb": 512,
+      "price_usd_hourly": 0.0
+    },
+    "r6i.large": {
+      "vcpu": 2,
+      "ram_gb": 16,
+      "price_usd_hourly": 0.1936
+    },
+    "c8gn.16xlarge": {
+      "vcpu": 64,
+      "ram_gb": 128,
+      "price_usd_hourly": 0.0
+    },
+    "g5.16xlarge": {
+      "vcpu": 64,
+      "ram_gb": 256,
+      "price_usd_hourly": 4.096
+    },
+    "t3.nano": {
+      "vcpu": 2,
+      "ram_gb": 0,
+      "price_usd_hourly": 0.0
+    },
+    "i7ie.24xlarge": {
+      "vcpu": 96,
+      "ram_gb": 768,
+      "price_usd_hourly": 14.0976
+    },
+    "m7a.48xlarge": {
+      "vcpu": 192,
+      "ram_gb": 768,
+      "price_usd_hourly": 0.0
+    },
+    "r6idn.16xlarge": {
+      "vcpu": 64,
+      "ram_gb": 512,
+      "price_usd_hourly": 6.25248
+    },
+    "g4dn.metal": {
+      "vcpu": 96,
+      "ram_gb": 384,
+      "price_usd_hourly": 7.824
+    },
+    "m8g.large": {
+      "vcpu": 2,
+      "ram_gb": 8,
+      "price_usd_hourly": 0.08976
+    },
+    "c8gn.metal-48xl": {
+      "vcpu": 192,
+      "ram_gb": 384,
+      "price_usd_hourly": 11.376
+    },
+    "m7gd.metal": {
+      "vcpu": 64,
+      "ram_gb": 256,
+      "price_usd_hourly": 0.0
+    },
+    "t4g.small": {
+      "vcpu": 2,
+      "ram_gb": 2,
+      "price_usd_hourly": 0.0168
+    },
+    "c8gn.xlarge": {
+      "vcpu": 4,
+      "ram_gb": 8,
+      "price_usd_hourly": 0.0
+    },
+    "c7gd.8xlarge": {
+      "vcpu": 32,
+      "ram_gb": 64,
+      "price_usd_hourly": 1.4515
+    },
+    "t4g.medium": {
+      "vcpu": 2,
+      "ram_gb": 4,
+      "price_usd_hourly": 0.0336
+    },
+    "m7i.16xlarge": {
+      "vcpu": 64,
+      "ram_gb": 256,
+      "price_usd_hourly": 3.2256
+    },
+    "vt1.6xlarge": {
+      "vcpu": 24,
+      "ram_gb": 48,
+      "price_usd_hourly": 0.0
+    },
+    "c5d.2xlarge": {
+      "vcpu": 8,
+      "ram_gb": 16,
+      "price_usd_hourly": 0.384
+    },
+    "c6gd.12xlarge": {
+      "vcpu": 48,
+      "ram_gb": 96,
+      "price_usd_hourly": 1.8432
+    },
+    "r5a.2xlarge": {
+      "vcpu": 8,
+      "ram_gb": 64,
+      "price_usd_hourly": 0.0
+    },
+    "m5n.2xlarge": {
+      "vcpu": 8,
+      "ram_gb": 32,
+      "price_usd_hourly": 0.611
+    },
+    "g5.12xlarge": {
+      "vcpu": 48,
+      "ram_gb": 192,
+      "price_usd_hourly": 0.0
+    },
+    "p5.48xlarge": {
+      "vcpu": 192,
+      "ram_gb": 2048,
+      "price_usd_hourly": 0.0
+    },
+    "g4ad.8xlarge": {
+      "vcpu": 32,
+      "ram_gb": 128,
+      "price_usd_hourly": 1.734
+    },
+    "m8gd.24xlarge": {
+      "vcpu": 96,
+      "ram_gb": 384,
+      "price_usd_hourly": 5.53536
+    },
+    "t2.nano": {
+      "vcpu": 1,
+      "ram_gb": 0,
+      "price_usd_hourly": 0.0058
+    },
+    "r6g.16xlarge": {
+      "vcpu": 64,
+      "ram_gb": 512,
+      "price_usd_hourly": 3.2256
+    },
+    "x8g.48xlarge": {
+      "vcpu": 192,
+      "ram_gb": 3072,
+      "price_usd_hourly": 18.7584
+    },
+    "r8gd.metal-24xl": {
+      "vcpu": 96,
+      "ram_gb": 768,
+      "price_usd_hourly": 7.05408
+    },
+    "x2gd.large": {
+      "vcpu": 2,
+      "ram_gb": 32,
+      "price_usd_hourly": 0.167
+    },
+    "r6gd.metal": {
+      "vcpu": 64,
+      "ram_gb": 512,
+      "price_usd_hourly": 3.6864
+    },
+    "c6gd.8xlarge": {
+      "vcpu": 32,
+      "ram_gb": 64,
+      "price_usd_hourly": 1.2288
+    },
+    "m6g.2xlarge": {
+      "vcpu": 8,
+      "ram_gb": 32,
+      "price_usd_hourly": 0.308
+    },
+    "c7g.xlarge": {
+      "vcpu": 4,
+      "ram_gb": 8,
+      "price_usd_hourly": 0.145
+    },
+    "m6g.16xlarge": {
+      "vcpu": 64,
+      "ram_gb": 256,
+      "price_usd_hourly": 2.464
+    },
+    "a1.4xlarge": {
+      "vcpu": 16,
+      "ram_gb": 32,
+      "price_usd_hourly": 0.408
+    },
+    "r7gd.metal": {
+      "vcpu": 64,
+      "ram_gb": 512,
+      "price_usd_hourly": 0.0
+    },
+    "m6gd.metal": {
+      "vcpu": 64,
+      "ram_gb": 256,
+      "price_usd_hourly": 2.8928
+    },
+    "i8g.metal-24xl": {
+      "vcpu": 96,
+      "ram_gb": 768,
+      "price_usd_hourly": 8.2368
+    },
+    "g6e.8xlarge": {
+      "vcpu": 32,
+      "ram_gb": 256,
+      "price_usd_hourly": 4.52856
+    },
+    "i8g.8xlarge": {
+      "vcpu": 32,
+      "ram_gb": 256,
+      "price_usd_hourly": 0.0
+    },
+    "c8g.xlarge": {
+      "vcpu": 4,
+      "ram_gb": 8,
+      "price_usd_hourly": 0.0
+    },
+    "r8gd.8xlarge": {
+      "vcpu": 32,
+      "ram_gb": 256,
+      "price_usd_hourly": 2.35136
+    },
+    "r8gd.24xlarge": {
+      "vcpu": 96,
+      "ram_gb": 768,
+      "price_usd_hourly": 7.05408
+    },
+    "gr6.4xlarge": {
+      "vcpu": 16,
+      "ram_gb": 128,
+      "price_usd_hourly": 1.5392
+    },
+    "m8g.16xlarge": {
+      "vcpu": 64,
+      "ram_gb": 256,
+      "price_usd_hourly": 2.87232
+    },
+    "x2gd.12xlarge": {
+      "vcpu": 48,
+      "ram_gb": 768,
+      "price_usd_hourly": 4.008
+    },
+    "m8g.2xlarge": {
+      "vcpu": 8,
+      "ram_gb": 32,
+      "price_usd_hourly": 0.0
+    },
+    "g5g.xlarge": {
+      "vcpu": 4,
+      "ram_gb": 8,
+      "price_usd_hourly": 0.42
+    },
+    "c8gd.12xlarge": {
+      "vcpu": 48,
+      "ram_gb": 96,
+      "price_usd_hourly": 0.0
+    },
+    "m7gd.12xlarge": {
+      "vcpu": 48,
+      "ram_gb": 192,
+      "price_usd_hourly": 2.5628
+    },
+    "m6gd.4xlarge": {
+      "vcpu": 16,
+      "ram_gb": 64,
+      "price_usd_hourly": 0.7232
+    },
+    "p2.16xlarge": {
+      "vcpu": 64,
+      "ram_gb": 732,
+      "price_usd_hourly": 14.4
+    },
+    "c8gd.48xlarge": {
+      "vcpu": 192,
+      "ram_gb": 384,
+      "price_usd_hourly": 0.0
+    },
+    "t2.medium": {
+      "vcpu": 2,
+      "ram_gb": 4,
+      "price_usd_hourly": 0.0464
+    },
+    "i4g.16xlarge": {
+      "vcpu": 64,
+      "ram_gb": 512,
+      "price_usd_hourly": 0.0
+    },
+    "m8g.8xlarge": {
+      "vcpu": 32,
+      "ram_gb": 128,
+      "price_usd_hourly": 0.0
+    },
+    "m6gd.12xlarge": {
+      "vcpu": 48,
+      "ram_gb": 192,
+      "price_usd_hourly": 2.1696
+    },
+    "c7gd.16xlarge": {
+      "vcpu": 64,
+      "ram_gb": 128,
+      "price_usd_hourly": 2.903
+    },
+    "c8gn.large": {
+      "vcpu": 2,
+      "ram_gb": 4,
+      "price_usd_hourly": 0.1185
+    },
+    "inf2.xlarge": {
+      "vcpu": 4,
+      "ram_gb": 16,
+      "price_usd_hourly": 0.7582
+    },
+    "c7g.4xlarge": {
+      "vcpu": 16,
+      "ram_gb": 32,
+      "price_usd_hourly": 0.0
+    },
+    "c8gn.12xlarge": {
+      "vcpu": 48,
+      "ram_gb": 96,
+      "price_usd_hourly": 2.844
+    },
+    "r7gd.medium": {
+      "vcpu": 1,
+      "ram_gb": 8,
+      "price_usd_hourly": 0.0
+    },
+    "inf2.48xlarge": {
+      "vcpu": 192,
+      "ram_gb": 768,
+      "price_usd_hourly": 0.0
+    },
+    "c7gn.large": {
+      "vcpu": 2,
+      "ram_gb": 4,
+      "price_usd_hourly": 0.1248
+    },
+    "g6e.2xlarge": {
+      "vcpu": 8,
+      "ram_gb": 64,
+      "price_usd_hourly": 0.0
+    },
+    "t3a.micro": {
+      "vcpu": 2,
+      "ram_gb": 1,
+      "price_usd_hourly": 0.0094
+    },
+    "m6g.4xlarge": {
+      "vcpu": 16,
+      "ram_gb": 64,
+      "price_usd_hourly": 0.616
+    },
+    "m8gd.8xlarge": {
+      "vcpu": 32,
+      "ram_gb": 128,
+      "price_usd_hourly": 0.0
+    },
+    "c6g.12xlarge": {
+      "vcpu": 48,
+      "ram_gb": 96,
+      "price_usd_hourly": 1.632
+    },
+    "i2.large": {
+      "vcpu": 2,
+      "ram_gb": 15,
+      "price_usd_hourly": 0.0
+    },
+    "is4gen.medium": {
+      "vcpu": 1,
+      "ram_gb": 6,
+      "price_usd_hourly": 0.14408
+    },
+    "r8gd.4xlarge": {
+      "vcpu": 16,
+      "ram_gb": 128,
+      "price_usd_hourly": 1.17568
+    },
+    "f2.6xlarge": {
+      "vcpu": 24,
+      "ram_gb": 256,
+      "price_usd_hourly": 0.0
+    },
+    "c7gd.metal": {
+      "vcpu": 64,
+      "ram_gb": 128,
+      "price_usd_hourly": 2.903
+    },
+    "r6gd.4xlarge": {
+      "vcpu": 16,
+      "ram_gb": 128,
+      "price_usd_hourly": 0.9216
+    },
+    "x8g.8xlarge": {
+      "vcpu": 32,
+      "ram_gb": 512,
+      "price_usd_hourly": 0.0
+    },
+    "m7gd.medium": {
+      "vcpu": 1,
+      "ram_gb": 4,
+      "price_usd_hourly": 0.0534
+    },
+    "m7g.2xlarge": {
+      "vcpu": 8,
+      "ram_gb": 32,
+      "price_usd_hourly": 0.3264
+    },
+    "c7gn.8xlarge": {
+      "vcpu": 32,
+      "ram_gb": 64,
+      "price_usd_hourly": 1.9968
+    },
+    "c8gd.16xlarge": {
+      "vcpu": 64,
+      "ram_gb": 128,
+      "price_usd_hourly": 3.13536
+    },
+    "c6gd.medium": {
+      "vcpu": 1,
+      "ram_gb": 2,
+      "price_usd_hourly": 0.0384
+    },
+    "c6gn.large": {
+      "vcpu": 2,
+      "ram_gb": 4,
+      "price_usd_hourly": 0.0
+    },
+    "c7gn.medium": {
+      "vcpu": 1,
+      "ram_gb": 2,
+      "price_usd_hourly": 0.0624
+    },
+    "c8g.metal-48xl": {
+      "vcpu": 192,
+      "ram_gb": 384,
+      "price_usd_hourly": 0.0
+    },
+    "g3s.xlarge": {
+      "vcpu": 4,
+      "ram_gb": 30,
+      "price_usd_hourly": 0.75
+    },
+    "r8gd.metal-48xl": {
+      "vcpu": 192,
+      "ram_gb": 1536,
+      "price_usd_hourly": 0.0
+    },
+    "c7gd.xlarge": {
+      "vcpu": 4,
+      "ram_gb": 8,
+      "price_usd_hourly": 0.1814
+    },
+    "m7gd.8xlarge": {
+      "vcpu": 32,
+      "ram_gb": 128,
+      "price_usd_hourly": 1.7086
+    },
+    "g5g.8xlarge": {
+      "vcpu": 32,
+      "ram_gb": 64,
+      "price_usd_hourly": 0.0
+    },
+    "g5g.16xlarge": {
+      "vcpu": 64,
+      "ram_gb": 128,
+      "price_usd_hourly": 0.0
+    },
+    "i4g.8xlarge": {
+      "vcpu": 32,
+      "ram_gb": 256,
+      "price_usd_hourly": 2.47104
+    },
+    "p3.8xlarge": {
+      "vcpu": 32,
+      "ram_gb": 244,
+      "price_usd_hourly": 12.24
+    },
+    "c7gd.large": {
+      "vcpu": 2,
+      "ram_gb": 4,
+      "price_usd_hourly": 0.0907
+    },
+    "r7gd.2xlarge": {
+      "vcpu": 8,
+      "ram_gb": 64,
+      "price_usd_hourly": 0.5443
+    },
+    "r7gd.8xlarge": {
+      "vcpu": 32,
+      "ram_gb": 256,
+      "price_usd_hourly": 2.1773
+    },
+    "m7g.xlarge": {
+      "vcpu": 4,
+      "ram_gb": 16,
+      "price_usd_hourly": 0.0
+    },
+    "a1.medium": {
+      "vcpu": 1,
+      "ram_gb": 2,
+      "price_usd_hourly": 0.0255
+    },
+    "g6.16xlarge": {
+      "vcpu": 64,
+      "ram_gb": 256,
+      "price_usd_hourly": 3.3968
+    },
+    "r8g.16xlarge": {
+      "vcpu": 64,
+      "ram_gb": 512,
+      "price_usd_hourly": 3.77024
+    },
+    "c1.xlarge": {
+      "vcpu": 8,
+      "ram_gb": 7,
+      "price_usd_hourly": 0.52
+    },
+    "g6e.16xlarge": {
+      "vcpu": 64,
+      "ram_gb": 512,
+      "price_usd_hourly": 0.0
+    },
+    "c6gd.large": {
+      "vcpu": 2,
+      "ram_gb": 4,
+      "price_usd_hourly": 0.0
+    },
+    "r8g.8xlarge": {
+      "vcpu": 32,
+      "ram_gb": 256,
+      "price_usd_hourly": 0.0
+    },
+    "c8g.large": {
+      "vcpu": 2,
+      "ram_gb": 4,
+      "price_usd_hourly": 0.07976
+    },
+    "i4g.2xlarge": {
+      "vcpu": 8,
+      "ram_gb": 64,
+      "price_usd_hourly": 0.61776
+    },
+    "c7gn.12xlarge": {
+      "vcpu": 48,
+      "ram_gb": 96,
+      "price_usd_hourly": 0.0
+    },
+    "c8gn.medium": {
+      "vcpu": 1,
+      "ram_gb": 2,
+      "price_usd_hourly": 0.0593
+    },
+    "c6gd.metal": {
+      "vcpu": 64,
+      "ram_gb": 128,
+      "price_usd_hourly": 2.4576
+    },
+    "r6g.4xlarge": {
+      "vcpu": 16,
+      "ram_gb": 128,
+      "price_usd_hourly": 0.8064
+    },
+    "g4ad.2xlarge": {
+      "vcpu": 8,
+      "ram_gb": 32,
+      "price_usd_hourly": 0.54117
+    },
+    "g3.8xlarge": {
+      "vcpu": 32,
+      "ram_gb": 244,
+      "price_usd_hourly": 2.28
+    },
+    "a1.large": {
+      "vcpu": 2,
+      "ram_gb": 4,
+      "price_usd_hourly": 0.051
+    },
+    "m1.small": {
+      "vcpu": 1,
+      "ram_gb": 1,
+      "price_usd_hourly": 0.044
+    },
+    "g6.12xlarge": {
+      "vcpu": 48,
+      "ram_gb": 192,
+      "price_usd_hourly": 4.6016
+    },
+    "im4gn.2xlarge": {
+      "vcpu": 8,
+      "ram_gb": 32,
+      "price_usd_hourly": 0.0
+    },
+    "c1.medium": {
+      "vcpu": 2,
+      "ram_gb": 1,
+      "price_usd_hourly": 0.13
+    },
+    "r8g.2xlarge": {
+      "vcpu": 8,
+      "ram_gb": 64,
+      "price_usd_hourly": 0.0
+    },
+    "x2gd.metal": {
+      "vcpu": 64,
+      "ram_gb": 1024,
+      "price_usd_hourly": 5.344
+    },
+    "cr1.8xlarge": {
+      "vcpu": 32,
+      "ram_gb": 244,
+      "price_usd_hourly": 3.5
+    }
+  },
+  "rds": {
+    "db.x2iedn.2xlarge": {
+      "vcpu": 8,
+      "ram_gb": 256,
+      "price_usd_hourly": 3.804
+    },
+    "db.m5d.4xlarge": {
+      "vcpu": 16,
+      "ram_gb": 64,
+      "price_usd_hourly": 1.61
+    },
+    "db.r5.2xlarge": {
+      "vcpu": 8,
+      "ram_gb": 64,
+      "price_usd_hourly": 1.0
+    },
+    "db.t3.xlarge": {
+      "vcpu": 4,
+      "ram_gb": 16,
+      "price_usd_hourly": 2.98
+    },
+    "db.m5.24xlarge": {
+      "vcpu": 96,
+      "ram_gb": 384,
+      "price_usd_hourly": 8.208
+    },
+    "db.t3.large": {
+      "vcpu": 2,
+      "ram_gb": 8,
+      "price_usd_hourly": 0.272
+    },
+    "db.r6in.12xlarge": {
+      "vcpu": 48,
+      "ram_gb": 384,
+      "price_usd_hourly": 16.603
+    },
+    "db.m7i.48xlarge": {
+      "vcpu": 192,
+      "ram_gb": 768,
+      "price_usd_hourly": 15.744
+    },
+    "db.r6i.16xlarge": {
+      "vcpu": 64,
+      "ram_gb": 512,
+      "price_usd_hourly": 7.456
+    },
+    "db.m6idn.2xlarge": {
+      "vcpu": 8,
+      "ram_gb": 32,
+      "price_usd_hourly": 1.18
+    },
+    "db.r5b.2xlarge.tpc2.mem4x": {
+      "vcpu": 8,
+      "ram_gb": 256,
+      "price_usd_hourly": 4.41
+    },
+    "db.m6i.2xlarge": {
+      "vcpu": 8,
+      "ram_gb": 32,
+      "price_usd_hourly": 0.684
+    },
+    "db.r6gd.2xlarge": {
+      "vcpu": 8,
+      "ram_gb": 64,
+      "price_usd_hourly": 1.248
+    },
+    "db.m7i.large": {
+      "vcpu": 2,
+      "ram_gb": 8,
+      "price_usd_hourly": 0.178
+    },
+    "db.r6gd.8xlarge": {
+      "vcpu": 32,
+      "ram_gb": 256,
+      "price_usd_hourly": 8.229
+    },
+    "db.r7i.xlarge": {
+      "vcpu": 4,
+      "ram_gb": 32,
+      "price_usd_hourly": 1.0
+    },
+    "db.r5.large": {
+      "vcpu": 2,
+      "ram_gb": 16,
+      "price_usd_hourly": 2.6072
+    },
+    "db.r6i.8xlarge": {
+      "vcpu": 32,
+      "ram_gb": 256,
+      "price_usd_hourly": 12.16
+    },
+    "db.x2iedn.32xlarge": {
+      "vcpu": 128,
+      "ram_gb": 4096,
+      "price_usd_hourly": 108.4226
+    },
+    "db.x2iedn.8xlarge": {
+      "vcpu": 32,
+      "ram_gb": 1024,
+      "price_usd_hourly": 21.054
+    },
+    "db.m5.16xlarge": {
+      "vcpu": 64,
+      "ram_gb": 256,
+      "price_usd_hourly": 10.944
+    },
+    "db.r6g.large": {
+      "vcpu": 2,
+      "ram_gb": 16,
+      "price_usd_hourly": 0.43
+    },
+    "db.r5d.8xlarge": {
+      "vcpu": 32,
+      "ram_gb": 256,
+      "price_usd_hourly": 4.571
+    },
+    "db.r5.24xlarge": {
+      "vcpu": 96,
+      "ram_gb": 768,
+      "price_usd_hourly": 36.48
+    },
+    "db.m6i.32xlarge": {
+      "vcpu": 128,
+      "ram_gb": 512,
+      "price_usd_hourly": 74.752
+    },
+    "db.x2iedn.16xlarge": {
+      "vcpu": 64,
+      "ram_gb": 2048,
+      "price_usd_hourly": 60.864
+    },
+    "db.r4.16xlarge": {
+      "vcpu": 64,
+      "ram_gb": 488,
+      "price_usd_hourly": 8.0
+    },
+    "db.r7i.large": {
+      "vcpu": 2,
+      "ram_gb": 16,
+      "price_usd_hourly": 0.25
+    },
+    "db.m3.xlarge": {
+      "vcpu": 4,
+      "ram_gb": 15,
+      "price_usd_hourly": 0.37
+    },
+    "db.m5.12xlarge": {
+      "vcpu": 48,
+      "ram_gb": 192,
+      "price_usd_hourly": 7.2
+    },
+    "db.r5b.12xlarge": {
+      "vcpu": 48,
+      "ram_gb": 384,
+      "price_usd_hourly": 38.094
+    },
+    "db.m6in.12xlarge": {
+      "vcpu": 48,
+      "ram_gb": 192,
+      "price_usd_hourly": 12.394
+    },
+    "db.r4.xlarge": {
+      "vcpu": 4,
+      "ram_gb": 30,
+      "price_usd_hourly": 0.58
+    },
+    "db.r5d.xlarge": {
+      "vcpu": 4,
+      "ram_gb": 32,
+      "price_usd_hourly": 1.143
+    },
+    "db.r6idn.24xlarge": {
+      "vcpu": 96,
+      "ram_gb": 768,
+      "price_usd_hourly": 55.823
+    },
+    "db.r6in.32xlarge": {
+      "vcpu": 128,
+      "ram_gb": 1024,
+      "price_usd_hourly": 22.138
+    },
+    "db.m5.xlarge": {
+      "vcpu": 4,
+      "ram_gb": 16,
+      "price_usd_hourly": 0.164
+    },
+    "db.m5d.24xlarge": {
+      "vcpu": 96,
+      "ram_gb": 384,
+      "price_usd_hourly": 9.661
+    },
+    "db.m6idn.24xlarge": {
+      "vcpu": 96,
+      "ram_gb": 384,
+      "price_usd_hourly": 42.48
+    },
+    "db.z1d.2xlarge": {
+      "vcpu": 8,
+      "ram_gb": 64,
+      "price_usd_hourly": 2.736
+    },
+    "db.r7i.2xlarge": {
+      "vcpu": 8,
+      "ram_gb": 64,
+      "price_usd_hourly": 1.0
+    },
+    "db.r6id.32xlarge": {
+      "vcpu": 128,
+      "ram_gb": 1024,
+      "price_usd_hourly": 57.257
+    },
+    "db.r6in.24xlarge": {
+      "vcpu": 96,
+      "ram_gb": 768,
+      "price_usd_hourly": 16.603
+    },
+    "db.r6id.8xlarge": {
+      "vcpu": 32,
+      "ram_gb": 256,
+      "price_usd_hourly": 9.543
+    },
+    "db.r5b.2xlarge": {
+      "vcpu": 8,
+      "ram_gb": 64,
+      "price_usd_hourly": 3.175
+    },
+    "db.r6id.large": {
+      "vcpu": 2,
+      "ram_gb": 16,
+      "price_usd_hourly": 0.596
+    },
+    "db.r7i.24xlarge": {
+      "vcpu": 96,
+      "ram_gb": 768,
+      "price_usd_hourly": 13.92
+    },
+    "db.m5.8xlarge": {
+      "vcpu": 32,
+      "ram_gb": 128,
+      "price_usd_hourly": 22.9504
+    },
+    "db.m6idn.xlarge": {
+      "vcpu": 4,
+      "ram_gb": 16,
+      "price_usd_hourly": 1.77
+    },
+    "db.r5d.2xlarge": {
+      "vcpu": 8,
+      "ram_gb": 64,
+      "price_usd_hourly": 1.065
+    },
+    "db.t3.2xlarge": {
+      "vcpu": 8,
+      "ram_gb": 32,
+      "price_usd_hourly": 0.544
+    },
+    "db.m7g.large": {
+      "vcpu": 2,
+      "ram_gb": 8,
+      "price_usd_hourly": 0.168
+    },
+    "db.m5.4xlarge": {
+      "vcpu": 16,
+      "ram_gb": 64,
+      "price_usd_hourly": 2.848
+    },
+    "db.r6i.large": {
+      "vcpu": 2,
+      "ram_gb": 16,
+      "price_usd_hourly": 0.372
+    },
+    "db.m7i.xlarge": {
+      "vcpu": 4,
+      "ram_gb": 16,
+      "price_usd_hourly": 0.712
+    },
+    "db.r8g.4xlarge": {
+      "vcpu": 16,
+      "ram_gb": 128,
+      "price_usd_hourly": 1.912
+    },
+    "db.m7i.12xlarge": {
+      "vcpu": 48,
+      "ram_gb": 192,
+      "price_usd_hourly": 8.544
+    },
+    "db.m4.10xlarge": {
+      "vcpu": 40,
+      "ram_gb": 160,
+      "price_usd_hourly": 12.24
+    },
+    "db.r5.16xlarge": {
+      "vcpu": 64,
+      "ram_gb": 512,
+      "price_usd_hourly": 40.016
+    },
+    "db.r6id.24xlarge": {
+      "vcpu": 96,
+      "ram_gb": 768,
+      "price_usd_hourly": 21.715
+    },
+    "db.m6idn.4xlarge": {
+      "vcpu": 16,
+      "ram_gb": 64,
+      "price_usd_hourly": 7.08
+    },
+    "db.r6gd.4xlarge": {
+      "vcpu": 16,
+      "ram_gb": 128,
+      "price_usd_hourly": 2.057
+    },
+    "db.r6id.4xlarge": {
+      "vcpu": 16,
+      "ram_gb": 128,
+      "price_usd_hourly": 4.771
+    },
+    "db.m6in.large": {
+      "vcpu": 2,
+      "ram_gb": 8,
+      "price_usd_hourly": 0.258
+    },
+    "db.r6idn.8xlarge": {
+      "vcpu": 32,
+      "ram_gb": 256,
+      "price_usd_hourly": 12.405
+    },
+    "db.m6g.12xlarge": {
+      "vcpu": 48,
+      "ram_gb": 192,
+      "price_usd_hourly": 7.296
+    },
+    "db.r5b.large": {
+      "vcpu": 2,
+      "ram_gb": 16,
+      "price_usd_hourly": 0.592
+    },
+    "db.m7i.8xlarge": {
+      "vcpu": 32,
+      "ram_gb": 128,
+      "price_usd_hourly": 2.848
+    },
+    "db.m6i.12xlarge": {
+      "vcpu": 48,
+      "ram_gb": 192,
+      "price_usd_hourly": 8.544
+    },
+    "db.x2iedn.24xlarge": {
+      "vcpu": 96,
+      "ram_gb": 3072,
+      "price_usd_hourly": 45.648
+    },
+    "db.r8g.large": {
+      "vcpu": 2,
+      "ram_gb": 16,
+      "price_usd_hourly": 0.276
+    },
+    "db.r6in.xlarge": {
+      "vcpu": 4,
+      "ram_gb": 32,
+      "price_usd_hourly": 0.692
+    },
+    "db.r3.2xlarge": {
+      "vcpu": 8,
+      "ram_gb": 61,
+      "price_usd_hourly": 0.945
+    },
+    "db.m6i.8xlarge": {
+      "vcpu": 32,
+      "ram_gb": 128,
+      "price_usd_hourly": 5.696
+    },
+    "db.r5d.12xlarge": {
+      "vcpu": 48,
+      "ram_gb": 384,
+      "price_usd_hourly": 12.783
+    },
+    "db.r5.4xlarge": {
+      "vcpu": 16,
+      "ram_gb": 128,
+      "price_usd_hourly": 5.952
+    },
+    "db.x1.32xlarge": {
+      "vcpu": 128,
+      "ram_gb": 1952,
+      "price_usd_hourly": 135.794
+    },
+    "db.r6idn.2xlarge": {
+      "vcpu": 8,
+      "ram_gb": 64,
+      "price_usd_hourly": 3.101
+    },
+    "db.z1d.6xlarge": {
+      "vcpu": 24,
+      "ram_gb": 192,
+      "price_usd_hourly": 24.413
+    },
+    "db.m6i.xlarge": {
+      "vcpu": 4,
+      "ram_gb": 16,
+      "price_usd_hourly": 2.448
+    },
+    "db.r6in.large": {
+      "vcpu": 2,
+      "ram_gb": 16,
+      "price_usd_hourly": 0.692
+    },
+    "db.r5b.4xlarge": {
+      "vcpu": 16,
+      "ram_gb": 128,
+      "price_usd_hourly": 15.253
+    },
+    "db.r6g.2xlarge": {
+      "vcpu": 8,
+      "ram_gb": 64,
+      "price_usd_hourly": 0.899
+    },
+    "db.r7g.large": {
+      "vcpu": 2,
+      "ram_gb": 16,
+      "price_usd_hourly": 0.276
+    },
+    "db.x1e.8xlarge": {
+      "vcpu": 32,
+      "ram_gb": 976,
+      "price_usd_hourly": 39.547
+    },
+    "db.r6i.12xlarge": {
+      "vcpu": 48,
+      "ram_gb": 384,
+      "price_usd_hourly": 5.592
+    },
+    "db.m6g.large": {
+      "vcpu": 2,
+      "ram_gb": 8,
+      "price_usd_hourly": 0.304
+    },
+    "db.r3.8xlarge": {
+      "vcpu": 32,
+      "ram_gb": 244,
+      "price_usd_hourly": 3.98
+    },
+    "db.r5b.2xlarge.tpc1.mem2x": {
+      "vcpu": 8,
+      "ram_gb": 128,
+      "price_usd_hourly": 4.41
+    },
+    "db.x2iezn.2xlarge": {
+      "vcpu": 8,
+      "ram_gb": 256,
+      "price_usd_hourly": 6.072
+    },
+    "db.m6idn.8xlarge": {
+      "vcpu": 32,
+      "ram_gb": 128,
+      "price_usd_hourly": 4.72
+    },
+    "db.t2.small": {
+      "vcpu": 1,
+      "ram_gb": 2,
+      "price_usd_hourly": 0.034
+    },
+    "db.m6id.xlarge": {
+      "vcpu": 4,
+      "ram_gb": 16,
+      "price_usd_hourly": 0.897
+    },
+    "db.m6id.4xlarge": {
+      "vcpu": 16,
+      "ram_gb": 64,
+      "price_usd_hourly": 3.587
+    },
+    "db.m7i.4xlarge": {
+      "vcpu": 16,
+      "ram_gb": 64,
+      "price_usd_hourly": 2.848
+    },
+    "db.m6id.32xlarge": {
+      "vcpu": 128,
+      "ram_gb": 512,
+      "price_usd_hourly": 43.046
+    },
+    "db.m6in.xlarge": {
+      "vcpu": 4,
+      "ram_gb": 16,
+      "price_usd_hourly": 0.516
+    },
+    "db.r6idn.32xlarge": {
+      "vcpu": 128,
+      "ram_gb": 1024,
+      "price_usd_hourly": 24.81
+    },
+    "db.m4.16xlarge": {
+      "vcpu": 64,
+      "ram_gb": 256,
+      "price_usd_hourly": 5.6
+    },
+    "db.m6idn.large": {
+      "vcpu": 2,
+      "ram_gb": 8,
+      "price_usd_hourly": 0.295
+    },
+    "db.t3.small": {
+      "vcpu": 2,
+      "ram_gb": 2,
+      "price_usd_hourly": 0.072
+    },
+    "db.m4.xlarge": {
+      "vcpu": 4,
+      "ram_gb": 16,
+      "price_usd_hourly": 0.35
+    },
+    "db.m6in.2xlarge": {
+      "vcpu": 8,
+      "ram_gb": 32,
+      "price_usd_hourly": 1.033
+    },
+    "db.m5.large": {
+      "vcpu": 2,
+      "ram_gb": 8,
+      "price_usd_hourly": 0.342
+    },
+    "db.m4.4xlarge": {
+      "vcpu": 16,
+      "ram_gb": 64,
+      "price_usd_hourly": 2.922
+    },
+    "db.r4.4xlarge": {
+      "vcpu": 16,
+      "ram_gb": 122,
+      "price_usd_hourly": 1.92
+    },
+    "db.m5d.8xlarge": {
+      "vcpu": 32,
+      "ram_gb": 128,
+      "price_usd_hourly": 6.441
+    },
+    "db.r6g.12xlarge": {
+      "vcpu": 48,
+      "ram_gb": 384,
+      "price_usd_hourly": 5.155
+    },
+    "db.x1e.xlarge": {
+      "vcpu": 4,
+      "ram_gb": 122,
+      "price_usd_hourly": 2.8022
+    },
+    "db.m6id.8xlarge": {
+      "vcpu": 32,
+      "ram_gb": 128,
+      "price_usd_hourly": 10.761
+    },
+    "db.m6i.24xlarge": {
+      "vcpu": 96,
+      "ram_gb": 384,
+      "price_usd_hourly": 28.8
+    },
+    "db.r5.2xlarge.tpc2.mem8x": {
+      "vcpu": 8,
+      "ram_gb": 512,
+      "price_usd_hourly": 7.456
+    },
+    "db.r6i.2xlarge": {
+      "vcpu": 8,
+      "ram_gb": 64,
+      "price_usd_hourly": 5.002
+    },
+    "db.r7i.48xlarge": {
+      "vcpu": 192,
+      "ram_gb": 1536,
+      "price_usd_hourly": 24.0
+    },
+    "db.m7i.16xlarge": {
+      "vcpu": 64,
+      "ram_gb": 256,
+      "price_usd_hourly": 2.624
+    },
+    "db.r5d.4xlarge": {
+      "vcpu": 16,
+      "ram_gb": 128,
+      "price_usd_hourly": 3.777
+    },
+    "db.m8g.4xlarge": {
+      "vcpu": 16,
+      "ram_gb": 64,
+      "price_usd_hourly": 2.688
+    },
+    "db.r5b.24xlarge": {
+      "vcpu": 96,
+      "ram_gb": 768,
+      "price_usd_hourly": 20.064
+    },
+    "db.x2iedn.4xlarge": {
+      "vcpu": 16,
+      "ram_gb": 512,
+      "price_usd_hourly": 22.824
+    },
+    "db.r5.6xlarge.tpc2.mem4x": {
+      "vcpu": 24,
+      "ram_gb": 768,
+      "price_usd_hourly": 11.184
+    },
+    "db.r5.xlarge": {
+      "vcpu": 4,
+      "ram_gb": 32,
+      "price_usd_hourly": 0.88
+    },
+    "db.m5d.xlarge": {
+      "vcpu": 4,
+      "ram_gb": 16,
+      "price_usd_hourly": 1.17
+    },
+    "db.m5d.large": {
+      "vcpu": 2,
+      "ram_gb": 8,
+      "price_usd_hourly": 0.419
+    },
+    "db.r5b.xlarge": {
+      "vcpu": 4,
+      "ram_gb": 32,
+      "price_usd_hourly": 0.963
+    },
+    "db.m6id.12xlarge": {
+      "vcpu": 48,
+      "ram_gb": 192,
+      "price_usd_hourly": 5.381
+    },
+    "db.r6gd.16xlarge": {
+      "vcpu": 64,
+      "ram_gb": 512,
+      "price_usd_hourly": 16.457
+    },
+    "db.r6idn.16xlarge": {
+      "vcpu": 64,
+      "ram_gb": 512,
+      "price_usd_hourly": 12.405
+    },
+    "db.t2.medium": {
+      "vcpu": 2,
+      "ram_gb": 4,
+      "price_usd_hourly": 0.301
+    },
+    "db.m6id.24xlarge": {
+      "vcpu": 96,
+      "ram_gb": 384,
+      "price_usd_hourly": 32.284
+    },
+    "db.m5d.12xlarge": {
+      "vcpu": 48,
+      "ram_gb": 192,
+      "price_usd_hourly": 5.028
+    },
+    "db.r5.8xlarge": {
+      "vcpu": 32,
+      "ram_gb": 256,
+      "price_usd_hourly": 3.648
+    },
+    "db.r6idn.4xlarge": {
+      "vcpu": 16,
+      "ram_gb": 128,
+      "price_usd_hourly": 6.203
+    },
+    "db.t4g.2xlarge": {
+      "vcpu": 8,
+      "ram_gb": 32,
+      "price_usd_hourly": 1.034
+    },
+    "db.m6idn.12xlarge": {
+      "vcpu": 48,
+      "ram_gb": 192,
+      "price_usd_hourly": 21.24
+    },
+    "db.r5b.16xlarge": {
+      "vcpu": 64,
+      "ram_gb": 512,
+      "price_usd_hourly": 9.472
+    },
+    "db.r5.12xlarge": {
+      "vcpu": 48,
+      "ram_gb": 384,
+      "price_usd_hourly": 8.928
+    },
+    "db.r5d.16xlarge": {
+      "vcpu": 64,
+      "ram_gb": 512,
+      "price_usd_hourly": 8.522
+    },
+    "db.r7g.16xlarge": {
+      "vcpu": 64,
+      "ram_gb": 512,
+      "price_usd_hourly": 7.65
+    },
+    "db.t2.micro": {
+      "vcpu": 1,
+      "ram_gb": 1,
+      "price_usd_hourly": 0.018
+    },
+    "db.m8g.16xlarge": {
+      "vcpu": 64,
+      "ram_gb": 384,
+      "price_usd_hourly": 5.376
+    },
+    "db.r6i.xlarge": {
+      "vcpu": 4,
+      "ram_gb": 32,
+      "price_usd_hourly": 1.0
+    },
+    "db.r6gd.12xlarge": {
+      "vcpu": 48,
+      "ram_gb": 384,
+      "price_usd_hourly": 12.343
+    },
+    "db.r6g.4xlarge": {
+      "vcpu": 16,
+      "ram_gb": 128,
+      "price_usd_hourly": 2.076
+    },
+    "db.r6i.4xlarge.tpc2.mem2x": {
+      "vcpu": 16,
+      "ram_gb": 256,
+      "price_usd_hourly": 3.728
+    },
+    "db.r6i.4xlarge.tpc2.mem4x": {
+      "vcpu": 16,
+      "ram_gb": 512,
+      "price_usd_hourly": 7.456
+    },
+    "db.x2iedn.xlarge": {
+      "vcpu": 4,
+      "ram_gb": 128,
+      "price_usd_hourly": 3.804
+    },
+    "db.m6idn.32xlarge": {
+      "vcpu": 128,
+      "ram_gb": 512,
+      "price_usd_hourly": 37.76
+    },
+    "db.t4g.xlarge": {
+      "vcpu": 4,
+      "ram_gb": 16,
+      "price_usd_hourly": 0.258
+    },
+    "db.r4.large": {
+      "vcpu": 2,
+      "ram_gb": 15,
+      "price_usd_hourly": 0.24
+    },
+    "db.t2.2xlarge": {
+      "vcpu": 8,
+      "ram_gb": 32,
+      "price_usd_hourly": 1.088
+    },
+    "db.r7g.12xlarge": {
+      "vcpu": 48,
+      "ram_gb": 384,
+      "price_usd_hourly": 5.738
+    },
+    "db.r4.8xlarge": {
+      "vcpu": 32,
+      "ram_gb": 244,
+      "price_usd_hourly": 20.008
+    },
+    "db.r8g.8xlarge": {
+      "vcpu": 32,
+      "ram_gb": 256,
+      "price_usd_hourly": 7.648
+    },
+    "db.r6g.16xlarge": {
+      "vcpu": 64,
+      "ram_gb": 512,
+      "price_usd_hourly": 7.194
+    },
+    "db.r7i.4xlarge": {
+      "vcpu": 16,
+      "ram_gb": 128,
+      "price_usd_hourly": 2.0
+    },
+    "db.m7i.2xlarge": {
+      "vcpu": 8,
+      "ram_gb": 32,
+      "price_usd_hourly": 1.424
+    },
+    "db.m6i.large": {
+      "vcpu": 2,
+      "ram_gb": 8,
+      "price_usd_hourly": 0.178
+    },
+    "db.r3.large": {
+      "vcpu": 2,
+      "ram_gb": 15,
+      "price_usd_hourly": 0.978
+    },
+    "db.r7g.2xlarge": {
+      "vcpu": 8,
+      "ram_gb": 64,
+      "price_usd_hourly": 1.106
+    },
+    "db.m6gd.large": {
+      "vcpu": 2,
+      "ram_gb": 8,
+      "price_usd_hourly": 0.522
+    },
+    "db.m6i.4xlarge": {
+      "vcpu": 16,
+      "ram_gb": 64,
+      "price_usd_hourly": 2.247
+    },
+    "db.z1d.12xlarge": {
+      "vcpu": 48,
+      "ram_gb": 384,
+      "price_usd_hourly": 8.208
+    },
+    "db.r7i.16xlarge": {
+      "vcpu": 64,
+      "ram_gb": 512,
+      "price_usd_hourly": 8.0
+    },
+    "db.t4g.small": {
+      "vcpu": 2,
+      "ram_gb": 2,
+      "price_usd_hourly": 0.032
+    },
+    "db.m6g.16xlarge": {
+      "vcpu": 64,
+      "ram_gb": 256,
+      "price_usd_hourly": 10.176
+    },
+    "db.m6in.16xlarge": {
+      "vcpu": 64,
+      "ram_gb": 256,
+      "price_usd_hourly": 8.262
+    },
+    "db.m4.large": {
+      "vcpu": 2,
+      "ram_gb": 8,
+      "price_usd_hourly": 0.35
+    },
+    "db.x2g.xlarge": {
+      "vcpu": 4,
+      "ram_gb": 64,
+      "price_usd_hourly": 0.652
+    },
+    "db.r5b.8xlarge": {
+      "vcpu": 32,
+      "ram_gb": 256,
+      "price_usd_hourly": 4.736
+    },
+    "db.t2.xlarge": {
+      "vcpu": 4,
+      "ram_gb": 16,
+      "price_usd_hourly": 0.544
+    },
+    "db.x2g.8xlarge": {
+      "vcpu": 32,
+      "ram_gb": 512,
+      "price_usd_hourly": 10.432
+    },
+    "db.m6in.4xlarge": {
+      "vcpu": 16,
+      "ram_gb": 64,
+      "price_usd_hourly": 2.064
+    },
+    "db.r6in.4xlarge": {
+      "vcpu": 16,
+      "ram_gb": 128,
+      "price_usd_hourly": 5.534
+    },
+    "db.r7g.8xlarge": {
+      "vcpu": 32,
+      "ram_gb": 256,
+      "price_usd_hourly": 7.65
+    },
+    "db.r8g.xlarge": {
+      "vcpu": 4,
+      "ram_gb": 32,
+      "price_usd_hourly": 0.478
+    },
+    "db.m6i.16xlarge": {
+      "vcpu": 64,
+      "ram_gb": 256,
+      "price_usd_hourly": 10.944
+    },
+    "db.m7g.12xlarge": {
+      "vcpu": 48,
+      "ram_gb": 192,
+      "price_usd_hourly": 4.044
+    },
+    "db.m8g.24xlarge": {
+      "vcpu": 96,
+      "ram_gb": 512,
+      "price_usd_hourly": 8.064
+    },
+    "db.m6gd.8xlarge": {
+      "vcpu": 32,
+      "ram_gb": 128,
+      "price_usd_hourly": 2.987
+    },
+    "db.r5d.large": {
+      "vcpu": 2,
+      "ram_gb": 16,
+      "price_usd_hourly": 0.266
+    },
+    "db.m7g.2xlarge": {
+      "vcpu": 8,
+      "ram_gb": 32,
+      "price_usd_hourly": 0.674
+    },
+    "db.r6i.2xlarge.tpc2.mem8x": {
+      "vcpu": 8,
+      "ram_gb": 512,
+      "price_usd_hourly": 14.912
+    },
+    "db.m6idn.16xlarge": {
+      "vcpu": 64,
+      "ram_gb": 256,
+      "price_usd_hourly": 18.88
+    },
+    "db.m7i.24xlarge": {
+      "vcpu": 96,
+      "ram_gb": 384,
+      "price_usd_hourly": 8.544
+    },
+    "db.m6in.24xlarge": {
+      "vcpu": 96,
+      "ram_gb": 384,
+      "price_usd_hourly": 24.787
+    },
+    "db.r4.2xlarge": {
+      "vcpu": 8,
+      "ram_gb": 61,
+      "price_usd_hourly": 5.002
+    },
+    "db.m5.2xlarge": {
+      "vcpu": 8,
+      "ram_gb": 32,
+      "price_usd_hourly": 0.684
+    },
+    "db.m4.2xlarge": {
+      "vcpu": 8,
+      "ram_gb": 32,
+      "price_usd_hourly": 0.73
+    },
+    "db.m8g.large": {
+      "vcpu": 2,
+      "ram_gb": 8,
+      "price_usd_hourly": 0.168
+    },
+    "db.r8g.48xlarge": {
+      "vcpu": 192,
+      "ram_gb": 1536,
+      "price_usd_hourly": 22.944
+    },
+    "db.r6id.12xlarge": {
+      "vcpu": 48,
+      "ram_gb": 384,
+      "price_usd_hourly": 7.152
+    },
+    "db.z1d.3xlarge": {
+      "vcpu": 12,
+      "ram_gb": 96,
+      "price_usd_hourly": 2.052
+    },
+    "db.r6i.4xlarge": {
+      "vcpu": 16,
+      "ram_gb": 128,
+      "price_usd_hourly": 4.0
+    },
+    "db.t2.large": {
+      "vcpu": 2,
+      "ram_gb": 8,
+      "price_usd_hourly": 0.136
+    },
+    "db.m6gd.2xlarge": {
+      "vcpu": 8,
+      "ram_gb": 32,
+      "price_usd_hourly": 2.088
+    },
+    "db.r6i.xlarge.tpc2.mem4x": {
+      "vcpu": 4,
+      "ram_gb": 128,
+      "price_usd_hourly": 3.728
+    },
+    "db.m5d.2xlarge": {
+      "vcpu": 8,
+      "ram_gb": 32,
+      "price_usd_hourly": 2.34
+    },
+    "db.r5b.4xlarge.tpc2.mem2x": {
+      "vcpu": 16,
+      "ram_gb": 256,
+      "price_usd_hourly": 8.821
+    },
+    "db.t3.medium": {
+      "vcpu": 2,
+      "ram_gb": 4,
+      "price_usd_hourly": 0.107
+    },
+    "db.m8g.2xlarge": {
+      "vcpu": 8,
+      "ram_gb": 32,
+      "price_usd_hourly": 0.672
+    },
+    "db.m7g.16xlarge": {
+      "vcpu": 64,
+      "ram_gb": 256,
+      "price_usd_hourly": 10.784
+    },
+    "db.m6g.4xlarge": {
+      "vcpu": 16,
+      "ram_gb": 64,
+      "price_usd_hourly": 2.544
+    },
+    "db.r6in.8xlarge": {
+      "vcpu": 32,
+      "ram_gb": 256,
+      "price_usd_hourly": 11.069
+    },
+    "db.r7g.4xlarge": {
+      "vcpu": 16,
+      "ram_gb": 128,
+      "price_usd_hourly": 2.211
+    },
+    "db.m6id.2xlarge": {
+      "vcpu": 8,
+      "ram_gb": 32,
+      "price_usd_hourly": 1.792
+    },
+    "db.r5b.4xlarge.tpc2.mem4x": {
+      "vcpu": 16,
+      "ram_gb": 512,
+      "price_usd_hourly": 8.821
+    },
+    "db.x2idn.32xlarge": {
+      "vcpu": 128,
+      "ram_gb": 2048,
+      "price_usd_hourly": 22.4
+    },
+    "db.r6idn.xlarge": {
+      "vcpu": 4,
+      "ram_gb": 32,
+      "price_usd_hourly": 1.551
+    },
+    "db.x2g.large": {
+      "vcpu": 2,
+      "ram_gb": 32,
+      "price_usd_hourly": 0.49
+    },
+    "db.r8g.12xlarge": {
+      "vcpu": 48,
+      "ram_gb": 384,
+      "price_usd_hourly": 11.472
+    },
+    "db.r6i.24xlarge": {
+      "vcpu": 96,
+      "ram_gb": 768,
+      "price_usd_hourly": 86.419
+    },
+    "db.x2g.4xlarge": {
+      "vcpu": 16,
+      "ram_gb": 256,
+      "price_usd_hourly": 5.216
+    },
+    "db.x1e.16xlarge": {
+      "vcpu": 64,
+      "ram_gb": 1952,
+      "price_usd_hourly": 22.4179
+    },
+    "db.r6i.8xlarge.tpc2.mem4x": {
+      "vcpu": 32,
+      "ram_gb": 1024,
+      "price_usd_hourly": 14.912
+    },
+    "db.r3.xlarge": {
+      "vcpu": 4,
+      "ram_gb": 30,
+      "price_usd_hourly": 0.5
+    },
+    "db.x2iezn.12xlarge": {
+      "vcpu": 48,
+      "ram_gb": 1536,
+      "price_usd_hourly": 36.429
+    },
+    "db.r7g.xlarge": {
+      "vcpu": 4,
+      "ram_gb": 32,
+      "price_usd_hourly": 0.956
+    },
+    "db.m5d.16xlarge": {
+      "vcpu": 64,
+      "ram_gb": 256,
+      "price_usd_hourly": 6.441
+    },
+    "db.r5.xlarge.tpc2.mem2x": {
+      "vcpu": 4,
+      "ram_gb": 64,
+      "price_usd_hourly": 0.932
+    },
+    "db.r6id.16xlarge": {
+      "vcpu": 64,
+      "ram_gb": 512,
+      "price_usd_hourly": 9.543
+    },
+    "db.m7g.xlarge": {
+      "vcpu": 4,
+      "ram_gb": 16,
+      "price_usd_hourly": 0.337
+    },
+    "db.m6id.16xlarge": {
+      "vcpu": 64,
+      "ram_gb": 256,
+      "price_usd_hourly": 14.336
+    },
+    "db.r7i.12xlarge": {
+      "vcpu": 48,
+      "ram_gb": 384,
+      "price_usd_hourly": 12.0
+    },
+    "db.t3.micro": {
+      "vcpu": 2,
+      "ram_gb": 1,
+      "price_usd_hourly": 0.017
+    },
+    "db.x2iezn.4xlarge": {
+      "vcpu": 16,
+      "ram_gb": 512,
+      "price_usd_hourly": 6.072
+    },
+    "db.x2g.12xlarge": {
+      "vcpu": 48,
+      "ram_gb": 768,
+      "price_usd_hourly": 7.824
+    },
+    "db.r3.4xlarge": {
+      "vcpu": 16,
+      "ram_gb": 122,
+      "price_usd_hourly": 1.89
+    },
+    "db.m3.large": {
+      "vcpu": 2,
+      "ram_gb": 7,
+      "price_usd_hourly": 0.37
+    },
+    "db.m3.medium": {
+      "vcpu": 1,
+      "ram_gb": 3,
+      "price_usd_hourly": 0.09
+    },
+    "db.r7i.8xlarge": {
+      "vcpu": 32,
+      "ram_gb": 256,
+      "price_usd_hourly": 8.0
+    },
+    "db.r5.2xlarge.tpc1.mem2x": {
+      "vcpu": 8,
+      "ram_gb": 128,
+      "price_usd_hourly": 1.864
+    },
+    "db.m6in.32xlarge": {
+      "vcpu": 128,
+      "ram_gb": 512,
+      "price_usd_hourly": 16.525
+    },
+    "db.r6i.2xlarge.tpc1.mem2x": {
+      "vcpu": 8,
+      "ram_gb": 128,
+      "price_usd_hourly": 1.864
+    },
+    "db.r5.4xlarge.tpc2.mem2x": {
+      "vcpu": 16,
+      "ram_gb": 256,
+      "price_usd_hourly": 3.728
+    },
+    "db.r5.large.tpc1.mem2x": {
+      "vcpu": 2,
+      "ram_gb": 32,
+      "price_usd_hourly": 0.932
+    },
+    "db.x2iezn.6xlarge": {
+      "vcpu": 24,
+      "ram_gb": 768,
+      "price_usd_hourly": 9.107
+    },
+    "db.r6in.2xlarge": {
+      "vcpu": 8,
+      "ram_gb": 64,
+      "price_usd_hourly": 2.767
+    },
+    "db.m6g.8xlarge": {
+      "vcpu": 32,
+      "ram_gb": 128,
+      "price_usd_hourly": 4.864
+    },
+    "db.x1.16xlarge": {
+      "vcpu": 64,
+      "ram_gb": 976,
+      "price_usd_hourly": 57.067
+    },
+    "db.r5.12xlarge.tpc2.mem2x": {
+      "vcpu": 48,
+      "ram_gb": 768,
+      "price_usd_hourly": 11.184
+    },
+    "db.m6in.8xlarge": {
+      "vcpu": 32,
+      "ram_gb": 128,
+      "price_usd_hourly": 4.131
+    },
+    "db.r6gd.xlarge": {
+      "vcpu": 4,
+      "ram_gb": 32,
+      "price_usd_hourly": 1.029
+    },
+    "db.x2g.2xlarge": {
+      "vcpu": 8,
+      "ram_gb": 128,
+      "price_usd_hourly": 1.96
+    },
+    "db.m6gd.xlarge": {
+      "vcpu": 4,
+      "ram_gb": 16,
+      "price_usd_hourly": 1.044
+    },
+    "db.t4g.medium": {
+      "vcpu": 2,
+      "ram_gb": 4,
+      "price_usd_hourly": 0.065
+    },
+    "db.m7g.8xlarge": {
+      "vcpu": 32,
+      "ram_gb": 128,
+      "price_usd_hourly": 2.696
+    },
+    "db.m2.2xlarge": {
+      "vcpu": 4,
+      "ram_gb": 34,
+      "price_usd_hourly": 1.38
+    },
+    "db.m8g.48xlarge": {
+      "vcpu": 192,
+      "ram_gb": 768,
+      "price_usd_hourly": 16.128
+    },
+    "db.x2g.16xlarge": {
+      "vcpu": 64,
+      "ram_gb": 1024,
+      "price_usd_hourly": 10.432
+    },
+    "db.r6idn.large": {
+      "vcpu": 2,
+      "ram_gb": 16,
+      "price_usd_hourly": 0.775
+    },
+    "db.x1e.2xlarge": {
+      "vcpu": 8,
+      "ram_gb": 244,
+      "price_usd_hourly": 4.943
+    },
+    "db.r6g.xlarge": {
+      "vcpu": 4,
+      "ram_gb": 32,
+      "price_usd_hourly": 0.519
+    },
+    "db.r5b.2xlarge.tpc2.mem8x": {
+      "vcpu": 8,
+      "ram_gb": 512,
+      "price_usd_hourly": 17.642
+    },
+    "db.r5.4xlarge.tpc2.mem3x": {
+      "vcpu": 16,
+      "ram_gb": 384,
+      "price_usd_hourly": 5.592
+    },
+    "db.x2iezn.8xlarge": {
+      "vcpu": 32,
+      "ram_gb": 1024,
+      "price_usd_hourly": 12.143
+    },
+    "db.r8g.24xlarge": {
+      "vcpu": 96,
+      "ram_gb": 768,
+      "price_usd_hourly": 22.944
+    },
+    "db.r6i.8xlarge.tpc2.mem3x": {
+      "vcpu": 32,
+      "ram_gb": 768,
+      "price_usd_hourly": 22.368
+    },
+    "db.r5d.24xlarge": {
+      "vcpu": 96,
+      "ram_gb": 768,
+      "price_usd_hourly": 12.783
+    },
+    "db.m8g.12xlarge": {
+      "vcpu": 48,
+      "ram_gb": 256,
+      "price_usd_hourly": 4.032
+    },
+    "db.c6gd.12xlarge": {
+      "vcpu": 48,
+      "ram_gb": 96,
+      "price_usd_hourly": 11.448
+    },
+    "db.r6in.16xlarge": {
+      "vcpu": 64,
+      "ram_gb": 512,
+      "price_usd_hourly": 22.138
+    },
+    "db.m6gd.4xlarge": {
+      "vcpu": 16,
+      "ram_gb": 64,
+      "price_usd_hourly": 1.493
+    },
+    "db.t4g.large": {
+      "vcpu": 2,
+      "ram_gb": 8,
+      "price_usd_hourly": 0.146
+    },
+    "db.r5b.xlarge.tpc2.mem4x": {
+      "vcpu": 4,
+      "ram_gb": 128,
+      "price_usd_hourly": 2.205
+    },
+    "db.r6i.large.tpc1.mem2x": {
+      "vcpu": 2,
+      "ram_gb": 32,
+      "price_usd_hourly": 0.466
+    },
+    "db.r5.4xlarge.tpc2.mem4x": {
+      "vcpu": 16,
+      "ram_gb": 512,
+      "price_usd_hourly": 14.912
+    },
+    "db.r6id.2xlarge": {
+      "vcpu": 8,
+      "ram_gb": 64,
+      "price_usd_hourly": 3.579
+    },
+    "db.t4g.micro": {
+      "vcpu": 2,
+      "ram_gb": 1,
+      "price_usd_hourly": 0.032
+    },
+    "db.r6id.xlarge": {
+      "vcpu": 4,
+      "ram_gb": 32,
+      "price_usd_hourly": 0.596
+    },
+    "db.m6g.2xlarge": {
+      "vcpu": 8,
+      "ram_gb": 32,
+      "price_usd_hourly": 1.272
+    },
+    "db.x1e.32xlarge": {
+      "vcpu": 128,
+      "ram_gb": 3904,
+      "price_usd_hourly": 79.094
+    },
+    "db.t1.micro": {
+      "vcpu": 1,
+      "ram_gb": 0,
+      "price_usd_hourly": 0.05
+    },
+    "db.m7g.4xlarge": {
+      "vcpu": 16,
+      "ram_gb": 64,
+      "price_usd_hourly": 1.348
+    },
+    "db.m8g.xlarge": {
+      "vcpu": 4,
+      "ram_gb": 16,
+      "price_usd_hourly": 0.672
+    },
+    "db.r5b.large.tpc1.mem2x": {
+      "vcpu": 2,
+      "ram_gb": 32,
+      "price_usd_hourly": 1.103
+    },
+    "db.m2.xlarge": {
+      "vcpu": 2,
+      "ram_gb": 17,
+      "price_usd_hourly": 0.345
+    },
+    "db.z1d.xlarge": {
+      "vcpu": 4,
+      "ram_gb": 32,
+      "price_usd_hourly": 3.419
+    },
+    "db.m3.2xlarge": {
+      "vcpu": 8,
+      "ram_gb": 30,
+      "price_usd_hourly": 1.806
+    },
+    "db.m6id.large": {
+      "vcpu": 2,
+      "ram_gb": 8,
+      "price_usd_hourly": 0.448
+    },
+    "db.r8g.16xlarge": {
+      "vcpu": 64,
+      "ram_gb": 512,
+      "price_usd_hourly": 11.488
+    },
+    "db.r5.2xlarge.tpc2.mem4x": {
+      "vcpu": 8,
+      "ram_gb": 256,
+      "price_usd_hourly": 7.456
+    },
+    "db.r5b.6xlarge.tpc2.mem4x": {
+      "vcpu": 24,
+      "ram_gb": 768,
+      "price_usd_hourly": 13.231
+    },
+    "db.r6gd.large": {
+      "vcpu": 2,
+      "ram_gb": 16,
+      "price_usd_hourly": 0.514
+    },
+    "db.r8g.2xlarge": {
+      "vcpu": 8,
+      "ram_gb": 64,
+      "price_usd_hourly": 1.912
+    },
+    "db.r6i.32xlarge": {
+      "vcpu": 128,
+      "ram_gb": 1024,
+      "price_usd_hourly": 32.0
+    },
+    "db.m6gd.16xlarge": {
+      "vcpu": 64,
+      "ram_gb": 256,
+      "price_usd_hourly": 11.947
+    },
+    "db.r6i.2xlarge.tpc2.mem4x": {
+      "vcpu": 8,
+      "ram_gb": 256,
+      "price_usd_hourly": 3.728
+    },
+    "db.m1.large": {
+      "vcpu": 2,
+      "ram_gb": 7,
+      "price_usd_hourly": 0.23
+    },
+    "db.x2idn.24xlarge": {
+      "vcpu": 96,
+      "ram_gb": 1536,
+      "price_usd_hourly": 33.6
+    },
+    "db.z1d.large": {
+      "vcpu": 2,
+      "ram_gb": 16,
+      "price_usd_hourly": 1.251
+    },
+    "db.c6gd.4xlarge": {
+      "vcpu": 16,
+      "ram_gb": 32,
+      "price_usd_hourly": 3.816
+    },
+    "db.r6i.4xlarge.tpc2.mem3x": {
+      "vcpu": 16,
+      "ram_gb": 384,
+      "price_usd_hourly": 5.592
+    },
+    "db.m8g.8xlarge": {
+      "vcpu": 32,
+      "ram_gb": 128,
+      "price_usd_hourly": 5.376
+    },
+    "db.x1e.4xlarge": {
+      "vcpu": 16,
+      "ram_gb": 488,
+      "price_usd_hourly": 5.6045
+    },
+    "db.r6i.6xlarge.tpc2.mem4x": {
+      "vcpu": 24,
+      "ram_gb": 768,
+      "price_usd_hourly": 22.368
+    },
+    "db.m1.medium": {
+      "vcpu": 1,
+      "ram_gb": 3,
+      "price_usd_hourly": 0.24
+    },
+    "db.r6idn.12xlarge": {
+      "vcpu": 48,
+      "ram_gb": 384,
+      "price_usd_hourly": 27.912
+    },
+    "db.r6g.8xlarge": {
+      "vcpu": 32,
+      "ram_gb": 256,
+      "price_usd_hourly": 4.153
+    },
+    "db.m1.xlarge": {
+      "vcpu": 4,
+      "ram_gb": 15,
+      "price_usd_hourly": 0.98
+    },
+    "db.m6g.xlarge": {
+      "vcpu": 4,
+      "ram_gb": 16,
+      "price_usd_hourly": 0.608
+    },
+    "db.c6gd.8xlarge": {
+      "vcpu": 32,
+      "ram_gb": 64,
+      "price_usd_hourly": 7.632
+    },
+    "db.m6gd.12xlarge": {
+      "vcpu": 48,
+      "ram_gb": 192,
+      "price_usd_hourly": 12.528
+    },
+    "db.r5b.8xlarge.tpc2.mem3x": {
+      "vcpu": 32,
+      "ram_gb": 768,
+      "price_usd_hourly": 13.231
+    },
+    "db.r5b.xlarge.tpc2.mem2x": {
+      "vcpu": 4,
+      "ram_gb": 64,
+      "price_usd_hourly": 2.205
+    },
+    "db.c6gd.large": {
+      "vcpu": 2,
+      "ram_gb": 4,
+      "price_usd_hourly": 0.477
+    },
+    "db.m1.small": {
+      "vcpu": 1,
+      "ram_gb": 1,
+      "price_usd_hourly": 0.055
+    },
+    "db.r5b.4xlarge.tpc2.mem3x": {
+      "vcpu": 16,
+      "ram_gb": 384,
+      "price_usd_hourly": 6.615
+    },
+    "db.c6gd.2xlarge": {
+      "vcpu": 8,
+      "ram_gb": 16,
+      "price_usd_hourly": 1.908
+    },
+    "db.x2idn.16xlarge": {
+      "vcpu": 64,
+      "ram_gb": 1024,
+      "price_usd_hourly": 22.4
+    },
+    "db.c6gd.16xlarge": {
+      "vcpu": 64,
+      "ram_gb": 128,
+      "price_usd_hourly": 15.264
+    },
+    "db.r5.xlarge.tpc2.mem4x": {
+      "vcpu": 4,
+      "ram_gb": 128,
+      "price_usd_hourly": 3.728
+    },
+    "db.r6i.xlarge.tpc2.mem2x": {
+      "vcpu": 4,
+      "ram_gb": 64,
+      "price_usd_hourly": 0.932
+    },
+    "db.m2.4xlarge": {
+      "vcpu": 8,
+      "ram_gb": 68,
+      "price_usd_hourly": 2.64
+    },
+    "db.c6gd.medium": {
+      "vcpu": 1,
+      "ram_gb": 2,
+      "price_usd_hourly": 0.2385
+    },
+    "db.c6gd.xlarge": {
+      "vcpu": 4,
+      "ram_gb": 8,
+      "price_usd_hourly": 0.954
+    },
+    "db.r5.8xlarge.tpc2.mem3x": {
+      "vcpu": 32,
+      "ram_gb": 768,
+      "price_usd_hourly": 22.368
+    }
+  }
+}

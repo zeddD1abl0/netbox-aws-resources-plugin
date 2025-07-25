@@ -1,37 +1,21 @@
 # NetBox AWS Resources Plugin
 
-NetBox plugin for discovering and managing various AWS Resources within NetBox. This plugin aims to provide visibility into your AWS infrastructure and its relationship with your on-premises or other cloud resources tracked in NetBox.
-
-
 * Free software: Apache-2.0
 * Documentation: https://zeddD1abl0.github.io/netbox-aws-resources-plugin/
 
+A plugin for NetBox to model and manage Amazon Web Services (AWS) resources. This plugin extends NetBox to serve as a source of truth for key AWS infrastructure components, enabling better visibility and management of your cloud and on-premise resources in one place.
 
 ## Features
 
-Currently, the plugin provides the following features, focused on AWS resource management:
+This plugin introduces the following models to NetBox:
 
-*   **AWS Account Tracking:**
-    *   Store AWS Account ID (12-digit), a descriptive Name, and associate with a NetBox Tenant.
-    *   Support for hierarchical relationships using a `Parent Account` field, allowing for representation of AWS Organizations structures or other parent-child account relationships.
-*   **AWS VPC Management:**
-    *   Store VPC ID, a descriptive Name, CIDR block (linked to `ipam.Prefix`), and associate with an AWS Account and NetBox Tenant.
-*   **AWS Subnet Management:**
-    *   Store Subnet ID, a descriptive Name, CIDR block (linked to `ipam.Prefix`), Availability Zone, and associate with an AWS VPC and NetBox Tenant.
-*   **AWS Load Balancer Management (ALB/NLB):**
-    *   Store Load Balancer ARN, Name, Type (Application/Network), Scheme (Internal/Internet-facing), DNS Name, and associate with an AWS Account, VPC, and NetBox Tenant.
-    *   Track associated Subnets.
-*   **User Interface Enhancements:**
-    *   Dedicated list views for AWS Accounts, VPCs, Subnets, and Load Balancers with relevant custom columns.
-    *   Filtering options for all managed resources.
-    *   Detailed pages for each resource displaying its attributes and related items (e.g., VPCs under an Account, Subnets under a VPC, Load Balancers under an Account/VPC).
-*   **Bulk Operations:**
-    *   Bulk editing and deletion for all managed resources.
-*   **Search Integration:**
-    *   All managed AWS resources are searchable via NetBox's global search.
-
-**Future planned features include support for:**
-*   Target Groups
+*   **AWS Account**: Manage AWS account information, including Account ID and parent/child relationships for AWS Organizations.
+*   **AWS VPC**: Model your Virtual Private Clouds, including their CIDR blocks and region.
+*   **AWS Subnet**: Track your VPC subnets, their CIDR blocks, and availability zones.
+*   **AWS EC2 Instance**: Document your EC2 instances, including instance type, VPC/subnet placement, and link them to NetBox Virtual Machines.
+*   **AWS RDS Instance**: Keep track of your RDS database instances, their class, engine, and VPC/subnet placement.
+*   **AWS Load Balancer**: Model Application, Network, and Gateway Load Balancers, their type, scheme, and associated subnets.
+*   **AWS Target Group**: Define Target Groups for your load balancers, linking them to a specific NetBox Service (protocol and port).
 
 ## Models
 
@@ -48,12 +32,18 @@ The plugin introduces the following NetBox models. For detailed information on e
 |----------------|----------------|
 |     4.0        |   4.0.0-alpha1 |
 
-## Installing
+## Installation
 
 For adding to a NetBox Docker setup see
 [the general instructions for using netbox-docker with plugins](https://github.com/netbox-community/netbox-docker/wiki/Using-Netbox-Plugins).
 
-While this is still in development and not yet on pypi you can install with pip:
+While this is still in development and not yet on pypi you can install with pip from the root of this repository:
+
+```bash
+pip install .
+```
+
+Alternatively, you can install with pip from git:
 
 ```bash
 pip install git+https://github.com/zeddD1abl0/netbox-aws-resources-plugin
@@ -79,6 +69,23 @@ PLUGINS_CONFIG = {
     },
 }
 ```
+
+After installing the plugin, run the following commands from the NetBox root directory (`/opt/netbox/netbox/`):
+
+```bash
+# Apply database migrations
+./manage.py migrate
+
+# Collect static files
+./manage.py collectstatic
+
+# Restart NetBox services
+sudo systemctl restart netbox netbox-rq
+```
+
+## Usage
+
+Once installed and configured, you will find an "AWS" section in the NetBox navigation menu. From there, you can add and manage your AWS resources just like any other NetBox object.
 
 ## Credits
 

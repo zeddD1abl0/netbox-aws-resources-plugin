@@ -3,103 +3,90 @@
 {% load plugins %}
 
 {% block content %}
-    <div class="row">
-        <div class="col col-md-12">
-            {% plugin_buttons object %}
-        </div>
-    </div>
-    <div class="row">
-        {# Left Column: Main Details #}
-        <div class="col col-md-6">
-            <div class="card">
-                <h5 class="card-header">Load Balancer Details</h5>
-                <div class="card-body">
-                    <table class="table table-hover attr-table">
-                        <tr>
-                            <th scope="row">Name</th>
-                            <td>{{ object.name }}</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">ARN</th>
-                            <td>{{ object.arn }}</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">AWS Account</th>
-                            <td>
-                                {% if object.aws_account %}
-                                    <a href="{% url 'plugins:netbox_aws_resources_plugin:awsaccount' pk=object.aws_account.pk %}">{{ object.aws_account }}</a>
-                                {% else %}
-                                    &mdash;
-                                {% endif %}
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Region</th>
-                            <td>{{ object.region|placeholder }}</td> {# Region is auto-set from VPC #}
-                        </tr>
-                        <tr>
-                            <th scope="row">VPC</th>
-                            <td>
-                                {% if object.vpc %}
-                                    <a href="{% url 'plugins:netbox_aws_resources_plugin:awsvpc' pk=object.vpc.pk %}">{{ object.vpc }}</a>
-                                {% else %}
-                                    &mdash;
-                                {% endif %}
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Type</th>
-                            <td>{{ object.get_type_display|placeholder }}</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Scheme</th>
-                            <td>{{ object.get_scheme_display|placeholder }}</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">DNS Name</th>
-                            <td>{{ object.dns_name|placeholder }}</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">State</th>
-                            <td>{{ object.get_state_display|placeholder }}</td>
-                        </tr>
-                    </table>
-                </div>
+<div class="row">
+    {# Left Column: Main Details #}
+    <div class="col col-md-6">
+        <div class="card">
+            <h5 class="card-header">Load Balancer Details</h5>
+            <div class="card-body">
+                <table class="table table-hover attr-table">
+                    <tr>
+                        <th scope="row">Name</th>
+                        <td>{{ object.name }}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">ARN</th>
+                        <td>{{ object.arn }}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">AWS Account</th>
+                        <td>
+                            {% if object.aws_account %}
+                                <a href="{% url 'plugins:netbox_aws_resources_plugin:awsaccount' pk=object.aws_account.pk %}">{{ object.aws_account }}</a>
+                            {% else %}
+                                &mdash;
+                            {% endif %}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Region</th>
+                        <td>{{ object.region|placeholder }}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">VPC</th>
+                        <td>
+                            {% if object.vpc %}
+                                <a href="{% url 'plugins:netbox_aws_resources_plugin:awsvpc' pk=object.vpc.pk %}">{{ object.vpc }}</a>
+                            {% else %}
+                                &mdash;
+                            {% endif %}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Type</th>
+                        <td>{{ object.get_type_display|placeholder }}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Scheme</th>
+                        <td>{{ object.get_scheme_display|placeholder }}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">DNS Name</th>
+                        <td>{{ object.dns_name|placeholder }}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">State</th>
+                        <td>{{ object.get_state_display|placeholder }}</td>
+                    </tr>
+                </table>
             </div>
-            {% include 'inc/panels/tags.html' %}
-            {% include 'inc/panels/comments.html' %}
-            {% plugin_left_page object %}
         </div>
-
-        {# Right Column: Associated Subnets and other related items #}
-        <div class="col col-md-6">
-            <div class="card mb-3">
-                <h5 class="card-header">Associated Subnets</h5>
-                <div class="card-body">
-                    {% if subnets_table.rows %}
-                        {% render_table subnets_table %}
-                    {% else %}
-                        <span class="text-muted">No Subnets associated.</span>
-                    {% endif %}
-                </div>
-            </div>
-            {# Placeholder for other related info, e.g., Listeners, Target Groups #}
-            {% comment %}
-            <div class="card">
-                <h5 class="card-header">Other Related Items</h5>
-                <div class="card-body">
-                    <p class="text-muted">Placeholder for listeners, target groups, etc.</p>
-                </div>
-            </div>
-            {% endcomment %}
-            {% plugin_right_page object %}
-        </div>
+        {% include 'inc/panels/tags.html' %}
+        {% include 'inc/panels/comments.html' %}
+        {# {% plugin_left_page object %} #}
     </div>
 
-    {# Full Width Panels (if any) #}
-    <div class="row">
-        <div class="col col-md-12">
-            {% plugin_full_width_page object %}
+    {# Right Column: Associated Subnets #}
+    <div class="col col-md-6">
+        <div class="card">
+            <h5 class="card-header">Associated Subnets</h5>
+            <div class="card-body">
+                {% if aws_subnets_table.rows %}
+                    {% load render_table from django_tables2 %}
+                    {% render_table aws_subnets_table %}
+                {% else %}
+                    <span class="text-muted">No Subnets associated.</span>
+                {% endif %}
+            </div>
         </div>
+        {# {% plugin_right_page object %} #}
     </div>
-{% endblock %}
+</div>
+
+{# Full Width Panels for other related objects if needed in the future #}
+<div class="row">
+    <div class="col col-md-12">
+        {# {% plugin_full_width_page object %} #}
+    </div>
+</div>
+{% endblock content %}

@@ -1,13 +1,24 @@
 import django_filters
 from django import forms
-from ipam.models import Prefix
+from ipam.models import Prefix, Service
 from netbox.filtersets import NetBoxModelFilterSet, TagFilter
 from tenancy.filtersets import TenancyFilterSet
 from utilities.filters import MultiValueCharFilter
 
+from virtualization.models import VirtualMachine
 from .models import (
-    AWSAccount, AWSLoadBalancer, AWSSubnet, AWSVPC, AWSTargetGroup, AWSEC2Instance,
-    AWS_REGION_CHOICES, TARGET_GROUP_PROTOCOL_CHOICES, TARGET_GROUP_TYPE_CHOICES, AWS_TARGET_GROUP_STATE_CHOICES
+    AWSAccount,
+    AWSLoadBalancer,
+    AWSSubnet,
+    AWSVPC,
+    AWSTargetGroup,
+    AWSEC2Instance,
+    AWSRDSInstance,
+    AWS_REGION_CHOICES,
+    TARGET_GROUP_TYPE_CHOICES,
+    AWS_TARGET_GROUP_STATE_CHOICES,
+    EC2_INSTANCE_STATE_CHOICES,
+    RDS_INSTANCE_STATE_CHOICES,
 )
 
 
@@ -102,9 +113,29 @@ class AWSSubnetFilterSet(NetBoxModelFilterSet):
 
 
 class AWSEC2InstanceFilterSet(NetBoxModelFilterSet):
+    aws_account_id = django_filters.ModelMultipleChoiceFilter(
+        queryset=AWSAccount.objects.all(), label="AWS Account (ID)"
+    )
+    vpc_id = django_filters.ModelMultipleChoiceFilter(queryset=AWSVPC.objects.all(), label="AWS VPC (ID)")
+    region = django_filters.MultipleChoiceFilter(choices=AWS_REGION_CHOICES, label="Region")
+    state = django_filters.MultipleChoiceFilter(choices=EC2_INSTANCE_STATE_CHOICES, label="State")
+    virtual_machine_id = django_filters.ModelChoiceFilter(
+        queryset=VirtualMachine.objects.all(), label="Virtual Machine"
+    )
+
     class Meta:
         model = AWSEC2Instance
-        fields = ('id', 'name', 'instance_id', 'aws_account', 'region', 'vpc', 'state')
+        fields = (
+            "id",
+            "name",
+            "instance_id",
+            "aws_account_id",
+            "region",
+            "vpc_id",
+            "state",
+            "virtual_machine_id",
+            "tag",
+        )
 
     def search(self, queryset, name, value):
         return queryset.filter(name__icontains=value)
@@ -122,7 +153,9 @@ class AWSLoadBalancerFilterSet(NetBoxModelFilterSet):
     # )
     vpc_id = django_filters.ModelMultipleChoiceFilter(queryset=AWSVPC.objects.all(), label="AWS VPC (ID)")
     type = django_filters.MultipleChoiceFilter(choices=AWSLoadBalancer._meta.get_field("type").choices, label="Type")
-    scheme = django_filters.MultipleChoiceFilter(choices=AWSLoadBalancer._meta.get_field("scheme").choices, label="Scheme")
+    scheme = django_filters.MultipleChoiceFilter(
+        choices=AWSLoadBalancer._meta.get_field("scheme").choices, label="Scheme"
+    )
     state = django_filters.MultipleChoiceFilter(choices=AWSLoadBalancer._meta.get_field("state").choices, label="State")
     subnets = django_filters.ModelMultipleChoiceFilter(
         queryset=AWSSubnet.objects.all(),
@@ -133,7 +166,19 @@ class AWSLoadBalancerFilterSet(NetBoxModelFilterSet):
 
     class Meta:
         model = AWSLoadBalancer
-        fields = ["id", "name", "arn", "aws_account_id", "vpc_id", "type", "scheme", "state", "subnets", "tag"]  # Changed 'tags' to 'tag'
+        fields = [
+            "id",
+            "name",
+            "arn",
+            "aws_account_id",
+            "vpc_id",
+            "type",
+            "scheme",
+            "state",
+            "subnets",
+            "tag",
+        ]  # Changed 'tags' to 'tag'
+
 
 # If you need to filter other models, define their FilterSets here
 
@@ -146,20 +191,59 @@ class AWSTargetGroupFilterSet(NetBoxModelFilterSet):
     )
     region = django_filters.MultipleChoiceFilter(choices=AWS_REGION_CHOICES, label="Region")
     vpc_id = django_filters.ModelMultipleChoiceFilter(queryset=AWSVPC.objects.all(), label="AWS VPC (ID)")
-    protocol = django_filters.MultipleChoiceFilter(choices=TARGET_GROUP_PROTOCOL_CHOICES, label="Protocol")
-    port = django_filters.NumberFilter(label="Port")
+    service_id = django_filters.ModelMultipleChoiceFilter(
+        queryset=Service.objects.all(),
+        label="Service (ID)",
+    )
     target_type = django_filters.MultipleChoiceFilter(choices=TARGET_GROUP_TYPE_CHOICES, label="Target Type")
     state = django_filters.MultipleChoiceFilter(choices=AWS_TARGET_GROUP_STATE_CHOICES, label="State")
     load_balancers = django_filters.ModelMultipleChoiceFilter(
         queryset=AWSLoadBalancer.objects.all(),
         label="Load Balancers (ID)",
-        field_name='load_balancers' # Explicitly specify field_name for M2M
+        field_name="load_balancers",  # Explicitly specify field_name for M2M
     )
     tag = TagFilter()
 
     class Meta:
         model = AWSTargetGroup
         fields = [
-            "id", "name", "arn", "aws_account_id", "region", "vpc_id",
-            "protocol", "port", "target_type", "state", "load_balancers", "tag"
+            "name",
+            "arn",
+            "aws_account_id",
+            "region",
+            "vpc_id",
+            "service_id",
+            "target_type",
+            "state",
+            "load_balancers",
+            "tag",
         ]
+
+
+class AWSRDSInstanceFilterSet(NetBoxModelFilterSet):
+    aws_account_id = django_filters.ModelMultipleChoiceFilter(
+        queryset=AWSAccount.objects.all(), label="AWS Account (ID)"
+    )
+    vpc_id = django_filters.ModelMultipleChoiceFilter(queryset=AWSVPC.objects.all(), label="AWS VPC (ID)")
+    region = django_filters.MultipleChoiceFilter(choices=AWS_REGION_CHOICES, label="Region")
+    state = django_filters.MultipleChoiceFilter(choices=RDS_INSTANCE_STATE_CHOICES, label="State")
+    virtual_machine_id = django_filters.ModelChoiceFilter(
+        queryset=VirtualMachine.objects.all(), label="Virtual Machine"
+    )
+
+    class Meta:
+        model = AWSRDSInstance
+        fields = (
+            "id",
+            "name",
+            "instance_id",
+            "aws_account_id",
+            "region",
+            "vpc_id",
+            "state",
+            "virtual_machine_id",
+            "tag",
+        )
+
+    def search(self, queryset, name, value):
+        return queryset.filter(name__icontains=value)

@@ -76,7 +76,6 @@ urlpatterns = [
     ),
     # If you add bulk import later for Load Balancers:
     # path('aws-load-balancers/import/', views.AWSLoadBalancerBulkImportView.as_view(), name='awsloadbalancer_import'),
-
     # AWS Target Groups - List, Add, Individual View, Edit, Delete
     path("aws-target-groups/", views.AWSTargetGroupListView.as_view(), name="awstargetgroup_list"),
     path("aws-target-groups/add/", views.AWSTargetGroupEditView.as_view(), name="awstargetgroup_add"),
@@ -94,7 +93,6 @@ urlpatterns = [
     path("aws-target-groups/delete/", views.AWSTargetGroupBulkDeleteView.as_view(), name="awstargetgroup_bulk_delete"),
     # If you add bulk import later for Target Groups:
     # path('aws-target-groups/import/', views.AWSTargetGroupBulkImportView.as_view(), name='awstargetgroup_import'),
-
     # AWS EC2 Instances - List, Add, Individual View, Edit, Delete
     path("aws-ec2-instances/", views.AWSEC2InstanceListView.as_view(), name="awsec2instance_list"),
     path("aws-ec2-instances/add/", views.AWSEC2InstanceEditView.as_view(), name="awsec2instance_add"),
@@ -110,4 +108,19 @@ urlpatterns = [
     # AWS EC2 Instances - Bulk Operations
     path("aws-ec2-instances/edit/", views.AWSEC2InstanceBulkEditView.as_view(), name="awsec2instance_bulk_edit"),
     path("aws-ec2-instances/delete/", views.AWSEC2InstanceBulkDeleteView.as_view(), name="awsec2instance_bulk_delete"),
+    # AWS RDS Instances - List, Add, Individual View, Edit, Delete
+    path("aws-rds-instances/", views.AWSRDSInstanceListView.as_view(), name="awsrdsinstance_list"),
+    path("aws-rds-instances/add/", views.AWSRDSInstanceEditView.as_view(), name="awsrdsinstance_add"),
+    path("aws-rds-instances/<int:pk>/", views.AWSRDSInstanceView.as_view(), name="awsrdsinstance"),
+    path("aws-rds-instances/<int:pk>/edit/", views.AWSRDSInstanceEditView.as_view(), name="awsrdsinstance_edit"),
+    path("aws-rds-instances/<int:pk>/delete/", views.AWSRDSInstanceDeleteView.as_view(), name="awsrdsinstance_delete"),
+    path(
+        "aws-rds-instances/<int:pk>/changelog/",
+        ObjectChangeLogView.as_view(),
+        name="awsrdsinstance_changelog",
+        kwargs={"model": models.AWSRDSInstance},
+    ),
+    # AWS RDS Instances - Bulk Operations
+    path("aws-rds-instances/edit/", views.AWSRDSInstanceBulkEditView.as_view(), name="awsrdsinstance_bulk_edit"),
+    path("aws-rds-instances/delete/", views.AWSRDSInstanceBulkDeleteView.as_view(), name="awsrdsinstance_bulk_delete"),
 ]

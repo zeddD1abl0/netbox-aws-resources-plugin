@@ -1,7 +1,8 @@
 import django_tables2 as tables
+from . import models
 from netbox.tables import NetBoxTable, columns
 
-from .models import AWSVPC, AWSAccount, AWSLoadBalancer, AWSSubnet, AWSTargetGroup, AWSEC2Instance
+from .models import AWSVPC, AWSAccount, AWSSubnet, AWSTargetGroup, AWSEC2Instance, AWSRDSInstance
 
 
 class AWSAccountTable(NetBoxTable):
@@ -94,10 +95,47 @@ class AWSSubnetTable(NetBoxTable):
 class AWSLoadBalancerTable(NetBoxTable):
     name = tables.Column(linkify=True)
     arn = tables.Column(linkify=True, verbose_name="ARN")
-    aws_account = tables.Column(linkify=True, verbose_name="AWS Account")
-    region = tables.Column(verbose_name="Region") 
-    vpc = tables.Column(linkify=True, verbose_name="VPC")
+    aws_account = tables.TemplateColumn(
+        template_code="""
+        {% if record.aws_account %}
+            <a href="{% url 'plugins:netbox_aws_resources_plugin:awsaccount' pk=record.aws_account.pk %}">
+                {{ record.aws_account }}
+            </a>
+        {% else %}
+            &mdash;
+        {% endif %}
+        """
+    )
+    region = tables.TemplateColumn(template_code="{{ record.region|default:'&mdash;' }}")
+    vpc = tables.TemplateColumn(
+        template_code="""
+        {% if record.vpc %}
+            <a href="{% url 'plugins:netbox_aws_resources_plugin:awsvpc' pk=record.vpc.pk %}">{{ record.vpc }}</a>
+        {% else %}
+            &mdash;
+        {% endif %}
+        """
+    )
     dns_name = tables.Column(verbose_name="DNS Name")
+
+    class Meta(NetBoxTable.Meta):
+        model = models.AWSLoadBalancer
+        fields = (
+            "pk",
+            "id",
+            "name",
+            "arn",
+            "aws_account",
+            "region",
+            "vpc",
+            "dns_name",
+            "state",
+            "type",
+            "scheme",
+            "ip_address_type",
+            "actions",
+        )
+        default_columns = ("name", "arn", "aws_account", "region", "vpc", "dns_name", "state", "type")
 
 
 class AWSEC2InstanceTable(NetBoxTable):
@@ -108,50 +146,78 @@ class AWSEC2InstanceTable(NetBoxTable):
     vpc = tables.Column(linkify=True, verbose_name="VPC")
     instance_type = tables.Column(verbose_name="Instance Type")
     state = columns.ChoiceFieldColumn(verbose_name="State")
+    estimated_cost_usd_hourly = tables.Column(verbose_name="Est. Hourly Cost (USD)")
 
     class Meta(NetBoxTable.Meta):
         model = AWSEC2Instance
         fields = (
-            "pk", "id", "name", "instance_id", "aws_account", "region", "vpc", "instance_type", "state", "tags", "actions"
-        )
-        default_columns = ("name", "instance_id", "aws_account", "region", "vpc", "instance_type", "state", "actions") 
-    subnets_count = tables.Column(verbose_name="Subnets")
-    tags = columns.TagColumn(url_name='plugins:netbox_aws_resources_plugin:awsloadbalancer_list') 
-
-    def render_subnets_count(self, record):
-        return record.subnets.count()
-
-    class Meta(NetBoxTable.Meta):
-        model = AWSLoadBalancer
-        fields = (
             "pk",
             "id",
             "name",
-            "arn",
+            "instance_id",
             "aws_account",
             "region",
             "vpc",
-            "dns_name",
-            "subnets_count", 
-            "type",
-            "scheme",
+            "instance_type",
             "state",
+            "estimated_cost_usd_hourly",
             "tags",
-            "created",
-            "last_updated",
             "actions",
         )
         default_columns = (
             "name",
-            "arn",
+            "instance_id",
             "aws_account",
             "region",
             "vpc",
-            "dns_name",
-            "subnets_count", 
-            "type",
-            "scheme",
+            "instance_type",
             "state",
+            "estimated_cost_usd_hourly",
+            "actions",
+        )
+
+
+class AWSRDSInstanceTable(NetBoxTable):
+    name = tables.Column(linkify=True)
+    instance_id = tables.Column(linkify=True, verbose_name="DB Identifier")
+    aws_account = tables.Column(linkify=True, verbose_name="AWS Account")
+    region = tables.Column(verbose_name="Region")
+    vpc = tables.Column(linkify=True, verbose_name="VPC")
+    instance_class = tables.Column(verbose_name="Instance Class")
+    engine = tables.Column(verbose_name="Engine")
+    engine_version = tables.Column(verbose_name="Engine Version")
+    state = columns.ChoiceFieldColumn(verbose_name="State")
+    estimated_cost_usd_hourly = tables.Column(verbose_name="Est. Hourly Cost (USD)")
+
+    class Meta(NetBoxTable.Meta):
+        model = AWSRDSInstance
+        fields = (
+            "pk",
+            "id",
+            "name",
+            "instance_id",
+            "aws_account",
+            "region",
+            "vpc",
+            "instance_class",
+            "engine",
+            "engine_version",
+            "state",
+            "estimated_cost_usd_hourly",
+            "tags",
+            "actions",
+        )
+        default_columns = (
+            "name",
+            "instance_id",
+            "aws_account",
+            "region",
+            "vpc",
+            "instance_class",
+            "engine",
+            "state",
+            "estimated_cost_usd_hourly",
+            "actions",
         )
 
 
@@ -166,7 +232,7 @@ class AWSTargetGroupTable(NetBoxTable):
     target_type = tables.Column(verbose_name="Target Type")
     state = columns.ChoiceFieldColumn(verbose_name="State")
     load_balancers_count = tables.Column(verbose_name="LBs")
-    tags = columns.TagColumn(url_name='plugins:netbox_aws_resources_plugin:awstargetgroup_list')
+    tags = columns.TagColumn(url_name="plugins:netbox_aws_resources_plugin:awstargetgroup_list")
 
     def render_load_balancers_count(self, record):
         return record.load_balancers.count()

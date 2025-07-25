@@ -49,6 +49,14 @@ awsec2instance_add_button = PluginMenuButton(
     color=ButtonColorChoices.GREEN,
 )
 
+# Button for adding a new AWS RDS Instance
+awsrdsinstance_add_button = PluginMenuButton(
+    link="plugins:netbox_aws_resources_plugin:awsrdsinstance_add",
+    title="Add RDS Instance",
+    icon_class="mdi mdi-plus-thick",
+    color=ButtonColorChoices.GREEN,
+)
+
 # Menu item for listing AWS Accounts
 awsaccount_list_item = PluginMenuItem(
     link="plugins:netbox_aws_resources_plugin:awsaccount_list",
@@ -81,21 +89,39 @@ awsloadbalancer_list_item = PluginMenuItem(
 awstargetgroup_list_item = PluginMenuItem(
     link="plugins:netbox_aws_resources_plugin:awstargetgroup_list",
     link_text="AWS Target Groups",
-    buttons=(awstargetgroup_add_button,)
+    buttons=(awstargetgroup_add_button,),
 )
 
 # Menu item for listing AWS EC2 Instances
 awsec2instance_list_item = PluginMenuItem(
     link="plugins:netbox_aws_resources_plugin:awsec2instance_list",
     link_text="AWS EC2 Instances",
-    buttons=(awsec2instance_add_button,)
+    buttons=(awsec2instance_add_button,),
+)
+
+# Menu item for listing AWS RDS Instances
+awsrdsinstance_list_item = PluginMenuItem(
+    link="plugins:netbox_aws_resources_plugin:awsrdsinstance_list",
+    link_text="AWS RDS Instances",
+    buttons=(awsrdsinstance_add_button,),
 )
 
 # Define the top-level menu
 menu = PluginMenu(
     label="AWS Resources",  # Text that will appear on the top-level tab
     groups=(
-        ("AWS Management", (awsaccount_list_item, awsvpc_list_item, awssubnet_list_item, awsloadbalancer_list_item, awstargetgroup_list_item, awsec2instance_list_item)),
+        (
+            "AWS Management",
+            (
+                awsaccount_list_item,
+                awsvpc_list_item,
+                awssubnet_list_item,
+                awsloadbalancer_list_item,
+                awstargetgroup_list_item,
+                awsec2instance_list_item,
+                awsrdsinstance_list_item,
+            ),
+        ),
         # You can add more groups and items here later as your plugin grows
     ),
     icon_class="mdi mdi-cloud",  # Original cloud icon

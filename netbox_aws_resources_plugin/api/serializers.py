@@ -1,3 +1,6 @@
+import json
+import os
+
 from ipam.api.serializers import (
     PrefixSerializer as NetBoxNestedPrefixSerializer,
 )  # Use NetBox's nested Prefix serializer
@@ -6,6 +9,11 @@ from rest_framework import serializers
 from tenancy.api.serializers import TenantSerializer  # Assuming you might use this for tenant
 
 from ..models import AWSVPC, AWSAccount, AWSSubnet, AWSLoadBalancer, AWSTargetGroup
+
+# Load AZ data from JSON file
+file_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "data", "az_data.json")
+with open(file_path) as f:
+    AZ_DATA = json.load(f)
 
 
 # Nested serializer for representing parent_account concisely
@@ -70,13 +78,9 @@ class NestedAWSVPCSerializer(WritableNestedSerializer):
 
 class AWSVPCSerializer(NetBoxModelSerializer):
     url = serializers.HyperlinkedIdentityField(view_name="plugins-api:netbox_aws_resources_plugin-api:awsvpc-detail")
-    aws_account = NestedAWSAccountSerializer(read_only=True)  # Or queryset if writable is needed
-    cidr_block = NetBoxNestedPrefixSerializer(read_only=True)  # Use NetBox's nested Prefix serializer
-    # For writable nested fields, you would typically provide a queryset and remove read_only=True
-    # Example for aws_account if it were writable:
-    # aws_account = NestedAWSAccountSerializer(queryset=AWSAccount.objects.all())
-    # Example for cidr_block if it were writable and custom:
-    # cidr_block = NestedPrefixSerializer(queryset=Prefix.objects.all())
+    aws_account = NestedAWSAccountSerializer(read_only=True)
+    cidr_block = NetBoxNestedPrefixSerializer(read_only=True)
+    availability_zones = serializers.SerializerMethodField()
 
     class Meta:
         model = AWSVPC
@@ -89,6 +93,7 @@ class AWSVPCSerializer(NetBoxModelSerializer):
             "aws_account",
             "region",
             "cidr_block",
+            "availability_zones",
             "state",
             "is_default",
             "tags",
@@ -97,6 +102,10 @@ class AWSVPCSerializer(NetBoxModelSerializer):
             "last_updated",
         )
         brief_fields = ("id", "url", "display", "vpc_id", "name", "region")
+
+    def get_availability_zones(self, obj):
+        region_name = obj.region
+        return AZ_DATA.get(region_name, [])
 
 
 # Serializers for AWSSubnet
@@ -138,14 +147,19 @@ class AWSSubnetSerializer(NetBoxModelSerializer):
 
 # Serializers for AWSLoadBalancer (Placeholder if not already present)
 class NestedAWSLoadBalancerSerializer(WritableNestedSerializer):
-    url = serializers.HyperlinkedIdentityField(view_name="plugins-api:netbox_aws_resources_plugin-api:awsloadbalancer-detail")
+    url = serializers.HyperlinkedIdentityField(
+        view_name="plugins-api:netbox_aws_resources_plugin-api:awsloadbalancer-detail"
+    )
 
     class Meta:
         model = AWSLoadBalancer
         fields = ("id", "url", "display", "name", "arn")
 
+
 class AWSLoadBalancerSerializer(NetBoxModelSerializer):
-    url = serializers.HyperlinkedIdentityField(view_name="plugins-api:netbox_aws_resources_plugin-api:awsloadbalancer-detail")
+    url = serializers.HyperlinkedIdentityField(
+        view_name="plugins-api:netbox_aws_resources_plugin-api:awsloadbalancer-detail"
+    )
     aws_account = NestedAWSAccountSerializer(read_only=True)
     vpc = NestedAWSVPCSerializer(read_only=True, required=False, allow_null=True)
     subnets = NestedAWSSubnetSerializer(many=True, read_only=True, required=False)
@@ -176,7 +190,9 @@ class AWSLoadBalancerSerializer(NetBoxModelSerializer):
 
 # Serializers for AWSTargetGroup
 class NestedAWSTargetGroupSerializer(WritableNestedSerializer):
-    url = serializers.HyperlinkedIdentityField(view_name="plugins-api:netbox_aws_resources_plugin-api:awstargetgroup-detail")
+    url = serializers.HyperlinkedIdentityField(
+        view_name="plugins-api:netbox_aws_resources_plugin-api:awstargetgroup-detail"
+    )
 
     class Meta:
         model = AWSTargetGroup
@@ -184,7 +200,9 @@ class NestedAWSTargetGroupSerializer(WritableNestedSerializer):
 
 
 class AWSTargetGroupSerializer(NetBoxModelSerializer):
-    url = serializers.HyperlinkedIdentityField(view_name="plugins-api:netbox_aws_resources_plugin-api:awstargetgroup-detail")
+    url = serializers.HyperlinkedIdentityField(
+        view_name="plugins-api:netbox_aws_resources_plugin-api:awstargetgroup-detail"
+    )
     aws_account = NestedAWSAccountSerializer(read_only=True)
     vpc = NestedAWSVPCSerializer(read_only=True, required=False, allow_null=True)
     load_balancers = NestedAWSLoadBalancerSerializer(many=True, read_only=True, required=False)

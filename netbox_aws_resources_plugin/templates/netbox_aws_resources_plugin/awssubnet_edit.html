@@ -1,0 +1,10 @@
+{% extends 'generic/object_edit.html' %}
+{% load static %}
+
+{% block javascript %}
+  {{ block.super }}
+  {{ form.media }}
+  {% for script in extra_javascript %}
+    <script src="{% static script %}"></script>
+  {% endfor %}
+{% endblock %}

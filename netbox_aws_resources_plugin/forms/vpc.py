@@ -14,9 +14,12 @@ class AWSVPCForm(NetBoxModelForm):
     )
     cidr_block = DynamicModelChoiceField(
         label="CIDR Block (Prefix)",
-        queryset=Prefix.objects.filter(is_pool=False, status="container"),  # Typically VPCs are container prefixes
-        required=True, 
+        queryset=Prefix.objects.filter(
+            prefix__isnull=True, is_pool=False, status="container"
+        ),  # VPCs must be parent prefixes
+        required=True,
         help_text="The NetBox Prefix representing the primary IPv4 CIDR of this VPC. Should be a container type.",
+        query_params={"parent__isnull": "true", "status": "container"},
     )
 
     class Meta:

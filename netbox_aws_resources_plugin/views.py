@@ -3,12 +3,10 @@ from ipam.tables import IPAddressTable  # noqa # type: ignore
 from ipam.models import IPAddress  # noqa # type: ignore
 
 from . import filtersets, forms, models, tables
-from .models import AWSAccount, AWSVPC, AWSSubnet, AWSLoadBalancer, AWSTargetGroup, AWSEC2Instance # Ensure all models are imported
-from .tables import AWSSubnetTable # Ensure AWSSubnetTable is imported
 
 
 class AWSAccountView(generic.ObjectView):
-    queryset = models.AWSAccount.objects.prefetch_related('tags', 'child_accounts')
+    queryset = models.AWSAccount.objects.prefetch_related("tags", "child_accounts")
 
     def get_extra_context(self, request, instance):
         # Child Accounts Table
@@ -17,15 +15,19 @@ class AWSAccountView(generic.ObjectView):
         child_accounts_table.configure(request)
 
         # Related VPCs Table
-        vpcs = instance.vpcs.all().select_related('aws_account', 'region', 'cidr_block')
+        vpcs = instance.vpcs.all().select_related("aws_account", "region", "cidr_block")
         aws_vpc_table = tables.AWSVPCTable(vpcs, user=request.user, exclude=("aws_account",))
         aws_vpc_table.configure(request)
 
-        # Related Load Balancers Table (assuming related_name='load_balancers' or 'aws_load_balancers' on AWSLoadBalancer model for AWSAccount)
+        # Related Load Balancers Table (assuming related_name='load_balancers' on AWSLoadBalancer model for AWSAccount)
         # If the related_name is different, this line will need adjustment.
         # For example, if AWSLoadBalancer.aws_account has related_name="account_load_balancers"
-        load_balancers = models.AWSLoadBalancer.objects.filter(aws_account=instance).select_related('aws_account', 'region', 'vpc')
-        aws_load_balancer_table = tables.AWSLoadBalancerTable(load_balancers, user=request.user, exclude=("aws_account",))
+        load_balancers = models.AWSLoadBalancer.objects.filter(aws_account=instance).select_related(
+            "aws_account", "region", "vpc"
+        )
+        aws_load_balancer_table = tables.AWSLoadBalancerTable(
+            load_balancers, user=request.user, exclude=("aws_account",)
+        )
         aws_load_balancer_table.configure(request)
 
         return {
@@ -74,7 +76,9 @@ class AWSVPCView(generic.ObjectView):
     def get_extra_context(self, request, instance):
         # Table of associated Load Balancers
         # Use the related_name 'vpc_load_balancers' from AWSLoadBalancer.vpc field
-        load_balancers = instance.vpc_load_balancers.all().select_related('aws_account', 'vpc') # Removed 'region' from select_related
+        load_balancers = instance.vpc_load_balancers.all().select_related(
+            "aws_account", "vpc"
+        )  # Removed 'region' from select_related
         load_balancers_table = tables.AWSLoadBalancerTable(load_balancers, user=request.user)
         load_balancers_table.configure(request)
 
@@ -125,52 +129,107 @@ class AWSVPCBulkDeleteView(generic.BulkDeleteView):
 # Views for AWSEC2Instance
 #
 
+
 class AWSEC2InstanceView(generic.ObjectView):
-    queryset = models.AWSEC2Instance.objects.select_related('aws_account', 'vpc')
+    queryset = models.AWSEC2Instance.objects.select_related("aws_account", "vpc", "virtual_machine")
+
+    def get_extra_context(self, request, instance):
+        return {
+            "virtual_machine": instance.virtual_machine,
+        }
+
 
 class AWSEC2InstanceListView(generic.ObjectListView):
-    queryset = models.AWSEC2Instance.objects.select_related('aws_account', 'vpc')
+    queryset = models.AWSEC2Instance.objects.select_related("aws_account", "vpc")
     table = tables.AWSEC2InstanceTable
     filterset = filtersets.AWSEC2InstanceFilterSet
     filterset_form = forms.AWSEC2InstanceFilterForm
+
 
 class AWSEC2InstanceEditView(generic.ObjectEditView):
     queryset = models.AWSEC2Instance.objects.all()
     form = forms.AWSEC2InstanceForm
 
+
 class AWSEC2InstanceDeleteView(generic.ObjectDeleteView):
     queryset = models.AWSEC2Instance.objects.all()
 
+
 class AWSEC2InstanceBulkEditView(generic.BulkEditView):
-    queryset = models.AWSEC2Instance.objects.select_related('aws_account', 'vpc')
+    queryset = models.AWSEC2Instance.objects.select_related("aws_account", "vpc")
     filterset = filtersets.AWSEC2InstanceFilterSet
     table = tables.AWSEC2InstanceTable
     form = forms.AWSEC2InstanceBulkEditForm
+
 
 class AWSEC2InstanceBulkDeleteView(generic.BulkDeleteView):
     queryset = models.AWSEC2Instance.objects.all()
     table = tables.AWSEC2InstanceTable
 
 
+#
+# Views for AWSRDSInstance
+#
+
+
+class AWSRDSInstanceView(generic.ObjectView):
+    queryset = models.AWSRDSInstance.objects.select_related("aws_account", "vpc", "virtual_machine")
+
+    def get_extra_context(self, request, instance):
+        return {
+            "virtual_machine": instance.virtual_machine,
+        }
+
+
+class AWSRDSInstanceListView(generic.ObjectListView):
+    queryset = models.AWSRDSInstance.objects.select_related("aws_account", "vpc")
+    table = tables.AWSRDSInstanceTable
+    filterset = filtersets.AWSRDSInstanceFilterSet
+    filterset_form = forms.AWSRDSInstanceFilterForm
+
+
+class AWSRDSInstanceEditView(generic.ObjectEditView):
+    queryset = models.AWSRDSInstance.objects.all()
+    form = forms.AWSRDSInstanceForm
+
+
+class AWSRDSInstanceDeleteView(generic.ObjectDeleteView):
+    queryset = models.AWSRDSInstance.objects.all()
+
+
+class AWSRDSInstanceBulkEditView(generic.BulkEditView):
+    queryset = models.AWSRDSInstance.objects.select_related("aws_account", "vpc")
+    filterset = filtersets.AWSRDSInstanceFilterSet
+    table = tables.AWSRDSInstanceTable
+    form = forms.AWSRDSInstanceBulkEditForm
+
+
+class AWSRDSInstanceBulkDeleteView(generic.BulkDeleteView):
+    queryset = models.AWSRDSInstance.objects.all()
+    table = tables.AWSRDSInstanceTable
+
+
 # Views for AWSSubnet
 
 
 class AWSSubnetView(generic.ObjectView):
-    queryset = models.AWSSubnet.objects.select_related(
-        "aws_vpc__aws_account", "cidr_block"
-    )
+    queryset = models.AWSSubnet.objects.select_related("aws_vpc__aws_account", "cidr_block")
 
     def get_extra_context(self, request, instance):
         # Get IP Addresses in this subnet
-        ip_addresses = IPAddress.objects.none() # Default to no IPs
-        if instance.cidr_block: # Ensure the subnet has a CIDR block assigned
-            ip_addresses = IPAddress.objects.restrict(request.user, 'view').filter(
-                address__net_contained=str(instance.cidr_block) # Filter IPs contained within the subnet's prefix
-            ).select_related('vrf', 'tenant')
-        
+        ip_addresses = IPAddress.objects.none()  # Default to no IPs
+        if instance.cidr_block:  # Ensure the subnet has a CIDR block assigned
+            ip_addresses = (
+                IPAddress.objects.restrict(request.user, "view")
+                .filter(
+                    address__net_contained=str(instance.cidr_block)  # Filter IPs contained within the subnet's prefix
+                )
+                .select_related("vrf", "tenant")
+            )
+
         ip_addresses_table = IPAddressTable(ip_addresses, user=request.user)
-        if not request.user.has_perm('ipam.view_ipaddress'):
-            ip_addresses_table = None # Clear table if no permission
+        if not request.user.has_perm("ipam.view_ipaddress"):
+            ip_addresses_table = None  # Clear table if no permission
         elif ip_addresses_table:
             ip_addresses_table.configure(request)
 
@@ -189,7 +248,7 @@ class AWSSubnetListView(generic.ObjectListView):
 class AWSSubnetEditView(generic.ObjectEditView):
     queryset = models.AWSSubnet.objects.all()
     form = forms.AWSSubnetForm
-    # template_name = 'netbox_aws_resources_plugin/awssubnet_edit.html' # Optional
+    template_name = "netbox_aws_resources_plugin/awssubnet_edit.html"
 
 
 class AWSSubnetDeleteView(generic.ObjectDeleteView):
@@ -213,20 +272,18 @@ class AWSSubnetBulkDeleteView(generic.BulkDeleteView):
 
 
 class AWSLoadBalancerView(generic.ObjectView):
-    queryset = models.AWSLoadBalancer.objects.select_related(
-        "aws_account", "vpc"
-    ).prefetch_related(
-        "subnets", "tags"
-    )
+    queryset = models.AWSLoadBalancer.objects.select_related("aws_account", "vpc").prefetch_related("subnets", "tags")
 
     def get_extra_context(self, request, instance):
-        # 'instance.subnets.all()' will now use prefetched data
-        subnets_table = tables.AWSSubnetTable(instance.subnets.all(), user=request.user)
-        subnets_table.configure(request)
+        # Get the context from the parent view
+        context = super().get_extra_context(request, instance)
 
-        return {
-            "subnets_table": subnets_table,
-        }
+        # Prepare and add the subnets table
+        aws_subnets_table = tables.AWSSubnetTable(instance.subnets.all(), user=request.user)
+        aws_subnets_table.configure(request)
+        context["aws_subnets_table"] = aws_subnets_table
+
+        return context
 
 
 class AWSLoadBalancerListView(generic.ObjectListView):
@@ -261,10 +318,9 @@ class AWSLoadBalancerBulkDeleteView(generic.BulkDeleteView):
 
 # Views for AWSTargetGroup
 
+
 class AWSTargetGroupView(generic.ObjectView):
-    queryset = models.AWSTargetGroup.objects.select_related(
-        "aws_account", "vpc"
-    ).prefetch_related(
+    queryset = models.AWSTargetGroup.objects.select_related("aws_account", "vpc").prefetch_related(
         "load_balancers", "tags"
     )
 
@@ -279,9 +335,7 @@ class AWSTargetGroupView(generic.ObjectView):
 
 
 class AWSTargetGroupListView(generic.ObjectListView):
-    queryset = models.AWSTargetGroup.objects.select_related(
-        "aws_account", "vpc"
-    ).prefetch_related(
+    queryset = models.AWSTargetGroup.objects.select_related("aws_account", "vpc").prefetch_related(
         "load_balancers", "tags"
     )
     table = tables.AWSTargetGroupTable
@@ -299,9 +353,7 @@ class AWSTargetGroupDeleteView(generic.ObjectDeleteView):
 
 
 class AWSTargetGroupBulkEditView(generic.BulkEditView):
-    queryset = models.AWSTargetGroup.objects.select_related(
-        "aws_account", "vpc"
-    ).prefetch_related(
+    queryset = models.AWSTargetGroup.objects.select_related("aws_account", "vpc").prefetch_related(
         "load_balancers", "tags"
     )
     filterset = filtersets.AWSTargetGroupFilterSet
